@@ -16,9 +16,9 @@ function Sidebar({ darkMode, toggleDarkMode }) {
   ];
 
   return (
-    <div className="w-64 bg-gradient-to-b from-[#02042b] to-[#0a1128] text-white h-screen flex flex-col fixed border-r border-gray-800/50 shadow-2xl z-50">
-      <div className="p-6 flex items-center space-x-3 border-b border-white/5">
-        <Shield className="w-8 h-8 text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
+    <div className="w-64 bg-white dark:bg-gradient-to-b dark:from-[#02042b] dark:to-[#0a1128] text-gray-900 dark:text-white h-screen flex flex-col fixed border-r border-gray-200 dark:border-gray-800/50 shadow-lg dark:shadow-2xl z-50 transition-colors duration-500">
+      <div className="p-6 flex items-center space-x-3 border-b border-gray-200 dark:border-white/5">
+        <Shield className="w-8 h-8 text-blue-600 dark:text-blue-400 dark:drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
         <span className="text-xl font-bold tracking-wide">RefundShield</span>
       </div>
       <nav className="flex-1 p-4 space-y-2">
@@ -26,19 +26,19 @@ function Sidebar({ darkMode, toggleDarkMode }) {
           const Icon = link.icon;
           const isActive = location.pathname === link.path || (location.pathname.startsWith('/clusters') && link.path === '/clusters');
           return (
-            <Link key={link.path} to={link.path} className={`group flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 ${isActive ? 'bg-blue-600/90 text-white shadow-[0_0_15px_rgba(37,99,235,0.4)]' : 'text-gray-400 hover:bg-white/5 hover:text-gray-100'}`}>
+            <Link key={link.path} to={link.path} className={`group flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 ${isActive ? 'bg-blue-600/10 dark:bg-blue-600/90 text-blue-700 dark:text-white dark:shadow-[0_0_15px_rgba(37,99,235,0.4)]' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-gray-100'}`}>
               <Icon className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`} />
               <span className="font-medium">{link.name}</span>
             </Link>
           )
         })}
       </nav>
-      <div className="p-4 border-t border-white/5">
+      <div className="p-4 border-t border-gray-200 dark:border-white/5">
         <button 
           onClick={toggleDarkMode}
-          className="flex items-center space-x-3 w-full p-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all duration-300"
+          className="flex items-center space-x-3 w-full p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
         >
-          {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          {darkMode ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-blue-600" />}
           <span className="font-medium">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
         </button>
       </div>
