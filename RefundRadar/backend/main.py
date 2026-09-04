@@ -14,13 +14,13 @@ async def lifespan(app: FastAPI):
     # Set LIVE_STREAM_ENABLED=false in .env to disable by default
     if os.getenv("LIVE_STREAM_ENABLED", "true").lower() == "true":
         start_stream()
-        print("[RefundShield] Live stream started.")
+        print("[RefundRadar] Live stream started.")
     else:
-        print("[RefundShield] Live stream paused (LIVE_STREAM_ENABLED=false).")
+        print("[RefundRadar] Live stream paused (LIVE_STREAM_ENABLED=false).")
     yield
     stop_stream()
 
-app = FastAPI(title="RefundShield API", lifespan=lifespan)
+app = FastAPI(title="RefundRadar API", lifespan=lifespan)
 
 # Enable CORS for React frontend
 app.add_middleware(

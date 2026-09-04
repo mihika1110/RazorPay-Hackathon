@@ -30,7 +30,7 @@ def generate_investigation_report(cluster_id):
     total_refunds     = cluster.get('total_refunds', 0)
 
     # Build a detailed prompt for Gemini
-    prompt = f"""You are RefundShield, an expert fraud intelligence analyst at Razorpay.
+    prompt = f"""You are RefundRadar, an expert fraud intelligence analyst at Razorpay.
 Analyze the following cluster of accounts and produce a structured investigation report.
 
 CLUSTER DATA:

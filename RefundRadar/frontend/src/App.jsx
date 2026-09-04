@@ -10,7 +10,7 @@ import { StreamProvider, useStream } from './context/StreamContext';
 function Sidebar({ darkMode, toggleDarkMode }) {
   const location = useLocation();
   const { isStreaming, isToggling, toggleStream } = useStream();
-  
+
   const links = [
     { name: 'Dashboard', path: '/', icon: LayoutDashboard },
     { name: 'Clusters', path: '/clusters', icon: Users },
@@ -21,7 +21,7 @@ function Sidebar({ darkMode, toggleDarkMode }) {
     <div className="w-64 bg-white dark:bg-gradient-to-b dark:from-[#02042b] dark:to-[#0a1128] text-gray-900 dark:text-white h-screen flex flex-col fixed border-r border-gray-200 dark:border-gray-800/50 shadow-lg dark:shadow-2xl z-50 transition-colors duration-500">
       <div className="p-6 flex items-center space-x-3 border-b border-gray-200 dark:border-white/5">
         <Shield className="w-8 h-8 text-blue-600 dark:text-blue-400 dark:drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
-        <span className="text-xl font-bold tracking-wide">RefundShield</span>
+        <span className="text-xl font-bold tracking-wide">RefundRadar</span>
       </div>
       <nav className="flex-1 p-4 space-y-2">
         {links.map(link => {
@@ -57,11 +57,10 @@ function Sidebar({ darkMode, toggleDarkMode }) {
           <button
             onClick={toggleStream}
             disabled={isToggling}
-            className={`w-full py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center space-x-2 transition-all duration-300 ${
-              isStreaming
-                ? 'bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-900/30'
-                : 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/30'
-            }`}
+            className={`w-full py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center space-x-2 transition-all duration-300 ${isStreaming
+              ? 'bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-900/30'
+              : 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/30'
+              }`}
             title={isStreaming ? "Pause synthetic order generation" : "Resume synthetic order generation"}
           >
             {isStreaming ? (
@@ -78,7 +77,7 @@ function Sidebar({ darkMode, toggleDarkMode }) {
           </button>
         </div>
 
-        <button 
+        <button
           onClick={toggleDarkMode}
           className="flex items-center space-x-3 w-full p-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white transition-all duration-300 text-sm"
         >
@@ -115,7 +114,7 @@ function App() {
             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 dark:bg-indigo-600/5 blur-[100px] pointer-events-none mix-blend-screen animate-float [animation-delay:2s]"></div>
 
             <Sidebar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-            
+
             <div className="flex-1 ml-64 p-8 overflow-y-auto h-screen relative z-10">
               <Routes>
                 <Route path="/" element={<Dashboard />} />
