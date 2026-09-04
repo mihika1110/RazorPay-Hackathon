@@ -8,15 +8,34 @@ const API_BASE = 'http://127.0.0.1:8000/api';
 export default function Dashboard() {
   const [stats, setStats] = useState(null);
   const [orders, setOrders] = useState([]);
+  const [isLive, setIsLive] = useState(false);
 
-  useEffect(() => {
+  const fetchData = () => {
     axios.get(`${API_BASE}/stats`).then(res => setStats(res.data));
     axios.get(`${API_BASE}/orders`).then(res => setOrders(res.data));
+    setIsLive(true);
+  };
+
+  useEffect(() => {
+    fetchData();
+    const interval = setInterval(fetchData, 5000); // poll every 5s
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white animate-fade-up">Risk Overview</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white animate-fade-up">Risk Overview</h1>
+        {isLive && (
+          <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 rounded-full animate-fade-up">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-xs font-semibold text-green-700 dark:text-green-400">LIVE</span>
+          </div>
+        )}
+      </div>
 
       {stats ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">

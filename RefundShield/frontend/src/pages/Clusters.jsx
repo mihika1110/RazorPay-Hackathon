@@ -12,7 +12,11 @@ export default function Clusters() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
-    axios.get(`${API_BASE}/clusters`).then(res => setClusters(res.data));
+    const fetchClusters = () =>
+      axios.get(`${API_BASE}/clusters`).then(res => setClusters(res.data));
+    fetchClusters();
+    const interval = setInterval(fetchClusters, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   const filteredClusters = clusters.filter(c => {

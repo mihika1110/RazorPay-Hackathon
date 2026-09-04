@@ -4,7 +4,7 @@ import uuid
 import random
 from datetime import datetime, timedelta
 
-def generate_synthetic_data(num_normal=800, num_abusive_clusters=20, num_dense_living=5):
+def generate_synthetic_data(num_normal=1800, num_abusive_clusters=40, num_medium_clusters=20, num_dense_living=10):
     np.random.seed(42)
     random.seed(42)
 
@@ -117,6 +117,40 @@ def generate_synthetic_data(num_normal=800, num_abusive_clusters=20, num_dense_l
                     "refund_requested": refund_requested,
                     "refund_amount": amount if refund_requested else 0.0,
                     "refund_timestamp": (order_date + timedelta(days=random.randint(1, 2))).isoformat() if refund_requested else None
+                })
+
+    # Generate Medium-Risk Clusters (wardrobing / borderline abuse)
+    for i in range(num_medium_clusters):
+        cluster_dev_id = f"DEV_M_{i}"
+        cluster_addr_id = f"ADDR_M_{i}"
+        num_accounts_in_cluster = random.randint(3, 7)
+        target_product = random.choice(products)
+        for j in range(num_accounts_in_cluster):
+            acc_id = f"ACC_M_{cluster_counter}"
+            cluster_counter += 1
+            dev_id = cluster_dev_id if random.random() < 0.7 else f"DEV_M_ALT_{cluster_counter}"
+            addr_id = cluster_addr_id if random.random() < 0.7 else f"ADDR_M_ALT_{cluster_counter}"
+            acc = create_account(acc_id, True, dev_id, addr_id)
+            accounts.append(acc)
+            base_refund_rate = random.uniform(0.3, 0.55)  # medium refund rate
+            num_orders = random.randint(3, 12)
+            for k in range(num_orders):
+                order_date = current_date - timedelta(days=random.randint(1, min(acc["account_age_days"], 30)))
+                amount = round(random.uniform(30, 800), 2)
+                refund_requested = 1 if random.random() < base_refund_rate else 0
+                orders.append({
+                    "order_id": f"ORD_{acc_id}_{k}",
+                    "account_id": acc_id,
+                    "timestamp": order_date.isoformat(),
+                    "product_id": target_product if random.random() < 0.5 else random.choice(products),
+                    "category": random.choice(categories),
+                    "amount": amount,
+                    "device_id": acc["device_id"],
+                    "address_id": acc["address_id"],
+                    "order_status": "REFUNDED" if refund_requested else "COMPLETED",
+                    "refund_requested": refund_requested,
+                    "refund_amount": amount if refund_requested else 0.0,
+                    "refund_timestamp": (order_date + timedelta(days=random.randint(1, 4))).isoformat() if refund_requested else None
                 })
 
     # Generate Dense Living (Hostel/Corporate) - Normal behavior but dense

@@ -8,7 +8,11 @@ export default function Metrics() {
   const [metrics, setMetrics] = useState(null);
 
   useEffect(() => {
-    axios.get(`${API_BASE}/metrics`).then(res => setMetrics(res.data));
+    const fetchMetrics = () =>
+      axios.get(`${API_BASE}/metrics`).then(res => setMetrics(res.data));
+    fetchMetrics();
+    const interval = setInterval(fetchMetrics, 10000); // poll every 10s
+    return () => clearInterval(interval);
   }, []);
 
   if (!metrics) return <div className="p-12 text-center text-gray-500">Loading metrics...</div>;

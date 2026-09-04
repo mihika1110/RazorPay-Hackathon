@@ -1,12 +1,21 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
 import pandas as pd
 import json
 import os
 
 from agent import generate_investigation_report
+from live_streamer import start_stream, stop_stream
 
-app = FastAPI(title="RefundShield API")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Start live data stream on server startup
+    start_stream()
+    yield
+    stop_stream()
+
+app = FastAPI(title="RefundShield API", lifespan=lifespan)
 
 # Enable CORS for React frontend
 app.add_middleware(
@@ -43,7 +52,7 @@ def get_stats():
     suspicious_clusters = len([c for c in clusters if c['risk_level'] == 'HIGH'])
     dense_nodes = len([c for c in clusters if c.get('is_dense_living', False)])
     
-    if 'refund_amount' in orders_df.columns:
+    if 'risk_level' in orders_df.columns:
         potential_exposure = float(orders_df[orders_df['risk_level'] == 'HIGH']['amount'].sum())
     else:
         potential_exposure = 0.0
@@ -99,3 +108,13 @@ def get_metrics():
         with open('metrics.json', 'r') as f:
             return json.load(f)
     return {"error": "Metrics not found"}
+
+@app.get("/api/stream/status")
+def get_stream_status():
+    """Returns the current count of live orders — for the frontend live indicator."""
+    from datetime import datetime
+    orders_df = load_orders()
+    return {
+        "total_orders": len(orders_df),
+        "last_updated": datetime.now().isoformat()
+    }
