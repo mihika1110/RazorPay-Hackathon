@@ -1,20 +1,20 @@
 {
     "precision": 85.71,
-    "recall": 96.43,
-    "f1": 90.76,
+    "recall": 93.1,
+    "f1": 89.26,
     "false_positive_rate": 0.08,
-    "false_negative_rate": 3.57,
+    "false_negative_rate": 6.9,
     "confusion_matrix": [
         [
-            10932,
+            10954,
             9
         ],
         [
-            2,
+            4,
             54
         ]
     ],
-    "test_records": 10997,
+    "test_records": 11021,
     "val_records": 4313,
     "train_records": 17252,
     "live_mode": true

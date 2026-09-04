@@ -3,8 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeft, Bot, ShieldAlert, Cpu, MapPin, CreditCard, Play, Building2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-
-const API_BASE = 'http://127.0.0.1:8000/api';
+import { API_BASE } from '../config';
 
 export default function Investigation() {
   const { id } = useParams();

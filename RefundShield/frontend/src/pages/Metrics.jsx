@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Target, Activity, Zap, Server, CheckCircle2, XCircle, Database, PieChart } from 'lucide-react';
 import { useStream } from '../context/StreamContext';
-
-const API_BASE = 'http://127.0.0.1:8000/api';
+import { API_BASE } from '../config';
 
 export default function Metrics() {
   const [metrics, setMetrics] = useState(null);

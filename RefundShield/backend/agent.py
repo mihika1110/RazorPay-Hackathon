@@ -58,8 +58,9 @@ Keep the tone professional and concise."""
     try:
         if not _client:
             raise ValueError("No API key configured")
+        model_name = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
         response = _client.models.generate_content(
-            model="gemini-2.0-flash",
+            model=model_name,
             contents=prompt
         )
         report_text = response.text

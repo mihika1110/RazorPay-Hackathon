@@ -3,8 +3,7 @@ import axios from 'axios';
 import { ShieldAlert, Activity, ShoppingCart, IndianRupee, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useStream } from '../context/StreamContext';
-
-const API_BASE = 'http://127.0.0.1:8000/api';
+import { API_BASE } from '../config';
 
 export default function Dashboard() {
   const [stats, setStats] = useState(null);

@@ -15,8 +15,8 @@ import os
 from datetime import datetime, timedelta
 
 # How often (seconds) to generate a new batch of orders
-STREAM_INTERVAL = 10
-BATCH_SIZE = 3  # new orders per tick
+STREAM_INTERVAL = int(os.getenv("STREAM_INTERVAL", "10"))
+BATCH_SIZE = int(os.getenv("STREAM_BATCH_SIZE", "3"))
 
 _stop_event = threading.Event()
 _lock = threading.Lock()
@@ -128,15 +128,11 @@ def _generate_new_orders(accounts_df, existing_order_count):
         })
     return pd.DataFrame(new_orders)
 
-def _rebuild_clusters(orders_df, accounts_df):
-    """Rebuild clusters.json from the current scored orders."""
-    from graph_engine import build_graph, detect_clusters, detect_dense_living_nodes
+def _rebuild_clusters():
+    """Rebuild clusters.json from current scored orders."""
+    from graph_engine import build_and_analyze_graph
     try:
-        graph = build_graph(accounts_df, orders_df)
-        clusters = detect_clusters(graph, orders_df)
-        clusters = detect_dense_living_nodes(clusters)
-        with open("clusters.json", "w") as f:
-            json.dump(clusters, f, indent=2)
+        build_and_analyze_graph()
     except Exception as e:
         print(f"[LiveStream] Cluster rebuild error: {e}")
 
@@ -179,7 +175,7 @@ def _stream_loop():
                     # Strip internal columns before saving to CSV
                     save_cols = [c for c in scored.columns if c not in ["abuse_label", "predicted_positive"]]
                     scored[save_cols].to_csv("orders_scored.csv", index=False)
-                    _rebuild_clusters(scored[save_cols], accounts_df)
+                    _rebuild_clusters()
                     print(f"[LiveStream] +{BATCH_SIZE} orders. Total: {len(scored)}")
 
         except Exception as e:

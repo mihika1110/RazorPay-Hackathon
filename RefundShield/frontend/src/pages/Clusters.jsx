@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Search, Filter, AlertTriangle, Building2 } from 'lucide-react';
-
-const API_BASE = 'http://127.0.0.1:8000/api';
+import { API_BASE } from '../config';
 
 export default function Clusters() {
   const [clusters, setClusters] = useState([]);

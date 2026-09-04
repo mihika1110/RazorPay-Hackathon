@@ -1,13 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-
-const API_BASE = 'http://127.0.0.1:8000/api';
+import { API_BASE } from '../config';
 
 const StreamContext = createContext({
   isStreaming: true,
   isToggling: false,
-  toggleStream: () => {},
-  fetchStatus: () => {},
+  toggleStream: () => { },
+  fetchStatus: () => { },
 });
 
 export function StreamProvider({ children }) {
