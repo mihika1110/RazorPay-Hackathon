@@ -15,22 +15,22 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-500">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Risk Overview</h1>
-      
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white animate-fade-up">Risk Overview</h1>
+
       {stats ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          <StatCard title="Orders Analyzed" value={stats.total_orders.toLocaleString()} icon={<ShoppingCart className="w-8 h-8 text-blue-500 drop-shadow-md" />} />
-          <StatCard title="Flagged Orders" value={stats.flagged_orders.toLocaleString()} icon={<Activity className="w-8 h-8 text-yellow-500 drop-shadow-md" />} />
-          <StatCard title="Suspicious Clusters" value={stats.suspicious_clusters} icon={<ShieldAlert className="w-8 h-8 text-red-500 drop-shadow-md" />} />
-          <StatCard title="Verified Dense Nodes" value={stats.dense_nodes} icon={<Building2 className="w-8 h-8 text-indigo-500 drop-shadow-md" />} />
-          <StatCard title="Refund Exposure" value={`₹${stats.potential_exposure.toLocaleString(undefined, {minimumFractionDigits: 2})}`} icon={<IndianRupee className="w-8 h-8 text-green-500 drop-shadow-md" />} />
+          <div className="animate-fade-up [animation-delay:100ms] opacity-0 fill-mode-forwards"><StatCard title="Orders Analyzed" value={stats.total_orders.toLocaleString()} icon={<ShoppingCart className="w-8 h-8 text-blue-500 drop-shadow-md" />} /></div>
+          <div className="animate-fade-up [animation-delay:200ms] opacity-0 fill-mode-forwards"><StatCard title="Flagged Orders" value={stats.flagged_orders.toLocaleString()} icon={<Activity className="w-8 h-8 text-yellow-500 drop-shadow-md" />} /></div>
+          <div className="animate-fade-up [animation-delay:300ms] opacity-0 fill-mode-forwards"><StatCard title="Suspicious Clusters" value={stats.suspicious_clusters} icon={<ShieldAlert className="w-8 h-8 text-red-500 drop-shadow-md" />} /></div>
+          <div className="animate-fade-up [animation-delay:400ms] opacity-0 fill-mode-forwards"><StatCard title="Verified Dense Nodes" value={stats.dense_nodes} icon={<Building2 className="w-8 h-8 text-indigo-500 drop-shadow-md" />} /></div>
+          <div className="animate-fade-up [animation-delay:500ms] opacity-0 fill-mode-forwards"><StatCard title="Refund Exposure" value={`₹${stats.potential_exposure.toLocaleString(undefined, { minimumFractionDigits: 2 })}`} icon={<IndianRupee className="w-8 h-8 text-green-500 drop-shadow-md" />} /></div>
         </div>
       ) : (
         <div className="h-24 flex items-center justify-center"><div className="animate-pulse bg-gray-200 dark:bg-slate-800/50 h-20 w-full rounded-xl"></div></div>
       )}
 
-      <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6 mt-8">
+      <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6 mt-8 animate-fade-up [animation-delay:600ms] opacity-0 fill-mode-forwards">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold text-gray-800 dark:text-white flex items-center space-x-2">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
@@ -38,7 +38,7 @@ export default function Dashboard() {
           </h2>
           <Link to="/clusters" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-semibold transition-colors">Investigate Clusters →</Link>
         </div>
-        
+
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
@@ -51,8 +51,8 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50 dark:divide-slate-700/50">
-              {orders.slice(0, 10).map((order) => (
-                <tr key={order.order_id} className="group hover:bg-gray-50/50 dark:hover:bg-slate-700/30 transition-all duration-300">
+              {orders.slice(0, 10).map((order, index) => (
+                <tr key={order.order_id} className="group hover:bg-gray-50/50 dark:hover:bg-slate-700/30 transition-all duration-300 animate-fade-up opacity-0 fill-mode-forwards" style={{ animationDelay: `${700 + index * 50}ms` }}>
                   <td className="py-4 text-sm font-medium text-gray-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{order.order_id}</td>
                   <td className="py-4 text-sm text-gray-600 dark:text-slate-300">{order.account_id}</td>
                   <td className="py-4 text-sm font-medium">₹{order.amount.toFixed(2)}</td>
@@ -101,7 +101,7 @@ export function RiskBadge({ level, score }) {
       <span className={`px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-sm ${colors[level] || colors.LOW}`}>
         {level}
       </span>
-      {score !== undefined && <span className="text-xs text-gray-400 dark:text-slate-500 font-medium mt-1">{(score*100).toFixed(0)}%</span>}
+      {score !== undefined && <span className="text-xs text-gray-400 dark:text-slate-500 font-medium mt-1">{(score * 100).toFixed(0)}%</span>}
     </div>
   );
 }

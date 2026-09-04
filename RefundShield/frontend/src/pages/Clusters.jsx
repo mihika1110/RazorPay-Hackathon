@@ -7,31 +7,54 @@ const API_BASE = 'http://127.0.0.1:8000/api';
 
 export default function Clusters() {
   const [clusters, setClusters] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [riskFilter, setRiskFilter] = useState('ALL');
 
   useEffect(() => {
     axios.get(`${API_BASE}/clusters`).then(res => setClusters(res.data));
   }, []);
 
+  const filteredClusters = clusters.filter(c => {
+    const matchesSearch = c.cluster_id.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesFilter = riskFilter === 'ALL' || c.risk_level === riskFilter;
+    return matchesSearch && matchesFilter;
+  });
+
+  const cycleFilter = () => {
+    const filters = ['ALL', 'HIGH', 'MEDIUM', 'LOW'];
+    const nextIdx = (filters.indexOf(riskFilter) + 1) % filters.length;
+    setRiskFilter(filters[nextIdx]);
+  };
+
   return (
-    <div className="space-y-6 animate-in fade-in duration-500">
+    <div className="space-y-6">
       <div className="flex justify-between items-end">
-        <div>
+        <div className="animate-fade-up">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Suspicious Clusters</h1>
           <p className="text-gray-500 dark:text-slate-400 mt-1">Groups of accounts sharing devices, addresses, and suspicious behavior.</p>
         </div>
-        <div className="flex space-x-3">
+        <div className="flex space-x-3 animate-fade-up [animation-delay:100ms] opacity-0 fill-mode-forwards">
           <div className="relative group">
             <Search className="w-5 h-5 absolute left-3 top-2.5 text-gray-400 dark:text-slate-500 group-hover:text-blue-500 transition-colors" />
-            <input type="text" placeholder="Search clusters..." className="pl-10 pr-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm dark:text-white transition-all shadow-sm" />
+            <input
+              type="text"
+              placeholder="Search clusters..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 pr-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm dark:text-white transition-all shadow-sm"
+            />
           </div>
-          <button className="flex items-center space-x-2 px-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg bg-white/80 dark:bg-slate-800/50 hover:bg-gray-50 dark:hover:bg-slate-700 backdrop-blur-sm transition-all shadow-sm hover:shadow-md">
+          <button
+            onClick={cycleFilter}
+            className="flex items-center space-x-2 px-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg bg-white/80 dark:bg-slate-800/50 hover:bg-gray-50 dark:hover:bg-slate-700 backdrop-blur-sm transition-all shadow-sm hover:shadow-md"
+          >
             <Filter className="w-4 h-4" />
-            <span>Filter</span>
+            <span>{riskFilter === 'ALL' ? 'Filter' : `Risk: ${riskFilter}`}</span>
           </button>
         </div>
       </div>
 
-      <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 overflow-hidden">
+      <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 overflow-hidden animate-fade-up [animation-delay:200ms] opacity-0 fill-mode-forwards">
         <table className="w-full text-left">
           <thead className="bg-gray-50/50 dark:bg-slate-800/30 text-gray-600 dark:text-slate-400 text-sm border-b dark:border-slate-700/50 backdrop-blur-md">
             <tr>
@@ -46,8 +69,8 @@ export default function Clusters() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-slate-700/50">
-            {clusters.map((cluster) => (
-              <tr key={cluster.cluster_id} className="group hover:bg-blue-50/50 dark:hover:bg-slate-700/30 transition-all duration-300">
+            {filteredClusters.map((cluster, index) => (
+              <tr key={cluster.cluster_id} className="group hover:bg-blue-50/50 dark:hover:bg-slate-700/30 transition-all duration-300 animate-fade-up opacity-0 fill-mode-forwards" style={{ animationDelay: `${300 + index * 50}ms` }}>
                 <td className="px-6 py-4 text-sm font-bold text-gray-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   <div className="flex items-center space-x-2">
                     {cluster.risk_level === 'HIGH' && <AlertTriangle className="w-4 h-4 text-red-500 animate-pulse" />}
@@ -75,7 +98,7 @@ export default function Clusters() {
                 <td className="px-6 py-4 text-sm font-medium">₹{cluster.refund_value.toFixed(2)}</td>
                 <td className="px-6 py-4">
                   <span className={`px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-sm ${cluster.risk_level === 'HIGH' ? 'bg-red-100/80 dark:bg-red-900/20 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/50 shadow-[0_0_10px_rgba(239,68,68,0.2)]' :
-                      cluster.risk_level === 'MEDIUM' ? 'bg-yellow-100/80 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800/50' : 'bg-green-100/80 dark:bg-green-900/20 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/50'
+                    cluster.risk_level === 'MEDIUM' ? 'bg-yellow-100/80 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800/50' : 'bg-green-100/80 dark:bg-green-900/20 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/50'
                     }`}>
                     {cluster.risk_level}
                   </span>
@@ -90,9 +113,11 @@ export default function Clusters() {
             ))}
           </tbody>
         </table>
-        {clusters.length === 0 && (
+        {clusters.length === 0 ? (
           <div className="p-12 text-center text-gray-500 dark:text-slate-400">Loading clusters...</div>
-        )}
+        ) : filteredClusters.length === 0 ? (
+          <div className="p-12 text-center text-gray-500 dark:text-slate-400">No clusters found matching your search.</div>
+        ) : null}
       </div>
     </div>
   );

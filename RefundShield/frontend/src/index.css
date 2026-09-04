@@ -6,6 +6,19 @@
   --color-razorpay-blue: #02042b;
   --color-razorpay-light: #f7f8f9;
   --color-razorpay-primary: #3385ff;
+  
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float: float 8s ease-in-out infinite;
+
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-30px) translateX(15px); }
+  }
 }
 
 body {

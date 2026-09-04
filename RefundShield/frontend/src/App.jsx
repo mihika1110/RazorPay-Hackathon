@@ -65,8 +65,8 @@ function App() {
       <div className={`${darkMode ? 'dark' : ''}`}>
         <div className="flex bg-[#F8FAFC] dark:bg-[#0B0F19] min-h-screen text-gray-900 dark:text-gray-100 transition-colors duration-500 relative overflow-hidden">
           {/* Ambient Glows */}
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 dark:bg-blue-600/5 blur-[100px] pointer-events-none mix-blend-screen"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 dark:bg-indigo-600/5 blur-[100px] pointer-events-none mix-blend-screen"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 dark:bg-blue-600/5 blur-[100px] pointer-events-none mix-blend-screen animate-float"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 dark:bg-indigo-600/5 blur-[100px] pointer-events-none mix-blend-screen animate-float [animation-delay:2s]"></div>
 
           <Sidebar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           

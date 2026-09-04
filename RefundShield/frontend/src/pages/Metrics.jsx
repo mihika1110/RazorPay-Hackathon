@@ -18,20 +18,20 @@ export default function Metrics() {
   const [fn, tp] = metrics.confusion_matrix[1];
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-500 max-w-5xl">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Model Performance Metrics</h1>
-      <p className="text-gray-500 dark:text-slate-400">Evaluated on a held-out synthetic test set.</p>
+    <div className="space-y-6 max-w-5xl">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white animate-fade-up">Model Performance Metrics</h1>
+      <p className="text-gray-500 dark:text-slate-400 animate-fade-up [animation-delay:100ms] opacity-0 fill-mode-forwards">Evaluated on a held-out synthetic test set.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 h-48">
-        <MetricCard title="Precision" value={`${metrics.precision}%`} icon={<Target className="text-blue-500" />} desc="Accuracy of flagged orders" formula="TP / (TP + FP)" formulaDesc="Out of all orders we flagged as abuse, what percentage were actually abuse?" legend="TP = True Positives, FP = False Positives" />
-        <MetricCard title="Recall" value={`${metrics.recall}%`} icon={<Zap className="text-yellow-500" />} desc="Detection rate of abusive orders" formula="TP / (TP + FN)" formulaDesc="Out of all actual abusive orders, what percentage did we successfully flag?" legend="TP = True Positives, FN = False Negatives" />
-        <MetricCard title="F1 Score" value={`${metrics.f1}%`} icon={<Activity className="text-green-500" />} desc="Harmonic mean of precision and recall" formula="2 × (P × R) / (P + R)" formulaDesc="A balanced measure that is only high if both Precision and Recall are high." legend="P = Precision, R = Recall" />
+        <div className="animate-fade-up [animation-delay:200ms] opacity-0 fill-mode-forwards"><MetricCard title="Precision" value={`${metrics.precision}%`} icon={<Target className="text-blue-500" />} desc="Accuracy of flagged orders" formula="TP / (TP + FP)" formulaDesc="Out of all orders we flagged as abuse, what percentage were actually abuse?" legend="TP = True Positives, FP = False Positives" /></div>
+        <div className="animate-fade-up [animation-delay:300ms] opacity-0 fill-mode-forwards"><MetricCard title="Recall" value={`${metrics.recall}%`} icon={<Zap className="text-yellow-500" />} desc="Detection rate of abusive orders" formula="TP / (TP + FN)" formulaDesc="Out of all actual abusive orders, what percentage did we successfully flag?" legend="TP = True Positives, FN = False Negatives" /></div>
+        <div className="animate-fade-up [animation-delay:400ms] opacity-0 fill-mode-forwards"><MetricCard title="F1 Score" value={`${metrics.f1}%`} icon={<Activity className="text-green-500" />} desc="Harmonic mean of precision and recall" formula="2 × (P × R) / (P + R)" formulaDesc="A balanced measure that is only high if both Precision and Recall are high." legend="P = Precision, R = Recall" /></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
 
         {/* Confusion Matrix */}
-        <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
+        <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6 animate-fade-up [animation-delay:500ms] opacity-0 fill-mode-forwards">
           <h3 className="text-lg font-bold mb-6 dark:text-white flex items-center space-x-2">
             <span className="w-1.5 h-6 bg-blue-500 rounded-full"></span>
             <span>Confusion Matrix</span>
@@ -43,21 +43,21 @@ export default function Metrics() {
             <div className="p-4 font-semibold text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-700/50 rounded">Predicted Abuse</div>
 
             <div className="p-4 font-semibold text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-700/50 rounded flex items-center justify-center">Actual Normal</div>
-            <div className="p-6 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800/50 rounded-lg flex flex-col items-center justify-center">
+            <div className="p-6 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800/50 rounded-lg flex flex-col items-center justify-center hover:scale-[1.05] hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300 cursor-default animate-fade-up [animation-delay:600ms] opacity-0 fill-mode-forwards">
               <span className="text-2xl font-bold text-green-700 dark:text-green-400">{tn}</span>
               <span className="text-xs text-green-600 dark:text-green-500 mt-1">True Negatives</span>
             </div>
-            <div className="p-6 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800/50 rounded-lg flex flex-col items-center justify-center">
+            <div className="p-6 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800/50 rounded-lg flex flex-col items-center justify-center hover:scale-[1.05] hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 cursor-default animate-fade-up [animation-delay:700ms] opacity-0 fill-mode-forwards">
               <span className="text-2xl font-bold text-red-700 dark:text-red-400">{fp}</span>
               <span className="text-xs text-red-600 dark:text-red-500 mt-1">False Positives</span>
             </div>
 
             <div className="p-4 font-semibold text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-700/50 rounded flex items-center justify-center">Actual Abuse</div>
-            <div className="p-6 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-100 dark:border-yellow-800/50 rounded-lg flex flex-col items-center justify-center">
+            <div className="p-6 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-100 dark:border-yellow-800/50 rounded-lg flex flex-col items-center justify-center hover:scale-[1.05] hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 cursor-default animate-fade-up [animation-delay:800ms] opacity-0 fill-mode-forwards">
               <span className="text-2xl font-bold text-yellow-700 dark:text-yellow-400">{fn}</span>
               <span className="text-xs text-yellow-600 dark:text-yellow-500 mt-1">False Negatives</span>
             </div>
-            <div className="p-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-lg flex flex-col items-center justify-center">
+            <div className="p-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-lg flex flex-col items-center justify-center hover:scale-[1.05] hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 cursor-default animate-fade-up [animation-delay:900ms] opacity-0 fill-mode-forwards">
               <span className="text-2xl font-bold text-blue-700 dark:text-blue-400">{tp}</span>
               <span className="text-xs text-blue-600 dark:text-blue-500 mt-1">True Positives</span>
             </div>
@@ -66,7 +66,7 @@ export default function Metrics() {
 
         {/* Dataset Info */}
         <div className="space-y-6">
-          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
+          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6 animate-fade-up [animation-delay:600ms] opacity-0 fill-mode-forwards">
             <h3 className="text-lg font-bold mb-4 dark:text-white flex items-center space-x-2">
               <span className="w-1.5 h-6 bg-purple-500 rounded-full"></span>
               <span>Dataset Details</span>
@@ -96,7 +96,7 @@ export default function Metrics() {
             </div>
           </div>
 
-          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
+          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6 animate-fade-up [animation-delay:700ms] opacity-0 fill-mode-forwards">
             <h3 className="text-lg font-bold mb-4 dark:text-white flex items-center space-x-2">
               <span className="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
               <span>Business Impact</span>
@@ -130,20 +130,24 @@ function MetricCard({ title, value, icon, desc, formula, formulaDesc, legend }) 
 
   return (
     <div
-      className="group cursor-pointer relative h-40 [perspective:1000px]"
+      className="group cursor-pointer relative h-48 w-full [perspective:1000px] hover:-translate-y-2 hover:scale-[1.02] transition-transform duration-300"
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
 
         {/* Front */}
-        <div className="absolute w-full h-full bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl p-6 rounded-xl shadow-sm border border-gray-100/50 dark:border-slate-700/50 flex flex-col justify-between hover:shadow-lg dark:hover:shadow-blue-900/20 transition-all duration-300 [backface-visibility:hidden]">
-          <div className="flex justify-between items-start mb-4">
+        <div className="absolute w-full h-full bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl p-6 rounded-xl shadow-sm border border-gray-100/50 dark:border-slate-700/50 flex flex-col justify-between hover:shadow-lg dark:hover:shadow-blue-500/20 dark:hover:border-blue-500/50 hover:border-blue-400/50 transition-all duration-500 [backface-visibility:hidden] overflow-hidden">
+          
+          {/* Hover Shine Animation */}
+          <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/60 dark:via-white/10 to-transparent skew-x-[-25deg] group-hover:animate-[shine_1s_ease-in-out_forwards] pointer-events-none"></div>
+
+          <div className="flex justify-between items-start mb-4 relative z-10">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{title}</h3>
             <div className="p-2 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700/50 dark:to-slate-800/50 rounded-lg border border-white/50 dark:border-white/5 shadow-inner group-hover:scale-110 transition-transform">{icon}</div>
           </div>
-          <div>
-            <p className="text-4xl font-black text-gray-900 dark:text-white tracking-tight">{value}</p>
-            <p className="text-sm text-gray-500 dark:text-slate-400 mt-2">{desc}</p>
+          <div className="relative z-10 flex flex-col justify-end h-full mt-2">
+            <p className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 tracking-tighter drop-shadow-sm">{value}</p>
+            <p className="text-sm text-gray-500 dark:text-slate-400 mt-2 leading-snug">{desc}</p>
           </div>
         </div>
 
