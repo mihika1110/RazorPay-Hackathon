@@ -13,7 +13,7 @@ Open a terminal and start the backend service:
 
 ```powershell
 # Navigate to the backend directory
-cd "RefundShield/backend"
+cd "RefundRadar/backend"
 
 # (Optional) Set your Gemini API key for live AI synthesis
 $env:GEMINI_API_KEY = "your-api-key-here"
@@ -31,7 +31,7 @@ Open a separate terminal and start the user interface:
 
 ```powershell
 # Navigate to the frontend directory
-cd "RefundShield/frontend"
+cd "RefundRadar/frontend"
 
 # Install dependencies (first time only)
 npm install
@@ -95,7 +95,7 @@ You can test the machine learning model with custom numbers directly in your ter
 ```powershell
 python -c "
 import pickle, pandas as pd
-clf = pickle.load(open('RefundShield/backend/model.pkl', 'rb'))
+clf = pickle.load(open('RefundRadar/backend/model.pkl', 'rb'))
 
 test_cases = {
     '1. University Student (₹220 basket, 0 refunds)':      [220, 180, 5, 0, 0.0, 200],
@@ -146,7 +146,7 @@ for name, vals in test_cases.items():
 ```
 RazorPay-Hackathon/
 ├── README.md                          # Project documentation and setup guide
-└── RefundShield/
+└── RefundRadar/
     ├── backend/
     │   ├── main.py                    # FastAPI server & API endpoints
     │   ├── ml_model.py                # Model training, feature pipeline & validation
