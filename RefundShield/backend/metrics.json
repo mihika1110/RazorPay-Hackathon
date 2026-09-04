@@ -6,14 +6,14 @@
     "false_negative_rate": 0.0,
     "confusion_matrix": [
         [
-            1271,
+            1424,
             0
         ],
         [
             0,
-            488
+            442
         ]
     ],
-    "test_records": 1759,
-    "train_records": 7033
+    "test_records": 1866,
+    "train_records": 7462
 }

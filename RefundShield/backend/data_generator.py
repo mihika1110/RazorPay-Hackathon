@@ -4,7 +4,7 @@ import uuid
 import random
 from datetime import datetime, timedelta
 
-def generate_synthetic_data(num_normal=800, num_abusive_clusters=20):
+def generate_synthetic_data(num_normal=800, num_abusive_clusters=20, num_dense_living=5):
     np.random.seed(42)
     random.seed(42)
 
@@ -117,6 +117,46 @@ def generate_synthetic_data(num_normal=800, num_abusive_clusters=20):
                     "refund_requested": refund_requested,
                     "refund_amount": amount if refund_requested else 0.0,
                     "refund_timestamp": (order_date + timedelta(days=random.randint(1, 2))).isoformat() if refund_requested else None
+                })
+
+    # Generate Dense Living (Hostel/Corporate) - Normal behavior but dense
+    for i in range(num_dense_living):
+        cluster_id = f"CLUSTER_D_{i}"
+        # They strictly share the SAME device and SAME address
+        cluster_dev_id = f"DEV_D_{i}"
+        cluster_addr_id = f"ADDR_D_{i}"
+        
+        num_accounts_in_hostel = random.randint(15, 30)
+        for j in range(num_accounts_in_hostel):
+            acc_id = f"ACC_D_{cluster_counter}"
+            cluster_counter += 1
+            
+            acc = create_account(acc_id, False, cluster_dev_id, cluster_addr_id)
+            accounts.append(acc)
+            
+            # Normal refund rate
+            base_refund_rate = random.uniform(0.05, 0.15)
+            
+            num_orders = random.randint(2, 10)
+            for k in range(num_orders):
+                order_date = current_date - timedelta(days=random.randint(1, acc["account_age_days"]))
+                amount = round(random.uniform(10, 300), 2)
+                
+                refund_requested = 1 if random.random() < base_refund_rate else 0
+                
+                orders.append({
+                    "order_id": f"ORD_{acc_id}_{k}",
+                    "account_id": acc_id,
+                    "timestamp": order_date.isoformat(),
+                    "product_id": random.choice(products), # Diverse products
+                    "category": random.choice(categories),
+                    "amount": amount,
+                    "device_id": acc["device_id"],
+                    "address_id": acc["address_id"],
+                    "order_status": "REFUNDED" if refund_requested else "COMPLETED",
+                    "refund_requested": refund_requested,
+                    "refund_amount": amount if refund_requested else 0.0,
+                    "refund_timestamp": (order_date + timedelta(days=random.randint(1, 5))).isoformat() if refund_requested else None
                 })
 
     df_accounts = pd.DataFrame(accounts)

@@ -2,6 +2,13 @@ import pandas as pd
 import networkx as nx
 import json
 import uuid
+import time
+
+def mock_google_maps_api(address_id):
+    """Simulates calling Google Maps Places API to categorize an address."""
+    if "ADDR_D" in address_id:
+        return "UNIVERSITY_DORM"
+    return "RESIDENTIAL"
 
 def build_and_analyze_graph():
     print("Building Relationship Graph...")
@@ -68,13 +75,29 @@ def build_and_analyze_graph():
             else:
                 avg_risk = 0.0
                 
-            # Determine cluster risk level
-            if avg_risk > 0.75 and refund_rate > 0.6:
-                risk_level = "HIGH"
-            elif avg_risk > 0.4 or refund_rate > 0.3:
-                risk_level = "MEDIUM"
+            # Determine if it's a Dense Living Area (Strict check: same IP AND same Address)
+            is_dense_living = False
+            location_type = "RESIDENTIAL"
+            if len(comp_accounts) >= 10 and len(comp_addresses) == 1 and len(comp_devices) == 1:
+                is_dense_living = True
+                location_type = mock_google_maps_api(comp_addresses[0])
+
+            # Determine cluster risk level (adjusted for Dense Living)
+            if is_dense_living:
+                # Requires much higher threshold if it's a Hostel/Dorm
+                if avg_risk > 0.85 and refund_rate > 0.75:
+                    risk_level = "HIGH"
+                elif avg_risk > 0.6 or refund_rate > 0.5:
+                    risk_level = "MEDIUM"
+                else:
+                    risk_level = "LOW"
             else:
-                risk_level = "LOW"
+                if avg_risk > 0.75 and refund_rate > 0.6:
+                    risk_level = "HIGH"
+                elif avg_risk > 0.4 or refund_rate > 0.3:
+                    risk_level = "MEDIUM"
+                else:
+                    risk_level = "LOW"
                 
             cluster_info = {
                 "cluster_id": cluster_id,
@@ -88,7 +111,9 @@ def build_and_analyze_graph():
                 "refund_value": refund_value,
                 "refund_rate": refund_rate,
                 "avg_risk_score": avg_risk,
-                "risk_level": risk_level
+                "risk_level": risk_level,
+                "is_dense_living": is_dense_living,
+                "location_type": location_type
             }
             clusters.append(cluster_info)
             

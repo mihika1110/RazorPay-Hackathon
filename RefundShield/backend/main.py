@@ -41,6 +41,7 @@ def get_stats():
         flagged_orders = 0
         
     suspicious_clusters = len([c for c in clusters if c['risk_level'] == 'HIGH'])
+    dense_nodes = len([c for c in clusters if c.get('is_dense_living', False)])
     
     if 'refund_amount' in orders_df.columns:
         potential_exposure = float(orders_df[orders_df['risk_level'] == 'HIGH']['amount'].sum())
@@ -51,6 +52,7 @@ def get_stats():
         "total_orders": total_orders,
         "flagged_orders": flagged_orders,
         "suspicious_clusters": suspicious_clusters,
+        "dense_nodes": dense_nodes,
         "potential_exposure": potential_exposure
     }
 

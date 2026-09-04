@@ -19,6 +19,8 @@ def generate_investigation_report(cluster_id):
     risk = cluster['risk_level']
     shared_devices = len(cluster['devices'])
     shared_addresses = len(cluster['addresses'])
+    is_dense_living = cluster.get('is_dense_living', False)
+    location_type = cluster.get('location_type', 'RESIDENTIAL')
     
     # AI Logic Simulation
     if risk == "HIGH":
@@ -35,16 +37,28 @@ def generate_investigation_report(cluster_id):
         ]
     else:
         # Failure recovery edge case simulation
-        confidence = 85
-        assessment = "While these accounts share devices/addresses, their behavior does not strongly indicate coordinated abuse. Order velocity and refund rates are within normal household limits."
-        action = "Monitor / additional verification. Do NOT block."
-        
-        evidence = [
-            f"Accounts share {shared_addresses} address(es), typical of a legitimate family/household.",
-            f"Refund rate is normal ({refund_rate:.1f}%), suggesting legitimate returns rather than abuse.",
-            "Purchasing behavior is varied, not targeting a specific item repeatedly.",
-            "Order velocity is spread out naturally."
-        ]
+        if is_dense_living:
+            confidence = 95
+            assessment = f"This cluster originates from a Dense Living Area ({location_type}). High shared node density (1 address, 1 IP) is expected. Order velocity and refund rates are within normal limits for this volume of residents."
+            action = "Monitor / additional verification. Do NOT block. Legitimate dense living area."
+            
+            evidence = [
+                f"External Maps API confirms address is a {location_type}.",
+                f"{accounts} accounts strictly share 1 device IP and 1 physical address, characteristic of a shared network/building.",
+                f"Refund rate is normal ({refund_rate:.1f}%) for this volume of diverse users.",
+                "Purchasing behavior is varied, not targeting a specific item repeatedly."
+            ]
+        else:
+            confidence = 85
+            assessment = "While these accounts share devices/addresses, their behavior does not strongly indicate coordinated abuse. Order velocity and refund rates are within normal household limits."
+            action = "Monitor / additional verification. Do NOT block."
+            
+            evidence = [
+                f"Accounts share {shared_addresses} address(es), typical of a legitimate family/household.",
+                f"Refund rate is normal ({refund_rate:.1f}%), suggesting legitimate returns rather than abuse.",
+                "Purchasing behavior is varied, not targeting a specific item repeatedly.",
+                "Order velocity is spread out naturally."
+            ]
         
     report = f"""# REFUND ABUSE INVESTIGATION
 **Cluster**: {cluster_id}

@@ -1,11 +1,12 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Clusters from './pages/Clusters';
 import Investigation from './pages/Investigation';
 import Metrics from './pages/Metrics';
-import { Shield, LayoutDashboard, Users, Activity, BarChart3 } from 'lucide-react';
+import { Shield, LayoutDashboard, Users, Activity, BarChart3, Sun, Moon } from 'lucide-react';
 
-function Sidebar() {
+function Sidebar({ darkMode, toggleDarkMode }) {
   const location = useLocation();
   
   const links = [
@@ -32,7 +33,16 @@ function Sidebar() {
           )
         })}
       </nav>
-      <div className="p-4 border-t border-gray-700 text-xs text-gray-400">
+      <div className="p-4 border-t border-gray-700">
+        <button 
+          onClick={toggleDarkMode}
+          className="flex items-center space-x-3 w-full p-3 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors"
+        >
+          {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+        </button>
+      </div>
+      <div className="p-4 text-xs text-gray-400">
         Razorpay AI Buildathon 2026
       </div>
     </div>
@@ -40,17 +50,29 @@ function Sidebar() {
 }
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('darkMode') === 'true';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', darkMode);
+  }, [darkMode]);
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+
   return (
     <Router>
-      <div className="flex bg-razorpay-light min-h-screen">
-        <Sidebar />
-        <div className="flex-1 ml-64 p-8 overflow-y-auto h-screen">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/clusters" element={<Clusters />} />
-            <Route path="/clusters/:id" element={<Investigation />} />
-            <Route path="/metrics" element={<Metrics />} />
-          </Routes>
+      <div className={`${darkMode ? 'dark' : ''}`}>
+        <div className="flex bg-razorpay-light dark:bg-gray-900 min-h-screen text-gray-900 dark:text-gray-100 transition-colors duration-200">
+          <Sidebar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <div className="flex-1 ml-64 p-8 overflow-y-auto h-screen">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/clusters" element={<Clusters />} />
+              <Route path="/clusters/:id" element={<Investigation />} />
+              <Route path="/metrics" element={<Metrics />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </Router>

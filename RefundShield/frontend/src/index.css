@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-razorpay-blue: #02042b;
   --color-razorpay-light: #f7f8f9;
@@ -7,7 +9,5 @@
 }
 
 body {
-  background-color: var(--color-razorpay-light);
-  color: #111827;
   font-family: 'Inter', sans-serif;
 }

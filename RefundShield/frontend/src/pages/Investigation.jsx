@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import { ArrowLeft, Bot, ShieldAlert, Cpu, MapPin, CreditCard, Play } from 'lucide-react';
+import { ArrowLeft, Bot, ShieldAlert, Cpu, MapPin, CreditCard, Play, Building2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 const API_BASE = 'http://127.0.0.1:8000/api';
@@ -32,7 +32,7 @@ export default function Investigation() {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500 max-w-6xl mx-auto">
-      <Link to="/clusters" className="flex items-center space-x-2 text-gray-500 hover:text-gray-900 transition-colors w-fit">
+      <Link to="/clusters" className="flex items-center space-x-2 text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white transition-colors w-fit">
         <ArrowLeft className="w-4 h-4" />
         <span>Back to Clusters</span>
       </Link>
@@ -40,15 +40,21 @@ export default function Investigation() {
       <div className="flex justify-between items-end">
         <div>
           <div className="flex items-center space-x-3 mb-2">
-            <h1 className="text-3xl font-bold text-gray-900">Cluster {cluster.cluster_id}</h1>
-            <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-              cluster.risk_level === 'HIGH' ? 'bg-red-100 text-red-700' : 
-              cluster.risk_level === 'MEDIUM' ? 'bg-yellow-100 text-yellow-700' : 'bg-green-100 text-green-700'
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Cluster {cluster.cluster_id}</h1>
+            <span className={`px-3 py-1 rounded-full text-xs font-bold border ${
+              cluster.risk_level === 'HIGH' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/50' : 
+              cluster.risk_level === 'MEDIUM' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800/50' : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/50'
             }`}>
               {cluster.risk_level} RISK
             </span>
+            {cluster.is_dense_living && (
+              <span className="flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50 shadow-sm" title="Verified via Maps API">
+                <Building2 className="w-4 h-4 mr-1.5" />
+                DENSE LIVING AREA ({cluster.location_type})
+              </span>
+            )}
           </div>
-          <p className="text-gray-500">Showing structured risk signals and relationship data.</p>
+          <p className="text-gray-500 dark:text-slate-400">Showing structured risk signals and relationship data.</p>
         </div>
         
         <button 
@@ -74,69 +80,69 @@ export default function Investigation() {
         {/* Left Column: Data & Graph */}
         <div className="lg:col-span-2 space-y-6">
           
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex space-x-12">
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6 flex space-x-12">
             <div>
-              <p className="text-sm text-gray-500 mb-1">Accounts</p>
-              <p className="text-2xl font-bold">{cluster.num_accounts}</p>
+              <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Accounts</p>
+              <p className="text-2xl font-bold dark:text-white">{cluster.num_accounts}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-500 mb-1">Orders</p>
-              <p className="text-2xl font-bold">{cluster.num_orders}</p>
+              <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Orders</p>
+              <p className="text-2xl font-bold dark:text-white">{cluster.num_orders}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-500 mb-1">Refund Rate</p>
-              <p className={`text-2xl font-bold ${cluster.refund_rate > 0.5 ? 'text-red-600' : ''}`}>{(cluster.refund_rate * 100).toFixed(1)}%</p>
+              <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Refund Rate</p>
+              <p className={`text-2xl font-bold ${cluster.refund_rate > 0.5 ? 'text-red-600 dark:text-red-400' : 'dark:text-white'}`}>{(cluster.refund_rate * 100).toFixed(1)}%</p>
             </div>
             <div>
-              <p className="text-sm text-gray-500 mb-1">Total Refund Value</p>
-              <p className="text-2xl font-bold">₹{cluster.refund_value.toFixed(2)}</p>
+              <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Total Refund Value</p>
+              <p className="text-2xl font-bold dark:text-white">₹{cluster.refund_value.toFixed(2)}</p>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h3 className="text-lg font-bold mb-4">Entity Relationships</h3>
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6">
+            <h3 className="text-lg font-bold mb-4 dark:text-white">Entity Relationships</h3>
             <div className="grid grid-cols-2 gap-4">
-              <div className="border border-gray-100 rounded-lg p-4 bg-gray-50">
-                <div className="flex items-center space-x-2 text-gray-700 font-semibold mb-3">
+              <div className="border border-gray-100 dark:border-slate-700 rounded-lg p-4 bg-gray-50 dark:bg-slate-700/50">
+                <div className="flex items-center space-x-2 text-gray-700 dark:text-slate-200 font-semibold mb-3">
                   <Cpu className="w-5 h-5" />
                   <span>Shared Devices ({cluster.devices.length})</span>
                 </div>
                 <div className="space-y-2">
-                  {cluster.devices.map(d => <div key={d} className="text-sm font-mono bg-white p-2 border border-gray-100 rounded">{d}</div>)}
+                  {cluster.devices.map(d => <div key={d} className="text-sm font-mono bg-white dark:bg-slate-800 p-2 border border-gray-100 dark:border-slate-600 rounded">{d}</div>)}
                 </div>
               </div>
-              <div className="border border-gray-100 rounded-lg p-4 bg-gray-50">
-                <div className="flex items-center space-x-2 text-gray-700 font-semibold mb-3">
+              <div className="border border-gray-100 dark:border-slate-700 rounded-lg p-4 bg-gray-50 dark:bg-slate-700/50">
+                <div className="flex items-center space-x-2 text-gray-700 dark:text-slate-200 font-semibold mb-3">
                   <MapPin className="w-5 h-5" />
                   <span>Shared Addresses ({cluster.addresses.length})</span>
                 </div>
                 <div className="space-y-2">
-                  {cluster.addresses.map(a => <div key={a} className="text-sm font-mono bg-white p-2 border border-gray-100 rounded">{a}</div>)}
+                  {cluster.addresses.map(a => <div key={a} className="text-sm font-mono bg-white dark:bg-slate-800 p-2 border border-gray-100 dark:border-slate-600 rounded">{a}</div>)}
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h3 className="text-lg font-bold mb-4">Order History</h3>
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6">
+            <h3 className="text-lg font-bold mb-4 dark:text-white">Order History</h3>
             <div className="max-h-64 overflow-y-auto">
               <table className="w-full text-left text-sm">
                 <thead>
-                  <tr className="border-b text-gray-500">
+                  <tr className="border-b dark:border-slate-700 text-gray-500 dark:text-slate-400">
                     <th className="pb-2">Account</th>
                     <th className="pb-2">Order ID</th>
                     <th className="pb-2">Amount</th>
                     <th className="pb-2">Status</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-50">
+                <tbody className="divide-y divide-gray-50 dark:divide-slate-700">
                   {cluster.order_details.slice(0, 15).map(o => (
                     <tr key={o.order_id}>
-                      <td className="py-2 text-gray-600">{o.account_id}</td>
-                      <td className="py-2 font-mono text-gray-900">{o.order_id}</td>
-                      <td className="py-2 font-medium">₹{o.amount.toFixed(2)}</td>
+                      <td className="py-2 text-gray-600 dark:text-slate-300">{o.account_id}</td>
+                      <td className="py-2 font-mono text-gray-900 dark:text-slate-100">{o.order_id}</td>
+                      <td className="py-2 font-medium dark:text-slate-200">₹{o.amount.toFixed(2)}</td>
                       <td className="py-2">
-                        {o.refund_requested ? <span className="text-red-600 font-semibold text-xs">REFUNDED</span> : <span className="text-green-600 font-semibold text-xs">COMPLETED</span>}
+                        {o.refund_requested ? <span className="text-red-600 dark:text-red-400 font-semibold text-xs">REFUNDED</span> : <span className="text-green-600 dark:text-green-400 font-semibold text-xs">COMPLETED</span>}
                       </td>
                     </tr>
                   ))}
@@ -150,38 +156,38 @@ export default function Investigation() {
         {/* Right Column: AI Report */}
         <div className="lg:col-span-1">
           <div className={`rounded-xl shadow-sm border p-6 min-h-full transition-all duration-500
-            ${report ? 'bg-white border-blue-100 ring-4 ring-blue-50' : 'bg-gray-50 border-gray-200 border-dashed'}`}>
+            ${report ? 'bg-white dark:bg-slate-800 border-blue-100 dark:border-blue-900/50 ring-4 ring-blue-50 dark:ring-blue-900/20' : 'bg-gray-50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 border-dashed'}`}>
             
-            <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-gray-100">
-              <div className={`p-2 rounded-lg ${report ? 'bg-blue-100 text-blue-600' : 'bg-gray-200 text-gray-400'}`}>
+            <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-gray-100 dark:border-slate-700">
+              <div className={`p-2 rounded-lg ${report ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400' : 'bg-gray-200 dark:bg-slate-700 text-gray-400 dark:text-slate-500'}`}>
                 <Bot className="w-6 h-6" />
               </div>
-              <h2 className={`font-bold text-lg ${report ? 'text-gray-900' : 'text-gray-400'}`}>
+              <h2 className={`font-bold text-lg ${report ? 'text-gray-900 dark:text-white' : 'text-gray-400 dark:text-slate-500'}`}>
                 AI Investigator Report
               </h2>
             </div>
 
             {loadingAI ? (
               <div className="space-y-4 animate-pulse">
-                <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                <div className="h-4 bg-gray-200 rounded w-full"></div>
-                <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-                <div className="h-4 bg-gray-200 rounded w-full"></div>
-                <div className="h-20 bg-gray-200 rounded w-full mt-6"></div>
+                <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-3/4"></div>
+                <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-full"></div>
+                <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-5/6"></div>
+                <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-full"></div>
+                <div className="h-20 bg-gray-200 dark:bg-slate-700 rounded w-full mt-6"></div>
               </div>
             ) : report ? (
-              <div className="prose prose-sm max-w-none text-gray-700 
-                prose-headings:text-gray-900 prose-headings:font-bold prose-headings:mb-2 prose-headings:mt-4
+              <div className="prose prose-sm max-w-none text-gray-700 dark:text-slate-300 
+                prose-headings:text-gray-900 dark:prose-headings:text-white prose-headings:font-bold prose-headings:mb-2 prose-headings:mt-4
                 prose-p:mb-3 prose-li:mb-1">
                 <ReactMarkdown>{report.report}</ReactMarkdown>
                 
-                <div className="mt-8 p-4 bg-blue-50 border border-blue-100 rounded-lg">
-                  <p className="text-xs text-blue-800 font-semibold uppercase tracking-wider mb-1">Recommended Action</p>
-                  <p className="text-sm font-bold text-blue-900">{report.recommended_action}</p>
+                <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-lg">
+                  <p className="text-xs text-blue-800 dark:text-blue-300 font-semibold uppercase tracking-wider mb-1">Recommended Action</p>
+                  <p className="text-sm font-bold text-blue-900 dark:text-blue-100">{report.recommended_action}</p>
                 </div>
               </div>
             ) : (
-              <div className="text-center py-12 text-gray-400">
+              <div className="text-center py-12 text-gray-400 dark:text-slate-500">
                 <Bot className="w-12 h-12 mx-auto mb-4 opacity-20" />
                 <p>Click "Run AI Investigation" to task the agent to review this cluster.</p>
               </div>

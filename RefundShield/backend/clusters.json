@@ -1,619 +1,621 @@
 [
     {
-        "cluster_id": "C099",
+        "cluster_id": "C085",
         "accounts": [
-            "ACC_A_149",
-            "ACC_A_150",
-            "ACC_A_155",
-            "ACC_A_144",
-            "ACC_A_145",
-            "ACC_A_148",
-            "ACC_A_152",
-            "ACC_A_151",
-            "ACC_A_147",
-            "ACC_A_146",
-            "ACC_A_153",
-            "ACC_A_154"
+            "ACC_A_38",
+            "ACC_A_36",
+            "ACC_A_31",
+            "ACC_A_32",
+            "ACC_A_35",
+            "ACC_A_37",
+            "ACC_A_40",
+            "ACC_A_30",
+            "ACC_A_39",
+            "ACC_A_33",
+            "ACC_A_34"
         ],
         "devices": [
-            "DEV_A_19",
-            "DEV_A_ALT_147"
+            "DEV_A_5",
+            "DEV_A_ALT_40",
+            "DEV_A_ALT_39"
         ],
         "addresses": [
-            "ADDR_A_19",
-            "ADDR_A_ALT_146"
-        ],
-        "num_accounts": 12,
-        "num_orders": 182,
-        "total_order_value": 154590.31,
-        "total_refunds": 154,
-        "refund_value": 130788.07,
-        "refund_rate": 0.8461538461538461,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C095",
-        "accounts": [
-            "ACC_A_117",
-            "ACC_A_109",
-            "ACC_A_114",
-            "ACC_A_118",
-            "ACC_A_115",
-            "ACC_A_116",
-            "ACC_A_112",
-            "ACC_A_110",
-            "ACC_A_119",
-            "ACC_A_120",
-            "ACC_A_111"
-        ],
-        "devices": [
-            "DEV_A_15"
-        ],
-        "addresses": [
-            "ADDR_A_ALT_121",
-            "ADDR_A_15",
-            "ADDR_A_ALT_119"
+            "ADDR_A_5",
+            "ADDR_A_ALT_36",
+            "ADDR_A_ALT_33"
         ],
         "num_accounts": 11,
-        "num_orders": 179,
-        "total_order_value": 146933.06,
-        "total_refunds": 149,
-        "refund_value": 123167.34,
-        "refund_rate": 0.8324022346368715,
+        "num_orders": 149,
+        "total_order_value": 111941.15,
+        "total_refunds": 103,
+        "refund_value": 77613.22,
+        "refund_rate": 0.6912751677852349,
         "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C097",
+        "accounts": [
+            "ACC_A_135",
+            "ACC_A_128",
+            "ACC_A_129",
+            "ACC_A_127",
+            "ACC_A_126",
+            "ACC_A_125",
+            "ACC_A_130",
+            "ACC_A_132",
+            "ACC_A_131",
+            "ACC_A_134",
+            "ACC_A_133"
+        ],
+        "devices": [
+            "DEV_A_ALT_135",
+            "DEV_A_ALT_129",
+            "DEV_A_17"
+        ],
+        "addresses": [
+            "ADDR_A_17"
+        ],
+        "num_accounts": 11,
+        "num_orders": 153,
+        "total_order_value": 116478.26000000001,
+        "total_refunds": 122,
+        "refund_value": 97091.39000000001,
+        "refund_rate": 0.7973856209150327,
+        "avg_risk_score": 0.9998692810457518,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C087",
+        "accounts": [
+            "ACC_A_54",
+            "ACC_A_52",
+            "ACC_A_47",
+            "ACC_A_53",
+            "ACC_A_50",
+            "ACC_A_49",
+            "ACC_A_56",
+            "ACC_A_48",
+            "ACC_A_55",
+            "ACC_A_46"
+        ],
+        "devices": [
+            "DEV_A_7",
+            "DEV_A_ALT_56"
+        ],
+        "addresses": [
+            "ADDR_A_ALT_51",
+            "ADDR_A_ALT_57",
+            "ADDR_A_7"
+        ],
+        "num_accounts": 10,
+        "num_orders": 165,
+        "total_order_value": 129934.25,
+        "total_refunds": 135,
+        "refund_value": 107311.76000000001,
+        "refund_rate": 0.8181818181818182,
+        "avg_risk_score": 0.999919191919192,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C098",
+        "accounts": [
+            "ACC_A_136",
+            "ACC_A_144",
+            "ACC_A_139",
+            "ACC_A_140",
+            "ACC_A_141",
+            "ACC_A_145",
+            "ACC_A_137",
+            "ACC_A_138",
+            "ACC_A_142",
+            "ACC_A_143"
+        ],
+        "devices": [
+            "DEV_A_18"
+        ],
+        "addresses": [
+            "ADDR_A_ALT_143",
+            "ADDR_A_ALT_139",
+            "ADDR_A_ALT_137",
+            "ADDR_A_18"
+        ],
+        "num_accounts": 10,
+        "num_orders": 174,
+        "total_order_value": 137999.15999999997,
+        "total_refunds": 129,
+        "refund_value": 102673.33,
+        "refund_rate": 0.7413793103448276,
+        "avg_risk_score": 1.0,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C091",
+        "accounts": [
+            "ACC_A_76",
+            "ACC_A_74",
+            "ACC_A_73",
+            "ACC_A_81",
+            "ACC_A_78",
+            "ACC_A_79",
+            "ACC_A_75",
+            "ACC_A_80",
+            "ACC_A_77"
+        ],
+        "devices": [
+            "DEV_A_ALT_79",
+            "DEV_A_11",
+            "DEV_A_ALT_80",
+            "DEV_A_ALT_74"
+        ],
+        "addresses": [
+            "ADDR_A_ALT_81",
+            "ADDR_A_ALT_75",
+            "ADDR_A_11"
+        ],
+        "num_accounts": 9,
+        "num_orders": 142,
+        "total_order_value": 120209.91,
+        "total_refunds": 97,
+        "refund_value": 80287.03,
+        "refund_rate": 0.6830985915492958,
+        "avg_risk_score": 0.9996803900325026,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C093",
+        "accounts": [
+            "ACC_A_93",
+            "ACC_A_95",
+            "ACC_A_98",
+            "ACC_A_92",
+            "ACC_A_96",
+            "ACC_A_90",
+            "ACC_A_94",
+            "ACC_A_91",
+            "ACC_A_97"
+        ],
+        "devices": [
+            "DEV_A_ALT_95",
+            "DEV_A_ALT_93",
+            "DEV_A_ALT_96",
+            "DEV_A_13"
+        ],
+        "addresses": [
+            "ADDR_A_ALT_98",
+            "ADDR_A_13"
+        ],
+        "num_accounts": 9,
+        "num_orders": 164,
+        "total_order_value": 124347.08000000002,
+        "total_refunds": 124,
+        "refund_value": 93058.43000000001,
+        "refund_rate": 0.7560975609756098,
+        "avg_risk_score": 1.0,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C094",
+        "accounts": [
+            "ACC_A_100",
+            "ACC_A_102",
+            "ACC_A_103",
+            "ACC_A_104",
+            "ACC_A_110",
+            "ACC_A_108",
+            "ACC_A_99",
+            "ACC_A_106",
+            "ACC_A_105"
+        ],
+        "devices": [
+            "DEV_A_ALT_105",
+            "DEV_A_14"
+        ],
+        "addresses": [
+            "ADDR_A_14",
+            "ADDR_A_ALT_111"
+        ],
+        "num_accounts": 9,
+        "num_orders": 128,
+        "total_order_value": 103147.74000000002,
+        "total_refunds": 94,
+        "refund_value": 74864.48000000001,
+        "refund_rate": 0.734375,
+        "avg_risk_score": 0.99984375,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C080",
         "accounts": [
             "ACC_A_7",
-            "ACC_A_10",
-            "ACC_A_3",
-            "ACC_A_9",
-            "ACC_A_0",
-            "ACC_A_5",
-            "ACC_A_2",
-            "ACC_A_6",
             "ACC_A_4",
-            "ACC_A_1"
+            "ACC_A_1",
+            "ACC_A_6",
+            "ACC_A_3",
+            "ACC_A_2",
+            "ACC_A_5",
+            "ACC_A_0"
         ],
         "devices": [
-            "DEV_A_0",
-            "DEV_A_ALT_5",
-            "DEV_A_ALT_10"
+            "DEV_A_0"
         ],
         "addresses": [
+            "ADDR_A_ALT_7",
             "ADDR_A_0",
-            "ADDR_A_ALT_2"
+            "ADDR_A_ALT_6",
+            "ADDR_A_ALT_8"
         ],
-        "num_accounts": 10,
-        "num_orders": 127,
-        "total_order_value": 105011.06999999999,
-        "total_refunds": 111,
-        "refund_value": 90648.93,
-        "refund_rate": 0.8740157480314961,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "num_accounts": 8,
+        "num_orders": 99,
+        "total_order_value": 78521.56999999999,
+        "total_refunds": 72,
+        "refund_value": 55989.869999999995,
+        "refund_rate": 0.7272727272727273,
+        "avg_risk_score": 0.9979230126322326,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C092",
+        "accounts": [
+            "ACC_A_89",
+            "ACC_A_82",
+            "ACC_A_85",
+            "ACC_A_86",
+            "ACC_A_84",
+            "ACC_A_83",
+            "ACC_A_88",
+            "ACC_A_87"
+        ],
+        "devices": [
+            "DEV_A_ALT_84",
+            "DEV_A_ALT_86",
+            "DEV_A_12"
+        ],
+        "addresses": [
+            "ADDR_A_12"
+        ],
+        "num_accounts": 8,
+        "num_orders": 96,
+        "total_order_value": 75106.22,
+        "total_refunds": 64,
+        "refund_value": 54461.75000000001,
+        "refund_rate": 0.6666666666666666,
+        "avg_risk_score": 0.9997916666666667,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C095",
+        "accounts": [
+            "ACC_A_116",
+            "ACC_A_118",
+            "ACC_A_117",
+            "ACC_A_112",
+            "ACC_A_113",
+            "ACC_A_111",
+            "ACC_A_114",
+            "ACC_A_115"
+        ],
+        "devices": [
+            "DEV_A_ALT_116",
+            "DEV_A_ALT_113",
+            "DEV_A_ALT_117",
+            "DEV_A_15"
+        ],
+        "addresses": [
+            "ADDR_A_15",
+            "ADDR_A_ALT_112"
+        ],
+        "num_accounts": 8,
+        "num_orders": 128,
+        "total_order_value": 102068.48999999999,
+        "total_refunds": 90,
+        "refund_value": 69117.45999999999,
+        "refund_rate": 0.703125,
+        "avg_risk_score": 0.9999335106382978,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C089",
         "accounts": [
-            "ACC_A_71",
-            "ACC_A_65",
-            "ACC_A_64",
             "ACC_A_67",
+            "ACC_A_65",
             "ACC_A_68",
             "ACC_A_62",
-            "ACC_A_70",
-            "ACC_A_69",
+            "ACC_A_66",
+            "ACC_A_64",
             "ACC_A_63"
         ],
         "devices": [
-            "DEV_A_ALT_66",
             "DEV_A_9"
         ],
         "addresses": [
-            "ADDR_A_ALT_64",
-            "ADDR_A_ALT_69",
             "ADDR_A_9"
         ],
-        "num_accounts": 9,
-        "num_orders": 142,
-        "total_order_value": 112908.72,
-        "total_refunds": 118,
-        "refund_value": 92048.78999999996,
-        "refund_rate": 0.8309859154929577,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "num_accounts": 7,
+        "num_orders": 104,
+        "total_order_value": 83434.32999999999,
+        "total_refunds": 72,
+        "refund_value": 53484.19,
+        "refund_rate": 0.6923076923076923,
+        "avg_risk_score": 0.999566941242064,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
-        "cluster_id": "C093",
+        "cluster_id": "C082",
         "accounts": [
-            "ACC_A_101",
-            "ACC_A_94",
-            "ACC_A_93",
-            "ACC_A_95",
-            "ACC_A_99",
-            "ACC_A_100",
-            "ACC_A_96",
-            "ACC_A_98",
-            "ACC_A_97"
+            "ACC_A_16",
+            "ACC_A_18",
+            "ACC_A_15",
+            "ACC_A_17",
+            "ACC_A_14",
+            "ACC_A_13"
         ],
         "devices": [
-            "DEV_A_ALT_102",
-            "DEV_A_ALT_99",
-            "DEV_A_ALT_97",
-            "DEV_A_13"
+            "DEV_A_ALT_16",
+            "DEV_A_2"
         ],
         "addresses": [
-            "ADDR_A_13"
+            "ADDR_A_2",
+            "ADDR_A_ALT_15",
+            "ADDR_A_ALT_17"
         ],
-        "num_accounts": 9,
-        "num_orders": 123,
-        "total_order_value": 98779.29,
-        "total_refunds": 101,
-        "refund_value": 81450.97,
-        "refund_rate": 0.8211382113821138,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C091",
-        "accounts": [
-            "ACC_A_79",
-            "ACC_A_78",
-            "ACC_A_80",
-            "ACC_A_82",
-            "ACC_A_84",
-            "ACC_A_83",
-            "ACC_A_85",
-            "ACC_A_81"
-        ],
-        "devices": [
-            "DEV_A_ALT_86",
-            "DEV_A_11",
-            "DEV_A_ALT_82",
-            "DEV_A_ALT_81"
-        ],
-        "addresses": [
-            "ADDR_A_ALT_85",
-            "ADDR_A_11"
-        ],
-        "num_accounts": 8,
-        "num_orders": 137,
-        "total_order_value": 114680.19,
-        "total_refunds": 118,
-        "refund_value": 100289.60000000002,
-        "refund_rate": 0.8613138686131386,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C098",
-        "accounts": [
-            "ACC_A_137",
-            "ACC_A_136",
-            "ACC_A_135",
-            "ACC_A_138",
-            "ACC_A_142",
-            "ACC_A_140",
-            "ACC_A_143",
-            "ACC_A_139"
-        ],
-        "devices": [
-            "DEV_A_ALT_140",
-            "DEV_A_18"
-        ],
-        "addresses": [
-            "ADDR_A_18"
-        ],
-        "num_accounts": 8,
-        "num_orders": 135,
-        "total_order_value": 109212.32,
-        "total_refunds": 110,
-        "refund_value": 88446.62,
+        "num_accounts": 6,
+        "num_orders": 81,
+        "total_order_value": 66729.09,
+        "total_refunds": 66,
+        "refund_value": 55134.77,
         "refund_rate": 0.8148148148148148,
         "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C085",
-        "accounts": [
-            "ACC_A_33",
-            "ACC_A_37",
-            "ACC_A_35",
-            "ACC_A_36",
-            "ACC_A_41",
-            "ACC_A_34",
-            "ACC_A_39"
-        ],
-        "devices": [
-            "DEV_A_ALT_35",
-            "DEV_A_ALT_34",
-            "DEV_A_5"
-        ],
-        "addresses": [
-            "ADDR_A_ALT_42",
-            "ADDR_A_5"
-        ],
-        "num_accounts": 7,
-        "num_orders": 112,
-        "total_order_value": 92859.93000000001,
-        "total_refunds": 83,
-        "refund_value": 66387.41,
-        "refund_rate": 0.7410714285714286,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C086",
-        "accounts": [
-            "ACC_A_48",
-            "ACC_A_46",
-            "ACC_A_47",
-            "ACC_A_43",
-            "ACC_A_44",
-            "ACC_A_45",
-            "ACC_A_42"
-        ],
-        "devices": [
-            "DEV_A_6",
-            "DEV_A_ALT_45"
-        ],
-        "addresses": [
-            "ADDR_A_6"
-        ],
-        "num_accounts": 7,
-        "num_orders": 99,
-        "total_order_value": 78918.15000000001,
-        "total_refunds": 84,
-        "refund_value": 66691.08,
-        "refund_rate": 0.8484848484848485,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C088",
-        "accounts": [
-            "ACC_A_61",
-            "ACC_A_56",
-            "ACC_A_58",
-            "ACC_A_57",
-            "ACC_A_55",
-            "ACC_A_59",
-            "ACC_A_60"
-        ],
-        "devices": [
-            "DEV_A_ALT_56",
-            "DEV_A_8",
-            "DEV_A_ALT_62"
-        ],
-        "addresses": [
-            "ADDR_A_ALT_57",
-            "ADDR_A_8"
-        ],
-        "num_accounts": 7,
-        "num_orders": 127,
-        "total_order_value": 100632.97,
-        "total_refunds": 106,
-        "refund_value": 80882.65000000001,
-        "refund_rate": 0.8346456692913385,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C094",
-        "accounts": [
-            "ACC_A_103",
-            "ACC_A_104",
-            "ACC_A_105",
-            "ACC_A_107",
-            "ACC_A_108",
-            "ACC_A_102",
-            "ACC_A_106"
-        ],
-        "devices": [
-            "DEV_A_14"
-        ],
-        "addresses": [
-            "ADDR_A_ALT_106",
-            "ADDR_A_ALT_109",
-            "ADDR_A_14"
-        ],
-        "num_accounts": 7,
-        "num_orders": 101,
-        "total_order_value": 79646.12999999998,
-        "total_refunds": 86,
-        "refund_value": 69221.07999999999,
-        "refund_rate": 0.8514851485148515,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C096",
         "accounts": [
-            "ACC_A_127",
+            "ACC_A_123",
+            "ACC_A_121",
+            "ACC_A_120",
             "ACC_A_122",
             "ACC_A_124",
-            "ACC_A_126",
-            "ACC_A_128",
-            "ACC_A_125",
-            "ACC_A_121"
+            "ACC_A_119"
         ],
         "devices": [
-            "DEV_A_16",
-            "DEV_A_ALT_123"
+            "DEV_A_16"
         ],
         "addresses": [
+            "ADDR_A_ALT_122",
             "ADDR_A_16",
-            "ADDR_A_ALT_122"
+            "ADDR_A_ALT_123"
         ],
-        "num_accounts": 7,
-        "num_orders": 118,
-        "total_order_value": 91375.14,
-        "total_refunds": 101,
-        "refund_value": 79819.56999999999,
-        "refund_rate": 0.8559322033898306,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "num_accounts": 6,
+        "num_orders": 92,
+        "total_order_value": 66612.45000000001,
+        "total_refunds": 58,
+        "refund_value": 40402.83,
+        "refund_rate": 0.6304347826086957,
+        "avg_risk_score": 0.999963768115942,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C083",
         "accounts": [
-            "ACC_A_23",
-            "ACC_A_25",
-            "ACC_A_20",
             "ACC_A_22",
-            "ACC_A_24",
-            "ACC_A_21"
+            "ACC_A_23",
+            "ACC_A_20",
+            "ACC_A_21",
+            "ACC_A_24"
         ],
         "devices": [
             "DEV_A_3"
         ],
         "addresses": [
-            "ADDR_A_ALT_22",
+            "ADDR_A_ALT_25",
             "ADDR_A_3"
         ],
-        "num_accounts": 6,
-        "num_orders": 104,
-        "total_order_value": 85708.04000000001,
-        "total_refunds": 87,
-        "refund_value": 73185.0,
-        "refund_rate": 0.8365384615384616,
+        "num_accounts": 5,
+        "num_orders": 76,
+        "total_order_value": 59438.369999999995,
+        "total_refunds": 54,
+        "refund_value": 38502.759999999995,
+        "refund_rate": 0.7105263157894737,
         "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C084",
         "accounts": [
-            "ACC_A_28",
-            "ACC_A_30",
-            "ACC_A_26",
+            "ACC_A_27",
+            "ACC_A_25",
             "ACC_A_29",
-            "ACC_A_32",
-            "ACC_A_31"
+            "ACC_A_26",
+            "ACC_A_28"
         ],
         "devices": [
             "DEV_A_4"
         ],
         "addresses": [
             "ADDR_A_4",
-            "ADDR_A_ALT_32"
+            "ADDR_A_ALT_26"
         ],
-        "num_accounts": 6,
-        "num_orders": 101,
-        "total_order_value": 91828.54000000001,
-        "total_refunds": 83,
-        "refund_value": 76594.95999999999,
-        "refund_rate": 0.8217821782178217,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "num_accounts": 5,
+        "num_orders": 57,
+        "total_order_value": 43320.810000000005,
+        "total_refunds": 41,
+        "refund_value": 33507.8,
+        "refund_rate": 0.7192982456140351,
+        "avg_risk_score": 0.9995106095845178,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
-        "cluster_id": "C087",
+        "cluster_id": "C086",
         "accounts": [
-            "ACC_A_54",
-            "ACC_A_53",
-            "ACC_A_51",
-            "ACC_A_50",
-            "ACC_A_52",
-            "ACC_A_49"
+            "ACC_A_45",
+            "ACC_A_44",
+            "ACC_A_43",
+            "ACC_A_42",
+            "ACC_A_41"
         ],
         "devices": [
-            "DEV_A_ALT_50",
-            "DEV_A_7",
-            "DEV_A_ALT_53"
+            "DEV_A_ALT_44",
+            "DEV_A_6"
         ],
         "addresses": [
-            "ADDR_A_7"
+            "ADDR_A_6"
         ],
-        "num_accounts": 6,
-        "num_orders": 104,
-        "total_order_value": 77372.56,
-        "total_refunds": 80,
-        "refund_value": 59292.579999999994,
-        "refund_rate": 0.7692307692307693,
+        "num_accounts": 5,
+        "num_orders": 61,
+        "total_order_value": 48696.08,
+        "total_refunds": 41,
+        "refund_value": 33311.31,
+        "refund_rate": 0.6721311475409836,
+        "avg_risk_score": 0.9997477931904162,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C088",
+        "accounts": [
+            "ACC_A_57",
+            "ACC_A_59",
+            "ACC_A_60",
+            "ACC_A_58",
+            "ACC_A_61"
+        ],
+        "devices": [
+            "DEV_A_8"
+        ],
+        "addresses": [
+            "ADDR_A_ALT_59",
+            "ADDR_A_8"
+        ],
+        "num_accounts": 5,
+        "num_orders": 76,
+        "total_order_value": 53455.880000000005,
+        "total_refunds": 54,
+        "refund_value": 36694.77,
+        "refund_rate": 0.7105263157894737,
         "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C099",
+        "accounts": [
+            "ACC_A_146",
+            "ACC_A_149",
+            "ACC_A_150",
+            "ACC_A_147",
+            "ACC_A_148"
+        ],
+        "devices": [
+            "DEV_A_19"
+        ],
+        "addresses": [
+            "ADDR_A_19",
+            "ADDR_A_ALT_148",
+            "ADDR_A_ALT_150"
+        ],
+        "num_accounts": 5,
+        "num_orders": 57,
+        "total_order_value": 47752.11,
+        "total_refunds": 39,
+        "refund_value": 30517.270000000004,
+        "refund_rate": 0.6842105263157895,
+        "avg_risk_score": 1.0,
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C090",
         "accounts": [
-            "ACC_A_74",
-            "ACC_A_77",
-            "ACC_A_73",
             "ACC_A_72",
-            "ACC_A_76",
-            "ACC_A_75"
+            "ACC_A_70",
+            "ACC_A_71",
+            "ACC_A_69"
         ],
         "devices": [
-            "DEV_A_ALT_73",
             "DEV_A_10"
         ],
         "addresses": [
+            "ADDR_A_ALT_71",
+            "ADDR_A_ALT_73",
             "ADDR_A_10"
         ],
-        "num_accounts": 6,
-        "num_orders": 89,
-        "total_order_value": 71112.05000000002,
-        "total_refunds": 76,
-        "refund_value": 60411.439999999995,
-        "refund_rate": 0.8539325842696629,
+        "num_accounts": 4,
+        "num_orders": 70,
+        "total_order_value": 48948.200000000004,
+        "total_refunds": 52,
+        "refund_value": 34963.79000000001,
+        "refund_rate": 0.7428571428571429,
         "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C092",
-        "accounts": [
-            "ACC_A_88",
-            "ACC_A_87",
-            "ACC_A_90",
-            "ACC_A_89",
-            "ACC_A_92",
-            "ACC_A_86"
-        ],
-        "devices": [
-            "DEV_A_12",
-            "DEV_A_ALT_90"
-        ],
-        "addresses": [
-            "ADDR_A_ALT_93",
-            "ADDR_A_ALT_87",
-            "ADDR_A_12"
-        ],
-        "num_accounts": 6,
-        "num_orders": 99,
-        "total_order_value": 80968.72,
-        "total_refunds": 90,
-        "refund_value": 74343.56999999999,
-        "refund_rate": 0.9090909090909091,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C097",
-        "accounts": [
-            "ACC_A_131",
-            "ACC_A_132",
-            "ACC_A_133",
-            "ACC_A_134",
-            "ACC_A_130",
-            "ACC_A_129"
-        ],
-        "devices": [
-            "DEV_A_17"
-        ],
-        "addresses": [
-            "ADDR_A_17"
-        ],
-        "num_accounts": 6,
-        "num_orders": 62,
-        "total_order_value": 50536.12,
-        "total_refunds": 53,
-        "refund_value": 42294.17,
-        "refund_rate": 0.8548387096774194,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
+        "risk_level": "HIGH",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C081",
         "accounts": [
-            "ACC_A_13",
-            "ACC_A_14",
-            "ACC_A_15",
+            "ACC_A_9",
             "ACC_A_11",
+            "ACC_A_10",
+            "ACC_A_8",
             "ACC_A_12"
         ],
         "devices": [
             "DEV_A_1",
-            "DEV_A_ALT_16"
+            "DEV_A_ALT_9"
         ],
         "addresses": [
             "ADDR_A_1"
         ],
         "num_accounts": 5,
-        "num_orders": 78,
-        "total_order_value": 57925.79,
-        "total_refunds": 70,
-        "refund_value": 53255.42000000001,
-        "refund_rate": 0.8974358974358975,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C082",
-        "accounts": [
-            "ACC_A_19",
-            "ACC_A_16",
-            "ACC_A_18",
-            "ACC_A_17"
-        ],
-        "devices": [
-            "DEV_A_ALT_18",
-            "DEV_A_2",
-            "DEV_A_ALT_19"
-        ],
-        "addresses": [
-            "ADDR_A_2",
-            "ADDR_A_ALT_20"
-        ],
-        "num_accounts": 4,
-        "num_orders": 66,
-        "total_order_value": 55104.590000000004,
-        "total_refunds": 58,
-        "refund_value": 50401.310000000005,
-        "refund_rate": 0.8787878787878788,
-        "avg_risk_score": 1.0,
-        "risk_level": "HIGH"
-    },
-    {
-        "cluster_id": "C001",
-        "accounts": [
-            "ACC_N_10",
-            "ACC_N_9"
-        ],
-        "devices": [
-            "DEV_N_9"
-        ],
-        "addresses": [
-            "ADDR_N_9"
-        ],
-        "num_accounts": 2,
-        "num_orders": 10,
-        "total_order_value": 2536.7799999999993,
-        "total_refunds": 1,
-        "refund_value": 225.29,
-        "refund_rate": 0.1,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C002",
-        "accounts": [
-            "ACC_N_20",
-            "ACC_N_19"
-        ],
-        "devices": [
-            "DEV_N_19"
-        ],
-        "addresses": [
-            "ADDR_N_19"
-        ],
-        "num_accounts": 2,
-        "num_orders": 17,
-        "total_order_value": 4486.5,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "num_orders": 72,
+        "total_order_value": 58950.22,
+        "total_refunds": 42,
+        "refund_value": 34945.01,
+        "refund_rate": 0.5833333333333334,
+        "avg_risk_score": 0.9987635933806147,
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C003",
         "accounts": [
-            "ACC_N_29",
-            "ACC_N_30"
+            "ACC_N_30",
+            "ACC_N_29"
         ],
         "devices": [
             "DEV_N_29"
@@ -622,418 +624,21 @@
             "ADDR_N_29"
         ],
         "num_accounts": 2,
-        "num_orders": 25,
-        "total_order_value": 6254.4,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C004",
-        "accounts": [
-            "ACC_N_40",
-            "ACC_N_39"
-        ],
-        "devices": [
-            "DEV_N_39"
-        ],
-        "addresses": [
-            "ADDR_N_39"
-        ],
-        "num_accounts": 2,
-        "num_orders": 14,
-        "total_order_value": 4023.1600000000008,
-        "total_refunds": 1,
-        "refund_value": 160.85,
-        "refund_rate": 0.07142857142857142,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C005",
-        "accounts": [
-            "ACC_N_49",
-            "ACC_N_50"
-        ],
-        "devices": [
-            "DEV_N_49"
-        ],
-        "addresses": [
-            "ADDR_N_49"
-        ],
-        "num_accounts": 2,
-        "num_orders": 19,
-        "total_order_value": 4991.89,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C006",
-        "accounts": [
-            "ACC_N_60",
-            "ACC_N_59"
-        ],
-        "devices": [
-            "DEV_N_59"
-        ],
-        "addresses": [
-            "ADDR_N_59"
-        ],
-        "num_accounts": 2,
-        "num_orders": 21,
-        "total_order_value": 5980.99,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C007",
-        "accounts": [
-            "ACC_N_70",
-            "ACC_N_69"
-        ],
-        "devices": [
-            "DEV_N_69"
-        ],
-        "addresses": [
-            "ADDR_N_69"
-        ],
-        "num_accounts": 2,
-        "num_orders": 23,
-        "total_order_value": 7273.290000000001,
-        "total_refunds": 2,
-        "refund_value": 236.78,
-        "refund_rate": 0.08695652173913043,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C008",
-        "accounts": [
-            "ACC_N_80",
-            "ACC_N_79"
-        ],
-        "devices": [
-            "DEV_N_79"
-        ],
-        "addresses": [
-            "ADDR_N_79"
-        ],
-        "num_accounts": 2,
-        "num_orders": 12,
-        "total_order_value": 2794.73,
-        "total_refunds": 1,
-        "refund_value": 210.2,
-        "refund_rate": 0.08333333333333333,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C009",
-        "accounts": [
-            "ACC_N_90",
-            "ACC_N_89"
-        ],
-        "devices": [
-            "DEV_N_89"
-        ],
-        "addresses": [
-            "ADDR_N_89"
-        ],
-        "num_accounts": 2,
-        "num_orders": 14,
-        "total_order_value": 3842.2500000000005,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C010",
-        "accounts": [
-            "ACC_N_99",
-            "ACC_N_100"
-        ],
-        "devices": [
-            "DEV_N_99"
-        ],
-        "addresses": [
-            "ADDR_N_99"
-        ],
-        "num_accounts": 2,
-        "num_orders": 10,
-        "total_order_value": 2779.2299999999996,
-        "total_refunds": 1,
-        "refund_value": 213.65,
-        "refund_rate": 0.1,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C011",
-        "accounts": [
-            "ACC_N_110",
-            "ACC_N_109"
-        ],
-        "devices": [
-            "DEV_N_109"
-        ],
-        "addresses": [
-            "ADDR_N_109"
-        ],
-        "num_accounts": 2,
-        "num_orders": 14,
-        "total_order_value": 4418.29,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C012",
-        "accounts": [
-            "ACC_N_120",
-            "ACC_N_119"
-        ],
-        "devices": [
-            "DEV_N_119"
-        ],
-        "addresses": [
-            "ADDR_N_119"
-        ],
-        "num_accounts": 2,
-        "num_orders": 9,
-        "total_order_value": 3162.27,
-        "total_refunds": 1,
-        "refund_value": 257.3,
-        "refund_rate": 0.1111111111111111,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C013",
-        "accounts": [
-            "ACC_N_130",
-            "ACC_N_129"
-        ],
-        "devices": [
-            "DEV_N_129"
-        ],
-        "addresses": [
-            "ADDR_N_129"
-        ],
-        "num_accounts": 2,
-        "num_orders": 5,
-        "total_order_value": 1626.9299999999998,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C014",
-        "accounts": [
-            "ACC_N_139",
-            "ACC_N_140"
-        ],
-        "devices": [
-            "DEV_N_139"
-        ],
-        "addresses": [
-            "ADDR_N_139"
-        ],
-        "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 4533.68,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C015",
-        "accounts": [
-            "ACC_N_150",
-            "ACC_N_149"
-        ],
-        "devices": [
-            "DEV_N_149"
-        ],
-        "addresses": [
-            "ADDR_N_149"
-        ],
-        "num_accounts": 2,
         "num_orders": 22,
-        "total_order_value": 5628.150000000001,
-        "total_refunds": 2,
-        "refund_value": 323.89,
-        "refund_rate": 0.09090909090909091,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C016",
-        "accounts": [
-            "ACC_N_160",
-            "ACC_N_159"
-        ],
-        "devices": [
-            "DEV_N_159"
-        ],
-        "addresses": [
-            "ADDR_N_159"
-        ],
-        "num_accounts": 2,
-        "num_orders": 14,
-        "total_order_value": 2951.4999999999995,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C017",
-        "accounts": [
-            "ACC_N_169",
-            "ACC_N_170"
-        ],
-        "devices": [
-            "DEV_N_169"
-        ],
-        "addresses": [
-            "ADDR_N_169"
-        ],
-        "num_accounts": 2,
-        "num_orders": 23,
-        "total_order_value": 6190.799999999998,
-        "total_refunds": 1,
-        "refund_value": 134.19,
-        "refund_rate": 0.043478260869565216,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C018",
-        "accounts": [
-            "ACC_N_179",
-            "ACC_N_180"
-        ],
-        "devices": [
-            "DEV_N_179"
-        ],
-        "addresses": [
-            "ADDR_N_179"
-        ],
-        "num_accounts": 2,
-        "num_orders": 19,
-        "total_order_value": 4584.74,
-        "total_refunds": 1,
-        "refund_value": 157.93,
-        "refund_rate": 0.05263157894736842,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C019",
-        "accounts": [
-            "ACC_N_189",
-            "ACC_N_190"
-        ],
-        "devices": [
-            "DEV_N_189"
-        ],
-        "addresses": [
-            "ADDR_N_189"
-        ],
-        "num_accounts": 2,
-        "num_orders": 21,
-        "total_order_value": 4779.639999999999,
-        "total_refunds": 2,
-        "refund_value": 522.02,
-        "refund_rate": 0.09523809523809523,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C020",
-        "accounts": [
-            "ACC_N_200",
-            "ACC_N_199"
-        ],
-        "devices": [
-            "DEV_N_199"
-        ],
-        "addresses": [
-            "ADDR_N_199"
-        ],
-        "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 4114.25,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C021",
-        "accounts": [
-            "ACC_N_210",
-            "ACC_N_209"
-        ],
-        "devices": [
-            "DEV_N_209"
-        ],
-        "addresses": [
-            "ADDR_N_209"
-        ],
-        "num_accounts": 2,
-        "num_orders": 22,
-        "total_order_value": 5314.17,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C022",
-        "accounts": [
-            "ACC_N_220",
-            "ACC_N_219"
-        ],
-        "devices": [
-            "DEV_N_219"
-        ],
-        "addresses": [
-            "ADDR_N_219"
-        ],
-        "num_accounts": 2,
-        "num_orders": 19,
-        "total_order_value": 4639.42,
-        "total_refunds": 2,
-        "refund_value": 373.47,
-        "refund_rate": 0.10526315789473684,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "total_order_value": 5099.599999999999,
+        "total_refunds": 8,
+        "refund_value": 1620.5500000000002,
+        "refund_rate": 0.36363636363636365,
+        "avg_risk_score": 0.00045454545454545455,
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C023",
         "accounts": [
-            "ACC_N_230",
-            "ACC_N_229"
+            "ACC_N_229",
+            "ACC_N_230"
         ],
         "devices": [
             "DEV_N_229"
@@ -1042,349 +647,15 @@
             "ADDR_N_229"
         ],
         "num_accounts": 2,
-        "num_orders": 18,
-        "total_order_value": 5928.680000000001,
-        "total_refunds": 1,
-        "refund_value": 359.15,
-        "refund_rate": 0.05555555555555555,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C024",
-        "accounts": [
-            "ACC_N_240",
-            "ACC_N_239"
-        ],
-        "devices": [
-            "DEV_N_239"
-        ],
-        "addresses": [
-            "ADDR_N_239"
-        ],
-        "num_accounts": 2,
         "num_orders": 13,
-        "total_order_value": 3594.7200000000003,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C025",
-        "accounts": [
-            "ACC_N_250",
-            "ACC_N_249"
-        ],
-        "devices": [
-            "DEV_N_249"
-        ],
-        "addresses": [
-            "ADDR_N_249"
-        ],
-        "num_accounts": 2,
-        "num_orders": 29,
-        "total_order_value": 8185.97,
-        "total_refunds": 3,
-        "refund_value": 737.17,
-        "refund_rate": 0.10344827586206896,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C026",
-        "accounts": [
-            "ACC_N_259",
-            "ACC_N_260"
-        ],
-        "devices": [
-            "DEV_N_259"
-        ],
-        "addresses": [
-            "ADDR_N_259"
-        ],
-        "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 4464.92,
-        "total_refunds": 1,
-        "refund_value": 173.69,
-        "refund_rate": 0.0625,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C027",
-        "accounts": [
-            "ACC_N_270",
-            "ACC_N_269"
-        ],
-        "devices": [
-            "DEV_N_269"
-        ],
-        "addresses": [
-            "ADDR_N_269"
-        ],
-        "num_accounts": 2,
-        "num_orders": 3,
-        "total_order_value": 432.20000000000005,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C028",
-        "accounts": [
-            "ACC_N_279",
-            "ACC_N_280"
-        ],
-        "devices": [
-            "DEV_N_279"
-        ],
-        "addresses": [
-            "ADDR_N_279"
-        ],
-        "num_accounts": 2,
-        "num_orders": 19,
-        "total_order_value": 4904.290000000001,
-        "total_refunds": 2,
-        "refund_value": 712.4499999999999,
-        "refund_rate": 0.10526315789473684,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C029",
-        "accounts": [
-            "ACC_N_290",
-            "ACC_N_289"
-        ],
-        "devices": [
-            "DEV_N_289"
-        ],
-        "addresses": [
-            "ADDR_N_289"
-        ],
-        "num_accounts": 2,
-        "num_orders": 19,
-        "total_order_value": 5376.53,
-        "total_refunds": 1,
-        "refund_value": 123.94,
-        "refund_rate": 0.05263157894736842,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C030",
-        "accounts": [
-            "ACC_N_300",
-            "ACC_N_299"
-        ],
-        "devices": [
-            "DEV_N_299"
-        ],
-        "addresses": [
-            "ADDR_N_299"
-        ],
-        "num_accounts": 2,
-        "num_orders": 19,
-        "total_order_value": 5365.400000000001,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C031",
-        "accounts": [
-            "ACC_N_309",
-            "ACC_N_310"
-        ],
-        "devices": [
-            "DEV_N_309"
-        ],
-        "addresses": [
-            "ADDR_N_309"
-        ],
-        "num_accounts": 2,
-        "num_orders": 7,
-        "total_order_value": 1531.8400000000001,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C032",
-        "accounts": [
-            "ACC_N_319",
-            "ACC_N_320"
-        ],
-        "devices": [
-            "DEV_N_319"
-        ],
-        "addresses": [
-            "ADDR_N_319"
-        ],
-        "num_accounts": 2,
-        "num_orders": 22,
-        "total_order_value": 5720.97,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C033",
-        "accounts": [
-            "ACC_N_329",
-            "ACC_N_330"
-        ],
-        "devices": [
-            "DEV_N_329"
-        ],
-        "addresses": [
-            "ADDR_N_329"
-        ],
-        "num_accounts": 2,
-        "num_orders": 27,
-        "total_order_value": 6555.7,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C034",
-        "accounts": [
-            "ACC_N_340",
-            "ACC_N_339"
-        ],
-        "devices": [
-            "DEV_N_339"
-        ],
-        "addresses": [
-            "ADDR_N_339"
-        ],
-        "num_accounts": 2,
-        "num_orders": 14,
-        "total_order_value": 4102.299999999999,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C035",
-        "accounts": [
-            "ACC_N_350",
-            "ACC_N_349"
-        ],
-        "devices": [
-            "DEV_N_349"
-        ],
-        "addresses": [
-            "ADDR_N_349"
-        ],
-        "num_accounts": 2,
-        "num_orders": 19,
-        "total_order_value": 4474.0599999999995,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C036",
-        "accounts": [
-            "ACC_N_360",
-            "ACC_N_359"
-        ],
-        "devices": [
-            "DEV_N_359"
-        ],
-        "addresses": [
-            "ADDR_N_359"
-        ],
-        "num_accounts": 2,
-        "num_orders": 8,
-        "total_order_value": 2330.8999999999996,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C037",
-        "accounts": [
-            "ACC_N_369",
-            "ACC_N_370"
-        ],
-        "devices": [
-            "DEV_N_369"
-        ],
-        "addresses": [
-            "ADDR_N_369"
-        ],
-        "num_accounts": 2,
-        "num_orders": 24,
-        "total_order_value": 5580.03,
-        "total_refunds": 3,
-        "refund_value": 740.88,
-        "refund_rate": 0.125,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C038",
-        "accounts": [
-            "ACC_N_380",
-            "ACC_N_379"
-        ],
-        "devices": [
-            "DEV_N_379"
-        ],
-        "addresses": [
-            "ADDR_N_379"
-        ],
-        "num_accounts": 2,
-        "num_orders": 18,
-        "total_order_value": 4210.5,
-        "total_refunds": 1,
-        "refund_value": 253.4,
-        "refund_rate": 0.05555555555555555,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C039",
-        "accounts": [
-            "ACC_N_390",
-            "ACC_N_389"
-        ],
-        "devices": [
-            "DEV_N_389"
-        ],
-        "addresses": [
-            "ADDR_N_389"
-        ],
-        "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 3941.1000000000004,
-        "total_refunds": 1,
-        "refund_value": 137.91,
-        "refund_rate": 0.0625,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "total_order_value": 3593.6900000000005,
+        "total_refunds": 4,
+        "refund_value": 1385.9999999999998,
+        "refund_rate": 0.3076923076923077,
+        "avg_risk_score": 0.0003436988543371385,
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C040",
@@ -1399,55 +670,15 @@
             "ADDR_N_399"
         ],
         "num_accounts": 2,
-        "num_orders": 14,
-        "total_order_value": 4192.0599999999995,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C041",
-        "accounts": [
-            "ACC_N_410",
-            "ACC_N_409"
-        ],
-        "devices": [
-            "DEV_N_409"
-        ],
-        "addresses": [
-            "ADDR_N_409"
-        ],
-        "num_accounts": 2,
         "num_orders": 9,
-        "total_order_value": 2430.17,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
+        "total_order_value": 2274.5099999999998,
+        "total_refunds": 4,
+        "refund_value": 1313.72,
+        "refund_rate": 0.4444444444444444,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C042",
-        "accounts": [
-            "ACC_N_419",
-            "ACC_N_420"
-        ],
-        "devices": [
-            "DEV_N_419"
-        ],
-        "addresses": [
-            "ADDR_N_419"
-        ],
-        "num_accounts": 2,
-        "num_orders": 19,
-        "total_order_value": 4614.49,
-        "total_refunds": 2,
-        "refund_value": 404.58000000000004,
-        "refund_rate": 0.10526315789473684,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C043",
@@ -1462,19 +693,21 @@
             "ADDR_N_429"
         ],
         "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 4579.66,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
+        "num_orders": 18,
+        "total_order_value": 4811.04,
+        "total_refunds": 7,
+        "refund_value": 2020.7800000000002,
+        "refund_rate": 0.3888888888888889,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C044",
         "accounts": [
-            "ACC_N_440",
-            "ACC_N_439"
+            "ACC_N_439",
+            "ACC_N_440"
         ],
         "devices": [
             "DEV_N_439"
@@ -1483,124 +716,21 @@
             "ADDR_N_439"
         ],
         "num_accounts": 2,
-        "num_orders": 22,
-        "total_order_value": 6812.1500000000015,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C045",
-        "accounts": [
-            "ACC_N_450",
-            "ACC_N_449"
-        ],
-        "devices": [
-            "DEV_N_449"
-        ],
-        "addresses": [
-            "ADDR_N_449"
-        ],
-        "num_accounts": 2,
-        "num_orders": 24,
-        "total_order_value": 5421.43,
-        "total_refunds": 1,
-        "refund_value": 82.72,
-        "refund_rate": 0.041666666666666664,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C046",
-        "accounts": [
-            "ACC_N_460",
-            "ACC_N_459"
-        ],
-        "devices": [
-            "DEV_N_459"
-        ],
-        "addresses": [
-            "ADDR_N_459"
-        ],
-        "num_accounts": 2,
-        "num_orders": 17,
-        "total_order_value": 4170.99,
+        "num_orders": 5,
+        "total_order_value": 1246.1299999999999,
         "total_refunds": 2,
-        "refund_value": 554.13,
-        "refund_rate": 0.11764705882352941,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C047",
-        "accounts": [
-            "ACC_N_470",
-            "ACC_N_469"
-        ],
-        "devices": [
-            "DEV_N_469"
-        ],
-        "addresses": [
-            "ADDR_N_469"
-        ],
-        "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 4126.77,
-        "total_refunds": 1,
-        "refund_value": 442.93,
-        "refund_rate": 0.0625,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C048",
-        "accounts": [
-            "ACC_N_479",
-            "ACC_N_480"
-        ],
-        "devices": [
-            "DEV_N_479"
-        ],
-        "addresses": [
-            "ADDR_N_479"
-        ],
-        "num_accounts": 2,
-        "num_orders": 21,
-        "total_order_value": 6296.529999999999,
-        "total_refunds": 1,
-        "refund_value": 143.75,
-        "refund_rate": 0.047619047619047616,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C049",
-        "accounts": [
-            "ACC_N_490",
-            "ACC_N_489"
-        ],
-        "devices": [
-            "DEV_N_489"
-        ],
-        "addresses": [
-            "ADDR_N_489"
-        ],
-        "num_accounts": 2,
-        "num_orders": 15,
-        "total_order_value": 4491.05,
-        "total_refunds": 1,
-        "refund_value": 286.89,
-        "refund_rate": 0.06666666666666667,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "refund_value": 489.42999999999995,
+        "refund_rate": 0.4,
+        "avg_risk_score": 0.00029787234042552,
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C050",
         "accounts": [
-            "ACC_N_500",
-            "ACC_N_499"
+            "ACC_N_499",
+            "ACC_N_500"
         ],
         "devices": [
             "DEV_N_499"
@@ -1609,124 +739,21 @@
             "ADDR_N_499"
         ],
         "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 4097.32,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
+        "num_orders": 8,
+        "total_order_value": 1979.21,
+        "total_refunds": 3,
+        "refund_value": 729.12,
+        "refund_rate": 0.375,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C051",
-        "accounts": [
-            "ACC_N_509",
-            "ACC_N_510"
-        ],
-        "devices": [
-            "DEV_N_509"
-        ],
-        "addresses": [
-            "ADDR_N_509"
-        ],
-        "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 2950.0,
-        "total_refunds": 1,
-        "refund_value": 90.13,
-        "refund_rate": 0.0625,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C052",
-        "accounts": [
-            "ACC_N_519",
-            "ACC_N_520"
-        ],
-        "devices": [
-            "DEV_N_519"
-        ],
-        "addresses": [
-            "ADDR_N_519"
-        ],
-        "num_accounts": 2,
-        "num_orders": 15,
-        "total_order_value": 3428.5,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C053",
-        "accounts": [
-            "ACC_N_529",
-            "ACC_N_530"
-        ],
-        "devices": [
-            "DEV_N_529"
-        ],
-        "addresses": [
-            "ADDR_N_529"
-        ],
-        "num_accounts": 2,
-        "num_orders": 12,
-        "total_order_value": 3102.6099999999997,
-        "total_refunds": 1,
-        "refund_value": 389.68,
-        "refund_rate": 0.08333333333333333,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C054",
-        "accounts": [
-            "ACC_N_539",
-            "ACC_N_540"
-        ],
-        "devices": [
-            "DEV_N_539"
-        ],
-        "addresses": [
-            "ADDR_N_539"
-        ],
-        "num_accounts": 2,
-        "num_orders": 7,
-        "total_order_value": 1645.82,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C055",
-        "accounts": [
-            "ACC_N_549",
-            "ACC_N_550"
-        ],
-        "devices": [
-            "DEV_N_549"
-        ],
-        "addresses": [
-            "ADDR_N_549"
-        ],
-        "num_accounts": 2,
-        "num_orders": 11,
-        "total_order_value": 2673.35,
-        "total_refunds": 1,
-        "refund_value": 206.48,
-        "refund_rate": 0.09090909090909091,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C056",
         "accounts": [
-            "ACC_N_559",
-            "ACC_N_560"
+            "ACC_N_560",
+            "ACC_N_559"
         ],
         "devices": [
             "DEV_N_559"
@@ -1735,19 +762,21 @@
             "ADDR_N_559"
         ],
         "num_accounts": 2,
-        "num_orders": 26,
-        "total_order_value": 6896.4800000000005,
-        "total_refunds": 1,
-        "refund_value": 206.43,
-        "refund_rate": 0.038461538461538464,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "num_orders": 20,
+        "total_order_value": 4731.009999999999,
+        "total_refunds": 7,
+        "refund_value": 1896.2599999999998,
+        "refund_rate": 0.35,
+        "avg_risk_score": 7.446808510638e-05,
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C057",
         "accounts": [
-            "ACC_N_569",
-            "ACC_N_570"
+            "ACC_N_570",
+            "ACC_N_569"
         ],
         "devices": [
             "DEV_N_569"
@@ -1756,244 +785,15 @@
             "ADDR_N_569"
         ],
         "num_accounts": 2,
-        "num_orders": 12,
-        "total_order_value": 2502.91,
-        "total_refunds": 1,
-        "refund_value": 51.47,
-        "refund_rate": 0.08333333333333333,
+        "num_orders": 20,
+        "total_order_value": 5013.370000000001,
+        "total_refunds": 11,
+        "refund_value": 2676.6500000000005,
+        "refund_rate": 0.55,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C058",
-        "accounts": [
-            "ACC_N_580",
-            "ACC_N_579"
-        ],
-        "devices": [
-            "DEV_N_579"
-        ],
-        "addresses": [
-            "ADDR_N_579"
-        ],
-        "num_accounts": 2,
-        "num_orders": 22,
-        "total_order_value": 5620.579999999998,
-        "total_refunds": 1,
-        "refund_value": 284.23,
-        "refund_rate": 0.045454545454545456,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C059",
-        "accounts": [
-            "ACC_N_589",
-            "ACC_N_590"
-        ],
-        "devices": [
-            "DEV_N_589"
-        ],
-        "addresses": [
-            "ADDR_N_589"
-        ],
-        "num_accounts": 2,
-        "num_orders": 13,
-        "total_order_value": 2921.71,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C060",
-        "accounts": [
-            "ACC_N_599",
-            "ACC_N_600"
-        ],
-        "devices": [
-            "DEV_N_599"
-        ],
-        "addresses": [
-            "ADDR_N_599"
-        ],
-        "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 4537.150000000001,
-        "total_refunds": 2,
-        "refund_value": 342.78999999999996,
-        "refund_rate": 0.125,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C061",
-        "accounts": [
-            "ACC_N_610",
-            "ACC_N_609"
-        ],
-        "devices": [
-            "DEV_N_609"
-        ],
-        "addresses": [
-            "ADDR_N_609"
-        ],
-        "num_accounts": 2,
-        "num_orders": 24,
-        "total_order_value": 5889.959999999999,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C062",
-        "accounts": [
-            "ACC_N_619",
-            "ACC_N_620"
-        ],
-        "devices": [
-            "DEV_N_619"
-        ],
-        "addresses": [
-            "ADDR_N_619"
-        ],
-        "num_accounts": 2,
-        "num_orders": 17,
-        "total_order_value": 4367.51,
-        "total_refunds": 2,
-        "refund_value": 755.97,
-        "refund_rate": 0.11764705882352941,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C063",
-        "accounts": [
-            "ACC_N_630",
-            "ACC_N_629"
-        ],
-        "devices": [
-            "DEV_N_629"
-        ],
-        "addresses": [
-            "ADDR_N_629"
-        ],
-        "num_accounts": 2,
-        "num_orders": 9,
-        "total_order_value": 2441.97,
-        "total_refunds": 1,
-        "refund_value": 339.12,
-        "refund_rate": 0.1111111111111111,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C064",
-        "accounts": [
-            "ACC_N_640",
-            "ACC_N_639"
-        ],
-        "devices": [
-            "DEV_N_639"
-        ],
-        "addresses": [
-            "ADDR_N_639"
-        ],
-        "num_accounts": 2,
-        "num_orders": 13,
-        "total_order_value": 3936.53,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C065",
-        "accounts": [
-            "ACC_N_650",
-            "ACC_N_649"
-        ],
-        "devices": [
-            "DEV_N_649"
-        ],
-        "addresses": [
-            "ADDR_N_649"
-        ],
-        "num_accounts": 2,
-        "num_orders": 18,
-        "total_order_value": 5369.629999999999,
-        "total_refunds": 1,
-        "refund_value": 291.89,
-        "refund_rate": 0.05555555555555555,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C066",
-        "accounts": [
-            "ACC_N_660",
-            "ACC_N_659"
-        ],
-        "devices": [
-            "DEV_N_659"
-        ],
-        "addresses": [
-            "ADDR_N_659"
-        ],
-        "num_accounts": 2,
-        "num_orders": 12,
-        "total_order_value": 2973.87,
-        "total_refunds": 1,
-        "refund_value": 112.43,
-        "refund_rate": 0.08333333333333333,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C067",
-        "accounts": [
-            "ACC_N_670",
-            "ACC_N_669"
-        ],
-        "devices": [
-            "DEV_N_669"
-        ],
-        "addresses": [
-            "ADDR_N_669"
-        ],
-        "num_accounts": 2,
-        "num_orders": 18,
-        "total_order_value": 2848.7299999999996,
-        "total_refunds": 2,
-        "refund_value": 249.98,
-        "refund_rate": 0.1111111111111111,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C068",
-        "accounts": [
-            "ACC_N_680",
-            "ACC_N_679"
-        ],
-        "devices": [
-            "DEV_N_679"
-        ],
-        "addresses": [
-            "ADDR_N_679"
-        ],
-        "num_accounts": 2,
-        "num_orders": 16,
-        "total_order_value": 4299.23,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C069",
@@ -2008,82 +808,21 @@
             "ADDR_N_689"
         ],
         "num_accounts": 2,
-        "num_orders": 12,
-        "total_order_value": 2551.4399999999996,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
+        "num_orders": 17,
+        "total_order_value": 4266.72,
+        "total_refunds": 6,
+        "refund_value": 1519.3000000000002,
+        "refund_rate": 0.35294117647058826,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C070",
-        "accounts": [
-            "ACC_N_700",
-            "ACC_N_699"
-        ],
-        "devices": [
-            "DEV_N_699"
-        ],
-        "addresses": [
-            "ADDR_N_699"
-        ],
-        "num_accounts": 2,
-        "num_orders": 15,
-        "total_order_value": 4124.5,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C071",
-        "accounts": [
-            "ACC_N_710",
-            "ACC_N_709"
-        ],
-        "devices": [
-            "DEV_N_709"
-        ],
-        "addresses": [
-            "ADDR_N_709"
-        ],
-        "num_accounts": 2,
-        "num_orders": 10,
-        "total_order_value": 3163.08,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C072",
-        "accounts": [
-            "ACC_N_720",
-            "ACC_N_719"
-        ],
-        "devices": [
-            "DEV_N_719"
-        ],
-        "addresses": [
-            "ADDR_N_719"
-        ],
-        "num_accounts": 2,
-        "num_orders": 14,
-        "total_order_value": 3238.98,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C073",
         "accounts": [
-            "ACC_N_730",
-            "ACC_N_729"
+            "ACC_N_729",
+            "ACC_N_730"
         ],
         "devices": [
             "DEV_N_729"
@@ -2092,55 +831,15 @@
             "ADDR_N_729"
         ],
         "num_accounts": 2,
-        "num_orders": 20,
-        "total_order_value": 4071.15,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C074",
-        "accounts": [
-            "ACC_N_739",
-            "ACC_N_740"
-        ],
-        "devices": [
-            "DEV_N_739"
-        ],
-        "addresses": [
-            "ADDR_N_739"
-        ],
-        "num_accounts": 2,
-        "num_orders": 18,
-        "total_order_value": 4361.3,
-        "total_refunds": 0,
-        "refund_value": 0.0,
-        "refund_rate": 0.0,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
-    },
-    {
-        "cluster_id": "C075",
-        "accounts": [
-            "ACC_N_750",
-            "ACC_N_749"
-        ],
-        "devices": [
-            "DEV_N_749"
-        ],
-        "addresses": [
-            "ADDR_N_749"
-        ],
-        "num_accounts": 2,
-        "num_orders": 18,
-        "total_order_value": 5538.370000000001,
-        "total_refunds": 2,
-        "refund_value": 491.49,
-        "refund_rate": 0.1111111111111111,
-        "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "num_orders": 11,
+        "total_order_value": 2567.67,
+        "total_refunds": 4,
+        "refund_value": 862.86,
+        "refund_rate": 0.36363636363636365,
+        "avg_risk_score": 0.014868686868686844,
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C076",
@@ -2155,13 +854,1721 @@
             "ADDR_N_759"
         ],
         "num_accounts": 2,
-        "num_orders": 5,
-        "total_order_value": 1406.06,
+        "num_orders": 13,
+        "total_order_value": 3113.76,
+        "total_refunds": 6,
+        "refund_value": 1600.4299999999998,
+        "refund_rate": 0.46153846153846156,
+        "avg_risk_score": 0.0,
+        "risk_level": "MEDIUM",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C101",
+        "accounts": [
+            "ACC_D_188",
+            "ACC_D_172",
+            "ACC_D_177",
+            "ACC_D_194",
+            "ACC_D_195",
+            "ACC_D_190",
+            "ACC_D_182",
+            "ACC_D_193",
+            "ACC_D_169",
+            "ACC_D_168",
+            "ACC_D_176",
+            "ACC_D_180",
+            "ACC_D_192",
+            "ACC_D_184",
+            "ACC_D_191",
+            "ACC_D_171",
+            "ACC_D_189",
+            "ACC_D_173",
+            "ACC_D_179",
+            "ACC_D_187",
+            "ACC_D_196",
+            "ACC_D_170",
+            "ACC_D_175",
+            "ACC_D_181",
+            "ACC_D_185",
+            "ACC_D_167",
+            "ACC_D_178",
+            "ACC_D_183",
+            "ACC_D_186",
+            "ACC_D_174"
+        ],
+        "devices": [
+            "DEV_D_1"
+        ],
+        "addresses": [
+            "ADDR_D_1"
+        ],
+        "num_accounts": 30,
+        "num_orders": 161,
+        "total_order_value": 27002.57,
+        "total_refunds": 12,
+        "refund_value": 2648.72,
+        "refund_rate": 0.07453416149068323,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": true,
+        "location_type": "UNIVERSITY_DORM"
+    },
+    {
+        "cluster_id": "C102",
+        "accounts": [
+            "ACC_D_198",
+            "ACC_D_210",
+            "ACC_D_209",
+            "ACC_D_216",
+            "ACC_D_213",
+            "ACC_D_199",
+            "ACC_D_201",
+            "ACC_D_212",
+            "ACC_D_217",
+            "ACC_D_211",
+            "ACC_D_215",
+            "ACC_D_200",
+            "ACC_D_202",
+            "ACC_D_221",
+            "ACC_D_197",
+            "ACC_D_206",
+            "ACC_D_208",
+            "ACC_D_214",
+            "ACC_D_205",
+            "ACC_D_218",
+            "ACC_D_203",
+            "ACC_D_204",
+            "ACC_D_219",
+            "ACC_D_207",
+            "ACC_D_220"
+        ],
+        "devices": [
+            "DEV_D_2"
+        ],
+        "addresses": [
+            "ADDR_D_2"
+        ],
+        "num_accounts": 25,
+        "num_orders": 156,
+        "total_order_value": 23236.64,
+        "total_refunds": 15,
+        "refund_value": 2419.82,
+        "refund_rate": 0.09615384615384616,
+        "avg_risk_score": 6.41025641025641e-05,
+        "risk_level": "LOW",
+        "is_dense_living": true,
+        "location_type": "UNIVERSITY_DORM"
+    },
+    {
+        "cluster_id": "C103",
+        "accounts": [
+            "ACC_D_233",
+            "ACC_D_240",
+            "ACC_D_228",
+            "ACC_D_231",
+            "ACC_D_225",
+            "ACC_D_234",
+            "ACC_D_222",
+            "ACC_D_236",
+            "ACC_D_223",
+            "ACC_D_230",
+            "ACC_D_226",
+            "ACC_D_224",
+            "ACC_D_239",
+            "ACC_D_232",
+            "ACC_D_238",
+            "ACC_D_237",
+            "ACC_D_227",
+            "ACC_D_235",
+            "ACC_D_241",
+            "ACC_D_229"
+        ],
+        "devices": [
+            "DEV_D_3"
+        ],
+        "addresses": [
+            "ADDR_D_3"
+        ],
+        "num_accounts": 20,
+        "num_orders": 142,
+        "total_order_value": 21157.019999999997,
+        "total_refunds": 21,
+        "refund_value": 3034.21,
+        "refund_rate": 0.14788732394366197,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": true,
+        "location_type": "UNIVERSITY_DORM"
+    },
+    {
+        "cluster_id": "C100",
+        "accounts": [
+            "ACC_D_161",
+            "ACC_D_164",
+            "ACC_D_163",
+            "ACC_D_154",
+            "ACC_D_157",
+            "ACC_D_155",
+            "ACC_D_165",
+            "ACC_D_158",
+            "ACC_D_162",
+            "ACC_D_152",
+            "ACC_D_153",
+            "ACC_D_156",
+            "ACC_D_166",
+            "ACC_D_160",
+            "ACC_D_159",
+            "ACC_D_151"
+        ],
+        "devices": [
+            "DEV_D_0"
+        ],
+        "addresses": [
+            "ADDR_D_0"
+        ],
+        "num_accounts": 16,
+        "num_orders": 90,
+        "total_order_value": 13070.86,
+        "total_refunds": 8,
+        "refund_value": 1185.29,
+        "refund_rate": 0.08888888888888889,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": true,
+        "location_type": "UNIVERSITY_DORM"
+    },
+    {
+        "cluster_id": "C104",
+        "accounts": [
+            "ACC_D_244",
+            "ACC_D_249",
+            "ACC_D_242",
+            "ACC_D_245",
+            "ACC_D_254",
+            "ACC_D_256",
+            "ACC_D_252",
+            "ACC_D_243",
+            "ACC_D_251",
+            "ACC_D_247",
+            "ACC_D_250",
+            "ACC_D_255",
+            "ACC_D_248",
+            "ACC_D_246",
+            "ACC_D_253"
+        ],
+        "devices": [
+            "DEV_D_4"
+        ],
+        "addresses": [
+            "ADDR_D_4"
+        ],
+        "num_accounts": 15,
+        "num_orders": 97,
+        "total_order_value": 16524.32,
+        "total_refunds": 6,
+        "refund_value": 976.9000000000001,
+        "refund_rate": 0.061855670103092786,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": true,
+        "location_type": "UNIVERSITY_DORM"
+    },
+    {
+        "cluster_id": "C001",
+        "accounts": [
+            "ACC_N_9",
+            "ACC_N_10"
+        ],
+        "devices": [
+            "DEV_N_9"
+        ],
+        "addresses": [
+            "ADDR_N_9"
+        ],
+        "num_accounts": 2,
+        "num_orders": 20,
+        "total_order_value": 4717.389999999999,
+        "total_refunds": 2,
+        "refund_value": 884.5899999999999,
+        "refund_rate": 0.1,
+        "avg_risk_score": 0.001,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C002",
+        "accounts": [
+            "ACC_N_20",
+            "ACC_N_19"
+        ],
+        "devices": [
+            "DEV_N_19"
+        ],
+        "addresses": [
+            "ADDR_N_19"
+        ],
+        "num_accounts": 2,
+        "num_orders": 19,
+        "total_order_value": 6776.57,
         "total_refunds": 1,
-        "refund_value": 292.46,
+        "refund_value": 212.34,
+        "refund_rate": 0.05263157894736842,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C004",
+        "accounts": [
+            "ACC_N_40",
+            "ACC_N_39"
+        ],
+        "devices": [
+            "DEV_N_39"
+        ],
+        "addresses": [
+            "ADDR_N_39"
+        ],
+        "num_accounts": 2,
+        "num_orders": 13,
+        "total_order_value": 3215.4200000000005,
+        "total_refunds": 1,
+        "refund_value": 457.14,
+        "refund_rate": 0.07692307692307693,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C005",
+        "accounts": [
+            "ACC_N_50",
+            "ACC_N_49"
+        ],
+        "devices": [
+            "DEV_N_49"
+        ],
+        "addresses": [
+            "ADDR_N_49"
+        ],
+        "num_accounts": 2,
+        "num_orders": 25,
+        "total_order_value": 5788.68,
+        "total_refunds": 3,
+        "refund_value": 779.13,
+        "refund_rate": 0.12,
+        "avg_risk_score": 0.0004,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C006",
+        "accounts": [
+            "ACC_N_59",
+            "ACC_N_60"
+        ],
+        "devices": [
+            "DEV_N_59"
+        ],
+        "addresses": [
+            "ADDR_N_59"
+        ],
+        "num_accounts": 2,
+        "num_orders": 21,
+        "total_order_value": 6038.460000000001,
+        "total_refunds": 3,
+        "refund_value": 564.3,
+        "refund_rate": 0.14285714285714285,
+        "avg_risk_score": 7.09219858156e-05,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C007",
+        "accounts": [
+            "ACC_N_70",
+            "ACC_N_69"
+        ],
+        "devices": [
+            "DEV_N_69"
+        ],
+        "addresses": [
+            "ADDR_N_69"
+        ],
+        "num_accounts": 2,
+        "num_orders": 26,
+        "total_order_value": 7725.16,
+        "total_refunds": 5,
+        "refund_value": 2064.08,
+        "refund_rate": 0.19230769230769232,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C008",
+        "accounts": [
+            "ACC_N_79",
+            "ACC_N_80"
+        ],
+        "devices": [
+            "DEV_N_79"
+        ],
+        "addresses": [
+            "ADDR_N_79"
+        ],
+        "num_accounts": 2,
+        "num_orders": 11,
+        "total_order_value": 2734.6800000000003,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C009",
+        "accounts": [
+            "ACC_N_89",
+            "ACC_N_90"
+        ],
+        "devices": [
+            "DEV_N_89"
+        ],
+        "addresses": [
+            "ADDR_N_89"
+        ],
+        "num_accounts": 2,
+        "num_orders": 16,
+        "total_order_value": 3773.55,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C010",
+        "accounts": [
+            "ACC_N_100",
+            "ACC_N_99"
+        ],
+        "devices": [
+            "DEV_N_99"
+        ],
+        "addresses": [
+            "ADDR_N_99"
+        ],
+        "num_accounts": 2,
+        "num_orders": 17,
+        "total_order_value": 4631.52,
+        "total_refunds": 2,
+        "refund_value": 894.05,
+        "refund_rate": 0.11764705882352941,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C011",
+        "accounts": [
+            "ACC_N_109",
+            "ACC_N_110"
+        ],
+        "devices": [
+            "DEV_N_109"
+        ],
+        "addresses": [
+            "ADDR_N_109"
+        ],
+        "num_accounts": 2,
+        "num_orders": 13,
+        "total_order_value": 3638.06,
+        "total_refunds": 2,
+        "refund_value": 393.84000000000003,
+        "refund_rate": 0.15384615384615385,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C012",
+        "accounts": [
+            "ACC_N_120",
+            "ACC_N_119"
+        ],
+        "devices": [
+            "DEV_N_119"
+        ],
+        "addresses": [
+            "ADDR_N_119"
+        ],
+        "num_accounts": 2,
+        "num_orders": 13,
+        "total_order_value": 4141.4800000000005,
+        "total_refunds": 1,
+        "refund_value": 275.2,
+        "refund_rate": 0.07692307692307693,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C013",
+        "accounts": [
+            "ACC_N_129",
+            "ACC_N_130"
+        ],
+        "devices": [
+            "DEV_N_129"
+        ],
+        "addresses": [
+            "ADDR_N_129"
+        ],
+        "num_accounts": 2,
+        "num_orders": 2,
+        "total_order_value": 340.21000000000004,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C014",
+        "accounts": [
+            "ACC_N_139",
+            "ACC_N_140"
+        ],
+        "devices": [
+            "DEV_N_139"
+        ],
+        "addresses": [
+            "ADDR_N_139"
+        ],
+        "num_accounts": 2,
+        "num_orders": 14,
+        "total_order_value": 3589.66,
+        "total_refunds": 2,
+        "refund_value": 654.93,
+        "refund_rate": 0.14285714285714285,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C015",
+        "accounts": [
+            "ACC_N_150",
+            "ACC_N_149"
+        ],
+        "devices": [
+            "DEV_N_149"
+        ],
+        "addresses": [
+            "ADDR_N_149"
+        ],
+        "num_accounts": 2,
+        "num_orders": 7,
+        "total_order_value": 1369.9299999999998,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C016",
+        "accounts": [
+            "ACC_N_159",
+            "ACC_N_160"
+        ],
+        "devices": [
+            "DEV_N_159"
+        ],
+        "addresses": [
+            "ADDR_N_159"
+        ],
+        "num_accounts": 2,
+        "num_orders": 7,
+        "total_order_value": 1989.9199999999998,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C017",
+        "accounts": [
+            "ACC_N_169",
+            "ACC_N_170"
+        ],
+        "devices": [
+            "DEV_N_169"
+        ],
+        "addresses": [
+            "ADDR_N_169"
+        ],
+        "num_accounts": 2,
+        "num_orders": 26,
+        "total_order_value": 7013.29,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C018",
+        "accounts": [
+            "ACC_N_180",
+            "ACC_N_179"
+        ],
+        "devices": [
+            "DEV_N_179"
+        ],
+        "addresses": [
+            "ADDR_N_179"
+        ],
+        "num_accounts": 2,
+        "num_orders": 19,
+        "total_order_value": 3779.11,
+        "total_refunds": 2,
+        "refund_value": 400.66999999999996,
+        "refund_rate": 0.10526315789473684,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C019",
+        "accounts": [
+            "ACC_N_190",
+            "ACC_N_189"
+        ],
+        "devices": [
+            "DEV_N_189"
+        ],
+        "addresses": [
+            "ADDR_N_189"
+        ],
+        "num_accounts": 2,
+        "num_orders": 5,
+        "total_order_value": 1876.12,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.034,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C020",
+        "accounts": [
+            "ACC_N_200",
+            "ACC_N_199"
+        ],
+        "devices": [
+            "DEV_N_199"
+        ],
+        "addresses": [
+            "ADDR_N_199"
+        ],
+        "num_accounts": 2,
+        "num_orders": 26,
+        "total_order_value": 6220.36,
+        "total_refunds": 4,
+        "refund_value": 880.3399999999999,
+        "refund_rate": 0.15384615384615385,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C021",
+        "accounts": [
+            "ACC_N_210",
+            "ACC_N_209"
+        ],
+        "devices": [
+            "DEV_N_209"
+        ],
+        "addresses": [
+            "ADDR_N_209"
+        ],
+        "num_accounts": 2,
+        "num_orders": 28,
+        "total_order_value": 8155.1399999999985,
+        "total_refunds": 1,
+        "refund_value": 25.57,
+        "refund_rate": 0.03571428571428571,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C022",
+        "accounts": [
+            "ACC_N_220",
+            "ACC_N_219"
+        ],
+        "devices": [
+            "DEV_N_219"
+        ],
+        "addresses": [
+            "ADDR_N_219"
+        ],
+        "num_accounts": 2,
+        "num_orders": 27,
+        "total_order_value": 6338.4,
+        "total_refunds": 3,
+        "refund_value": 539.72,
+        "refund_rate": 0.1111111111111111,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C024",
+        "accounts": [
+            "ACC_N_239",
+            "ACC_N_240"
+        ],
+        "devices": [
+            "DEV_N_239"
+        ],
+        "addresses": [
+            "ADDR_N_239"
+        ],
+        "num_accounts": 2,
+        "num_orders": 17,
+        "total_order_value": 3351.83,
+        "total_refunds": 2,
+        "refund_value": 202.46,
+        "refund_rate": 0.11764705882352941,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C025",
+        "accounts": [
+            "ACC_N_250",
+            "ACC_N_249"
+        ],
+        "devices": [
+            "DEV_N_249"
+        ],
+        "addresses": [
+            "ADDR_N_249"
+        ],
+        "num_accounts": 2,
+        "num_orders": 14,
+        "total_order_value": 3607.02,
+        "total_refunds": 1,
+        "refund_value": 350.13,
+        "refund_rate": 0.07142857142857142,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C026",
+        "accounts": [
+            "ACC_N_260",
+            "ACC_N_259"
+        ],
+        "devices": [
+            "DEV_N_259"
+        ],
+        "addresses": [
+            "ADDR_N_259"
+        ],
+        "num_accounts": 2,
+        "num_orders": 17,
+        "total_order_value": 4268.98,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C027",
+        "accounts": [
+            "ACC_N_269",
+            "ACC_N_270"
+        ],
+        "devices": [
+            "DEV_N_269"
+        ],
+        "addresses": [
+            "ADDR_N_269"
+        ],
+        "num_accounts": 2,
+        "num_orders": 15,
+        "total_order_value": 3842.0699999999997,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C028",
+        "accounts": [
+            "ACC_N_280",
+            "ACC_N_279"
+        ],
+        "devices": [
+            "DEV_N_279"
+        ],
+        "addresses": [
+            "ADDR_N_279"
+        ],
+        "num_accounts": 2,
+        "num_orders": 16,
+        "total_order_value": 3675.91,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C029",
+        "accounts": [
+            "ACC_N_290",
+            "ACC_N_289"
+        ],
+        "devices": [
+            "DEV_N_289"
+        ],
+        "addresses": [
+            "ADDR_N_289"
+        ],
+        "num_accounts": 2,
+        "num_orders": 9,
+        "total_order_value": 2814.2700000000004,
+        "total_refunds": 1,
+        "refund_value": 161.74,
+        "refund_rate": 0.1111111111111111,
+        "avg_risk_score": 0.00016548463356973333,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C030",
+        "accounts": [
+            "ACC_N_300",
+            "ACC_N_299"
+        ],
+        "devices": [
+            "DEV_N_299"
+        ],
+        "addresses": [
+            "ADDR_N_299"
+        ],
+        "num_accounts": 2,
+        "num_orders": 18,
+        "total_order_value": 4581.92,
+        "total_refunds": 3,
+        "refund_value": 947.5600000000001,
+        "refund_rate": 0.16666666666666666,
+        "avg_risk_score": 8.274231678486666e-05,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C031",
+        "accounts": [
+            "ACC_N_309",
+            "ACC_N_310"
+        ],
+        "devices": [
+            "DEV_N_309"
+        ],
+        "addresses": [
+            "ADDR_N_309"
+        ],
+        "num_accounts": 2,
+        "num_orders": 17,
+        "total_order_value": 5213.44,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C032",
+        "accounts": [
+            "ACC_N_320",
+            "ACC_N_319"
+        ],
+        "devices": [
+            "DEV_N_319"
+        ],
+        "addresses": [
+            "ADDR_N_319"
+        ],
+        "num_accounts": 2,
+        "num_orders": 12,
+        "total_order_value": 2950.7,
+        "total_refunds": 2,
+        "refund_value": 318.4,
+        "refund_rate": 0.16666666666666666,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C033",
+        "accounts": [
+            "ACC_N_330",
+            "ACC_N_329"
+        ],
+        "devices": [
+            "DEV_N_329"
+        ],
+        "addresses": [
+            "ADDR_N_329"
+        ],
+        "num_accounts": 2,
+        "num_orders": 19,
+        "total_order_value": 5328.28,
+        "total_refunds": 1,
+        "refund_value": 129.49,
+        "refund_rate": 0.05263157894736842,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C034",
+        "accounts": [
+            "ACC_N_340",
+            "ACC_N_339"
+        ],
+        "devices": [
+            "DEV_N_339"
+        ],
+        "addresses": [
+            "ADDR_N_339"
+        ],
+        "num_accounts": 2,
+        "num_orders": 22,
+        "total_order_value": 6412.910000000001,
+        "total_refunds": 5,
+        "refund_value": 1129.94,
+        "refund_rate": 0.22727272727272727,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C035",
+        "accounts": [
+            "ACC_N_350",
+            "ACC_N_349"
+        ],
+        "devices": [
+            "DEV_N_349"
+        ],
+        "addresses": [
+            "ADDR_N_349"
+        ],
+        "num_accounts": 2,
+        "num_orders": 25,
+        "total_order_value": 6544.96,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C036",
+        "accounts": [
+            "ACC_N_359",
+            "ACC_N_360"
+        ],
+        "devices": [
+            "DEV_N_359"
+        ],
+        "addresses": [
+            "ADDR_N_359"
+        ],
+        "num_accounts": 2,
+        "num_orders": 13,
+        "total_order_value": 3613.96,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C037",
+        "accounts": [
+            "ACC_N_370",
+            "ACC_N_369"
+        ],
+        "devices": [
+            "DEV_N_369"
+        ],
+        "addresses": [
+            "ADDR_N_369"
+        ],
+        "num_accounts": 2,
+        "num_orders": 23,
+        "total_order_value": 5289.249999999999,
+        "total_refunds": 1,
+        "refund_value": 292.62,
+        "refund_rate": 0.043478260869565216,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C038",
+        "accounts": [
+            "ACC_N_379",
+            "ACC_N_380"
+        ],
+        "devices": [
+            "DEV_N_379"
+        ],
+        "addresses": [
+            "ADDR_N_379"
+        ],
+        "num_accounts": 2,
+        "num_orders": 14,
+        "total_order_value": 3337.16,
+        "total_refunds": 2,
+        "refund_value": 615.32,
+        "refund_rate": 0.14285714285714285,
+        "avg_risk_score": 0.0001063829787234,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C039",
+        "accounts": [
+            "ACC_N_390",
+            "ACC_N_389"
+        ],
+        "devices": [
+            "DEV_N_389"
+        ],
+        "addresses": [
+            "ADDR_N_389"
+        ],
+        "num_accounts": 2,
+        "num_orders": 25,
+        "total_order_value": 7222.869999999999,
+        "total_refunds": 2,
+        "refund_value": 461.25,
+        "refund_rate": 0.08,
+        "avg_risk_score": 0.000533333333333328,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C041",
+        "accounts": [
+            "ACC_N_410",
+            "ACC_N_409"
+        ],
+        "devices": [
+            "DEV_N_409"
+        ],
+        "addresses": [
+            "ADDR_N_409"
+        ],
+        "num_accounts": 2,
+        "num_orders": 4,
+        "total_order_value": 1551.41,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C042",
+        "accounts": [
+            "ACC_N_420",
+            "ACC_N_419"
+        ],
+        "devices": [
+            "DEV_N_419"
+        ],
+        "addresses": [
+            "ADDR_N_419"
+        ],
+        "num_accounts": 2,
+        "num_orders": 22,
+        "total_order_value": 6228.26,
+        "total_refunds": 2,
+        "refund_value": 595.89,
+        "refund_rate": 0.09090909090909091,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C045",
+        "accounts": [
+            "ACC_N_450",
+            "ACC_N_449"
+        ],
+        "devices": [
+            "DEV_N_449"
+        ],
+        "addresses": [
+            "ADDR_N_449"
+        ],
+        "num_accounts": 2,
+        "num_orders": 17,
+        "total_order_value": 4328.38,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C046",
+        "accounts": [
+            "ACC_N_460",
+            "ACC_N_459"
+        ],
+        "devices": [
+            "DEV_N_459"
+        ],
+        "addresses": [
+            "ADDR_N_459"
+        ],
+        "num_accounts": 2,
+        "num_orders": 6,
+        "total_order_value": 1460.84,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C047",
+        "accounts": [
+            "ACC_N_470",
+            "ACC_N_469"
+        ],
+        "devices": [
+            "DEV_N_469"
+        ],
+        "addresses": [
+            "ADDR_N_469"
+        ],
+        "num_accounts": 2,
+        "num_orders": 26,
+        "total_order_value": 6073.119999999999,
+        "total_refunds": 5,
+        "refund_value": 1937.2599999999998,
+        "refund_rate": 0.19230769230769232,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C048",
+        "accounts": [
+            "ACC_N_479",
+            "ACC_N_480"
+        ],
+        "devices": [
+            "DEV_N_479"
+        ],
+        "addresses": [
+            "ADDR_N_479"
+        ],
+        "num_accounts": 2,
+        "num_orders": 22,
+        "total_order_value": 6001.18,
+        "total_refunds": 6,
+        "refund_value": 2468.56,
+        "refund_rate": 0.2727272727272727,
+        "avg_risk_score": 6.769825918761819e-05,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C049",
+        "accounts": [
+            "ACC_N_489",
+            "ACC_N_490"
+        ],
+        "devices": [
+            "DEV_N_489"
+        ],
+        "addresses": [
+            "ADDR_N_489"
+        ],
+        "num_accounts": 2,
+        "num_orders": 13,
+        "total_order_value": 3703.0399999999995,
+        "total_refunds": 1,
+        "refund_value": 107.22,
+        "refund_rate": 0.07692307692307693,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C051",
+        "accounts": [
+            "ACC_N_509",
+            "ACC_N_510"
+        ],
+        "devices": [
+            "DEV_N_509"
+        ],
+        "addresses": [
+            "ADDR_N_509"
+        ],
+        "num_accounts": 2,
+        "num_orders": 9,
+        "total_order_value": 2353.74,
+        "total_refunds": 1,
+        "refund_value": 474.79,
+        "refund_rate": 0.1111111111111111,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C052",
+        "accounts": [
+            "ACC_N_520",
+            "ACC_N_519"
+        ],
+        "devices": [
+            "DEV_N_519"
+        ],
+        "addresses": [
+            "ADDR_N_519"
+        ],
+        "num_accounts": 2,
+        "num_orders": 11,
+        "total_order_value": 2584.77,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C053",
+        "accounts": [
+            "ACC_N_529",
+            "ACC_N_530"
+        ],
+        "devices": [
+            "DEV_N_529"
+        ],
+        "addresses": [
+            "ADDR_N_529"
+        ],
+        "num_accounts": 2,
+        "num_orders": 5,
+        "total_order_value": 1345.38,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C054",
+        "accounts": [
+            "ACC_N_539",
+            "ACC_N_540"
+        ],
+        "devices": [
+            "DEV_N_539"
+        ],
+        "addresses": [
+            "ADDR_N_539"
+        ],
+        "num_accounts": 2,
+        "num_orders": 15,
+        "total_order_value": 4977.97,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C055",
+        "accounts": [
+            "ACC_N_550",
+            "ACC_N_549"
+        ],
+        "devices": [
+            "DEV_N_549"
+        ],
+        "addresses": [
+            "ADDR_N_549"
+        ],
+        "num_accounts": 2,
+        "num_orders": 16,
+        "total_order_value": 3935.7700000000004,
+        "total_refunds": 1,
+        "refund_value": 120.78,
+        "refund_rate": 0.0625,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C058",
+        "accounts": [
+            "ACC_N_579",
+            "ACC_N_580"
+        ],
+        "devices": [
+            "DEV_N_579"
+        ],
+        "addresses": [
+            "ADDR_N_579"
+        ],
+        "num_accounts": 2,
+        "num_orders": 24,
+        "total_order_value": 5821.33,
+        "total_refunds": 5,
+        "refund_value": 817.51,
+        "refund_rate": 0.20833333333333334,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C059",
+        "accounts": [
+            "ACC_N_590",
+            "ACC_N_589"
+        ],
+        "devices": [
+            "DEV_N_589"
+        ],
+        "addresses": [
+            "ADDR_N_589"
+        ],
+        "num_accounts": 2,
+        "num_orders": 19,
+        "total_order_value": 5785.110000000001,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C060",
+        "accounts": [
+            "ACC_N_600",
+            "ACC_N_599"
+        ],
+        "devices": [
+            "DEV_N_599"
+        ],
+        "addresses": [
+            "ADDR_N_599"
+        ],
+        "num_accounts": 2,
+        "num_orders": 15,
+        "total_order_value": 3909.65,
+        "total_refunds": 3,
+        "refund_value": 1021.01,
         "refund_rate": 0.2,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C061",
+        "accounts": [
+            "ACC_N_610",
+            "ACC_N_609"
+        ],
+        "devices": [
+            "DEV_N_609"
+        ],
+        "addresses": [
+            "ADDR_N_609"
+        ],
+        "num_accounts": 2,
+        "num_orders": 20,
+        "total_order_value": 5519.180000000001,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C062",
+        "accounts": [
+            "ACC_N_620",
+            "ACC_N_619"
+        ],
+        "devices": [
+            "DEV_N_619"
+        ],
+        "addresses": [
+            "ADDR_N_619"
+        ],
+        "num_accounts": 2,
+        "num_orders": 14,
+        "total_order_value": 3612.37,
+        "total_refunds": 1,
+        "refund_value": 489.33,
+        "refund_rate": 0.07142857142857142,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C063",
+        "accounts": [
+            "ACC_N_629",
+            "ACC_N_630"
+        ],
+        "devices": [
+            "DEV_N_629"
+        ],
+        "addresses": [
+            "ADDR_N_629"
+        ],
+        "num_accounts": 2,
+        "num_orders": 11,
+        "total_order_value": 3361.79,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C064",
+        "accounts": [
+            "ACC_N_639",
+            "ACC_N_640"
+        ],
+        "devices": [
+            "DEV_N_639"
+        ],
+        "addresses": [
+            "ADDR_N_639"
+        ],
+        "num_accounts": 2,
+        "num_orders": 25,
+        "total_order_value": 6199.17,
+        "total_refunds": 1,
+        "refund_value": 348.95,
+        "refund_rate": 0.04,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C065",
+        "accounts": [
+            "ACC_N_649",
+            "ACC_N_650"
+        ],
+        "devices": [
+            "DEV_N_649"
+        ],
+        "addresses": [
+            "ADDR_N_649"
+        ],
+        "num_accounts": 2,
+        "num_orders": 16,
+        "total_order_value": 4727.17,
+        "total_refunds": 2,
+        "refund_value": 470.48,
+        "refund_rate": 0.125,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C066",
+        "accounts": [
+            "ACC_N_659",
+            "ACC_N_660"
+        ],
+        "devices": [
+            "DEV_N_659"
+        ],
+        "addresses": [
+            "ADDR_N_659"
+        ],
+        "num_accounts": 2,
+        "num_orders": 23,
+        "total_order_value": 6034.9299999999985,
+        "total_refunds": 3,
+        "refund_value": 1057.8799999999999,
+        "refund_rate": 0.13043478260869565,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C067",
+        "accounts": [
+            "ACC_N_669",
+            "ACC_N_670"
+        ],
+        "devices": [
+            "DEV_N_669"
+        ],
+        "addresses": [
+            "ADDR_N_669"
+        ],
+        "num_accounts": 2,
+        "num_orders": 8,
+        "total_order_value": 2143.3900000000003,
+        "total_refunds": 2,
+        "refund_value": 281.52,
+        "refund_rate": 0.25,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C068",
+        "accounts": [
+            "ACC_N_679",
+            "ACC_N_680"
+        ],
+        "devices": [
+            "DEV_N_679"
+        ],
+        "addresses": [
+            "ADDR_N_679"
+        ],
+        "num_accounts": 2,
+        "num_orders": 22,
+        "total_order_value": 5279.590000000001,
+        "total_refunds": 4,
+        "refund_value": 661.89,
+        "refund_rate": 0.18181818181818182,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C070",
+        "accounts": [
+            "ACC_N_699",
+            "ACC_N_700"
+        ],
+        "devices": [
+            "DEV_N_699"
+        ],
+        "addresses": [
+            "ADDR_N_699"
+        ],
+        "num_accounts": 2,
+        "num_orders": 25,
+        "total_order_value": 7512.139999999999,
+        "total_refunds": 2,
+        "refund_value": 813.26,
+        "refund_rate": 0.08,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C071",
+        "accounts": [
+            "ACC_N_709",
+            "ACC_N_710"
+        ],
+        "devices": [
+            "DEV_N_709"
+        ],
+        "addresses": [
+            "ADDR_N_709"
+        ],
+        "num_accounts": 2,
+        "num_orders": 14,
+        "total_order_value": 2709.4500000000007,
+        "total_refunds": 1,
+        "refund_value": 181.77,
+        "refund_rate": 0.07142857142857142,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C072",
+        "accounts": [
+            "ACC_N_720",
+            "ACC_N_719"
+        ],
+        "devices": [
+            "DEV_N_719"
+        ],
+        "addresses": [
+            "ADDR_N_719"
+        ],
+        "num_accounts": 2,
+        "num_orders": 24,
+        "total_order_value": 6971.08,
+        "total_refunds": 1,
+        "refund_value": 231.35,
+        "refund_rate": 0.041666666666666664,
+        "avg_risk_score": 0.0008333333333333334,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C074",
+        "accounts": [
+            "ACC_N_740",
+            "ACC_N_739"
+        ],
+        "devices": [
+            "DEV_N_739"
+        ],
+        "addresses": [
+            "ADDR_N_739"
+        ],
+        "num_accounts": 2,
+        "num_orders": 21,
+        "total_order_value": 4906.639999999999,
+        "total_refunds": 2,
+        "refund_value": 558.41,
+        "refund_rate": 0.09523809523809523,
+        "avg_risk_score": 0.004285714285714286,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
+    },
+    {
+        "cluster_id": "C075",
+        "accounts": [
+            "ACC_N_749",
+            "ACC_N_750"
+        ],
+        "devices": [
+            "DEV_N_749"
+        ],
+        "addresses": [
+            "ADDR_N_749"
+        ],
+        "num_accounts": 2,
+        "num_orders": 11,
+        "total_order_value": 2056.72,
+        "total_refunds": 1,
+        "refund_value": 133.09,
+        "refund_rate": 0.09090909090909091,
+        "avg_risk_score": 0.0,
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C077",
@@ -2176,19 +2583,21 @@
             "ADDR_N_769"
         ],
         "num_accounts": 2,
-        "num_orders": 20,
-        "total_order_value": 4423.98,
-        "total_refunds": 1,
-        "refund_value": 467.36,
-        "refund_rate": 0.05,
+        "num_orders": 12,
+        "total_order_value": 3829.46,
+        "total_refunds": 2,
+        "refund_value": 602.26,
+        "refund_rate": 0.16666666666666666,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C078",
         "accounts": [
-            "ACC_N_780",
-            "ACC_N_779"
+            "ACC_N_779",
+            "ACC_N_780"
         ],
         "devices": [
             "DEV_N_779"
@@ -2197,13 +2606,15 @@
             "ADDR_N_779"
         ],
         "num_accounts": 2,
-        "num_orders": 9,
-        "total_order_value": 2584.96,
-        "total_refunds": 1,
-        "refund_value": 44.99,
-        "refund_rate": 0.1111111111111111,
+        "num_orders": 10,
+        "total_order_value": 1973.9499999999998,
+        "total_refunds": 0,
+        "refund_value": 0.0,
+        "refund_rate": 0.0,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     },
     {
         "cluster_id": "C079",
@@ -2218,12 +2629,14 @@
             "ADDR_N_789"
         ],
         "num_accounts": 2,
-        "num_orders": 13,
-        "total_order_value": 3816.9800000000005,
-        "total_refunds": 1,
-        "refund_value": 276.89,
-        "refund_rate": 0.07692307692307693,
+        "num_orders": 29,
+        "total_order_value": 7686.000000000001,
+        "total_refunds": 2,
+        "refund_value": 744.03,
+        "refund_rate": 0.06896551724137931,
         "avg_risk_score": 0.0,
-        "risk_level": "LOW"
+        "risk_level": "LOW",
+        "is_dense_living": false,
+        "location_type": "RESIDENTIAL"
     }
 ]
