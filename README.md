@@ -1,8 +1,8 @@
-# 🛡️ RefundShield — Intelligent Refund Abuse & Fraud Ring Detection
+# 📡 RefundRadar — Intelligent Refund Abuse & Fraud Ring Detection
 
 > Built for the **Razorpay AI Buildathon 2026**
 
-RefundShield is a real-time fraud intelligence platform that detects coordinated refund abuse syndicates, wardrobing, and serial return fraud. By combining **entity relationship graph clustering**, **machine learning risk scoring**, and an **autonomous AI investigation agent**, RefundShield uncovers organized fraud rings while ensuring legitimate customers—like students in dorms or families sharing devices—are protected from false positive blocks.
+RefundRadar is a real-time fraud intelligence platform that detects coordinated refund abuse syndicates, wardrobing, and serial return fraud. By combining **entity relationship graph clustering**, **machine learning risk scoring**, and an **autonomous AI investigation agent**, RefundRadar uncovers organized fraud rings while ensuring legitimate customers—like students in dorms or families sharing devices—are protected from false positive blocks.
 
 ---
 
@@ -43,14 +43,14 @@ npm run dev
 
 ---
 
-## 💡 Why We Built RefundShield
+## 💡 Why We Built RefundRadar
 
 Refund abuse costs digital merchants and payment gateways billions of rupees every year. Fraudsters game merchant return policies through:
 * **Coordinated Fraud Rings:** Creating dozens of disposable accounts across a small set of shared phones, laptops, and delivery drop points to repeatedly claim refunds.
 * **Wardrobing & Serial Abuse:** Purchasing high-ticket electronics or luxury apparel with the planned intent of using and returning them.
 * **The False Positive Dilemma:** Conventional rule engines (like *"flag any address with >3 accounts"*) end up blocking entire university dorms, shared PG hostels, and corporate apartment complexes.
 
-RefundShield solves this by analyzing the entire **relationship graph** and evaluating behavioral velocity, rather than making isolated judgments on single transactions.
+RefundRadar solves this by analyzing the entire **relationship graph** and evaluating behavioral velocity, rather than making isolated judgments on single transactions.
 
 ---
 
