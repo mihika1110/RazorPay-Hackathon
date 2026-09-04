@@ -9,6 +9,7 @@ export default function Clusters() {
   const [clusters, setClusters] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [riskFilter, setRiskFilter] = useState('ALL');
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
     axios.get(`${API_BASE}/clusters`).then(res => setClusters(res.data));
@@ -20,10 +21,9 @@ export default function Clusters() {
     return matchesSearch && matchesFilter;
   });
 
-  const cycleFilter = () => {
-    const filters = ['ALL', 'HIGH', 'MEDIUM', 'LOW'];
-    const nextIdx = (filters.indexOf(riskFilter) + 1) % filters.length;
-    setRiskFilter(filters[nextIdx]);
+  const selectFilter = (level) => {
+    setRiskFilter(level);
+    setIsFilterOpen(false);
   };
 
   return (
@@ -33,7 +33,7 @@ export default function Clusters() {
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Suspicious Clusters</h1>
           <p className="text-gray-500 dark:text-slate-400 mt-1">Groups of accounts sharing devices, addresses, and suspicious behavior.</p>
         </div>
-        <div className="flex space-x-3 animate-fade-up [animation-delay:100ms] opacity-0 fill-mode-forwards">
+        <div className="flex space-x-3 relative z-50 animate-fade-up [animation-delay:100ms] opacity-0 fill-mode-forwards">
           <div className="relative group">
             <Search className="w-5 h-5 absolute left-3 top-2.5 text-gray-400 dark:text-slate-500 group-hover:text-blue-500 transition-colors" />
             <input
@@ -44,13 +44,29 @@ export default function Clusters() {
               className="pl-10 pr-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm dark:text-white transition-all shadow-sm"
             />
           </div>
-          <button
-            onClick={cycleFilter}
-            className="flex items-center space-x-2 px-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg bg-white/80 dark:bg-slate-800/50 hover:bg-gray-50 dark:hover:bg-slate-700 backdrop-blur-sm transition-all shadow-sm hover:shadow-md"
-          >
-            <Filter className="w-4 h-4" />
-            <span>{riskFilter === 'ALL' ? 'Filter' : `Risk: ${riskFilter}`}</span>
-          </button>
+          <div className="relative">
+            <button 
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+              className="flex items-center space-x-2 px-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg bg-white/80 dark:bg-slate-800/50 hover:bg-gray-50 dark:hover:bg-slate-700 backdrop-blur-sm transition-all shadow-sm hover:shadow-md"
+            >
+              <Filter className="w-4 h-4" />
+              <span>{riskFilter === 'ALL' ? 'Filter' : `Risk: ${riskFilter}`}</span>
+            </button>
+            
+            {isFilterOpen && (
+              <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg shadow-xl overflow-hidden z-50">
+                {['ALL', 'HIGH', 'MEDIUM', 'LOW'].map((level) => (
+                  <button
+                    key={level}
+                    onClick={() => selectFilter(level)}
+                    className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors ${riskFilter === level ? 'font-bold text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20' : 'text-gray-700 dark:text-slate-300'}`}
+                  >
+                    {level === 'ALL' ? 'All Risks' : level}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
