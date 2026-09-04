@@ -18,7 +18,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 5000); // poll every 5s
+    const interval = setInterval(fetchData, 10000); // poll every 10s
     return () => clearInterval(interval);
   }, []);
 

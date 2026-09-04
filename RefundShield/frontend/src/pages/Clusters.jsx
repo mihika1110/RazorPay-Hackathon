@@ -15,7 +15,7 @@ export default function Clusters() {
     const fetchClusters = () =>
       axios.get(`${API_BASE}/clusters`).then(res => setClusters(res.data));
     fetchClusters();
-    const interval = setInterval(fetchClusters, 5000);
+    const interval = setInterval(fetchClusters, 10000); // poll every 10s
     return () => clearInterval(interval);
   }, []);
 

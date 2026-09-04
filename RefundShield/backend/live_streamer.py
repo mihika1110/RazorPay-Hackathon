@@ -15,7 +15,7 @@ import os
 from datetime import datetime, timedelta
 
 # How often (seconds) to generate a new batch of orders
-STREAM_INTERVAL = 5
+STREAM_INTERVAL = 10
 BATCH_SIZE = 3  # new orders per tick
 
 _stop_event = threading.Event()

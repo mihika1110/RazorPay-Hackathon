@@ -13,7 +13,7 @@ export default function Metrics() {
     const fetchMetrics = () =>
       axios.get(`${API_BASE}/metrics`).then(res => setMetrics(res.data));
     fetchMetrics();
-    const interval = setInterval(fetchMetrics, 5000); // poll every 5s
+    const interval = setInterval(fetchMetrics, 10000); // poll every 10s
     return () => clearInterval(interval);
   }, []);
 
@@ -34,13 +34,12 @@ export default function Metrics() {
               : 'Validation set metrics — live test metrics will appear once data starts streaming.'}
           </p>
         </div>
-        
+
         <div
-          className={`flex items-center space-x-2 px-3 py-1.5 rounded-full border transition-all duration-300 shadow-sm animate-fade-up ${
-            isStreaming
-              ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400'
-              : 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800/60 text-amber-700 dark:text-amber-400'
-          }`}
+          className={`flex items-center space-x-2 px-3 py-1.5 rounded-full border transition-all duration-300 shadow-sm animate-fade-up ${isStreaming
+            ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400'
+            : 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800/60 text-amber-700 dark:text-amber-400'
+            }`}
         >
           <span className="relative flex h-2 w-2">
             {isStreaming && (
@@ -175,7 +174,7 @@ function MetricCard({ title, value, icon, desc, formula, formulaDesc, legend }) 
 
         {/* Front */}
         <div className="absolute w-full h-full bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl p-6 rounded-xl shadow-sm border border-gray-100/50 dark:border-slate-700/50 flex flex-col justify-between hover:shadow-lg dark:hover:shadow-blue-500/20 dark:hover:border-blue-500/50 hover:border-blue-400/50 transition-all duration-500 [backface-visibility:hidden] overflow-hidden">
-          
+
           {/* Hover Shine Animation */}
           <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/60 dark:via-white/10 to-transparent skew-x-[-25deg] group-hover:animate-[shine_1s_ease-in-out_forwards] pointer-events-none"></div>
 
