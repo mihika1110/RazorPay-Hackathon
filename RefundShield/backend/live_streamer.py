@@ -189,13 +189,24 @@ def _stream_loop():
 
     print("[LiveStream] Stopped.")
 
+_stream_thread = None
+
+def is_stream_running():
+    global _stream_thread
+    return _stream_thread is not None and _stream_thread.is_alive() and not _stop_event.is_set()
+
 def start_stream():
-    """Start the background streaming thread."""
-    _stop_event.clear()
-    t = threading.Thread(target=_stream_loop, daemon=True)
-    t.start()
-    return t
+    """Start the background streaming thread if not already running."""
+    global _stream_thread
+    with _lock:
+        if is_stream_running():
+            return _stream_thread
+        _stop_event.clear()
+        _stream_thread = threading.Thread(target=_stream_loop, daemon=True)
+        _stream_thread.start()
+        return _stream_thread
 
 def stop_stream():
     """Signal the streaming thread to stop."""
     _stop_event.set()
+    return True

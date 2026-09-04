@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Target, Activity, Zap, Server, CheckCircle2, XCircle, Database, PieChart } from 'lucide-react';
+import { useStream } from '../context/StreamContext';
 
 const API_BASE = 'http://127.0.0.1:8000/api';
 
 export default function Metrics() {
   const [metrics, setMetrics] = useState(null);
+  const { isStreaming } = useStream();
 
   useEffect(() => {
     const fetchMetrics = () =>
       axios.get(`${API_BASE}/metrics`).then(res => setMetrics(res.data));
     fetchMetrics();
-    const interval = setInterval(fetchMetrics, 10000); // poll every 10s
+    const interval = setInterval(fetchMetrics, 5000); // poll every 5s
     return () => clearInterval(interval);
   }, []);
 
@@ -32,15 +34,24 @@ export default function Metrics() {
               : 'Validation set metrics — live test metrics will appear once data starts streaming.'}
           </p>
         </div>
-        {metrics.live_mode && (
-          <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 rounded-full animate-fade-up">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="text-xs font-semibold text-green-700 dark:text-green-400">LIVE</span>
-          </div>
-        )}
+        
+        <div
+          className={`flex items-center space-x-2 px-3 py-1.5 rounded-full border transition-all duration-300 shadow-sm animate-fade-up ${
+            isStreaming
+              ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400'
+              : 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800/60 text-amber-700 dark:text-amber-400'
+          }`}
+        >
+          <span className="relative flex h-2 w-2">
+            {isStreaming && (
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            )}
+            <span className={`relative inline-flex rounded-full h-2 w-2 ${isStreaming ? 'bg-emerald-500' : 'bg-amber-500'}`}></span>
+          </span>
+          <span className="text-xs font-semibold tracking-wide">
+            {isStreaming ? 'LIVE' : 'PAUSED'}
+          </span>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 h-48">

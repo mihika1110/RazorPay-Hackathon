@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ShieldAlert, Activity, ShoppingCart, IndianRupee, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useStream } from '../context/StreamContext';
 
 const API_BASE = 'http://127.0.0.1:8000/api';
 
 export default function Dashboard() {
   const [stats, setStats] = useState(null);
   const [orders, setOrders] = useState([]);
-  const [isLive, setIsLive] = useState(false);
+  const { isStreaming } = useStream();
 
   const fetchData = () => {
     axios.get(`${API_BASE}/stats`).then(res => setStats(res.data));
     axios.get(`${API_BASE}/orders`).then(res => setOrders(res.data));
-    setIsLive(true);
   };
 
   useEffect(() => {
@@ -26,15 +26,23 @@ export default function Dashboard() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white animate-fade-up">Risk Overview</h1>
-        {isLive && (
-          <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 rounded-full animate-fade-up">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="text-xs font-semibold text-green-700 dark:text-green-400">LIVE</span>
-          </div>
-        )}
+
+        <div
+          className={`flex items-center space-x-2 px-3 py-1.5 rounded-full border transition-all duration-300 shadow-sm animate-fade-up ${isStreaming
+              ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400'
+              : 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800/60 text-amber-700 dark:text-amber-400'
+            }`}
+        >
+          <span className="relative flex h-2 w-2">
+            {isStreaming && (
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            )}
+            <span className={`relative inline-flex rounded-full h-2 w-2 ${isStreaming ? 'bg-emerald-500' : 'bg-amber-500'}`}></span>
+          </span>
+          <span className="text-xs font-semibold tracking-wide">
+            {isStreaming ? 'LIVE' : 'PAUSED'}
+          </span>
+        </div>
       </div>
 
       {stats ? (

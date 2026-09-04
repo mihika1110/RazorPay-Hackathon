@@ -6,12 +6,16 @@ import json
 import os
 
 from agent import generate_investigation_report
-from live_streamer import start_stream, stop_stream
+from live_streamer import start_stream, stop_stream, is_stream_running
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Start live data stream on server startup
-    start_stream()
+    # Set LIVE_STREAM_ENABLED=false in .env to disable by default
+    if os.getenv("LIVE_STREAM_ENABLED", "true").lower() == "true":
+        start_stream()
+        print("[RefundShield] Live stream started.")
+    else:
+        print("[RefundShield] Live stream paused (LIVE_STREAM_ENABLED=false).")
     yield
     stop_stream()
 
@@ -111,10 +115,32 @@ def get_metrics():
 
 @app.get("/api/stream/status")
 def get_stream_status():
-    """Returns the current count of live orders — for the frontend live indicator."""
+    """Returns streaming status and current total count of orders."""
     from datetime import datetime
     orders_df = load_orders()
     return {
+        "is_streaming": is_stream_running(),
         "total_orders": len(orders_df),
         "last_updated": datetime.now().isoformat()
     }
+
+@app.post("/api/stream/toggle")
+def toggle_stream():
+    """Toggle live stream on/off."""
+    if is_stream_running():
+        stop_stream()
+        return {"is_streaming": False, "message": "Live stream paused"}
+    else:
+        start_stream()
+        return {"is_streaming": True, "message": "Live stream started"}
+
+@app.post("/api/stream/start")
+def start_stream_endpoint():
+    start_stream()
+    return {"is_streaming": True, "message": "Live stream started"}
+
+@app.post("/api/stream/stop")
+def stop_stream_endpoint():
+    stop_stream()
+    return {"is_streaming": False, "message": "Live stream paused"}
+
