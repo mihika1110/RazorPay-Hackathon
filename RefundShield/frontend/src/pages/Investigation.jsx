@@ -11,8 +11,16 @@ export default function Investigation() {
   const [report, setReport] = useState(null);
   const [loadingAI, setLoadingAI] = useState(false);
 
+  const fetchCluster = () => {
+    axios.get(`${API_BASE}/clusters/${id}`)
+      .then(res => setCluster(res.data))
+      .catch(console.error);
+  };
+
   useEffect(() => {
-    axios.get(`${API_BASE}/clusters/${id}`).then(res => setCluster(res.data)).catch(console.error);
+    fetchCluster();
+    const interval = setInterval(fetchCluster, 8000); // sync with live stream
+    return () => clearInterval(interval);
   }, [id]);
 
   const runInvestigation = async () => {
@@ -20,6 +28,8 @@ export default function Investigation() {
     try {
       const res = await axios.post(`${API_BASE}/investigate/${id}`);
       setReport(res.data);
+      // Immediately refresh the cluster state to sync with latest stream updates
+      fetchCluster();
     } catch (err) {
       console.error(err);
     } finally {
@@ -40,10 +50,9 @@ export default function Investigation() {
         <div>
           <div className="flex items-center space-x-3 mb-2">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Cluster {cluster.cluster_id}</h1>
-            <span className={`px-3 py-1 rounded-full text-xs font-bold border ${
-              cluster.risk_level === 'HIGH' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/50' : 
+            <span className={`px-3 py-1 rounded-full text-xs font-bold border ${cluster.risk_level === 'HIGH' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/50' :
               cluster.risk_level === 'MEDIUM' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800/50' : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/50'
-            }`}>
+              }`}>
               {cluster.risk_level} RISK
             </span>
             {cluster.is_dense_living && (
@@ -55,8 +64,8 @@ export default function Investigation() {
           </div>
           <p className="text-gray-500 dark:text-slate-400">Showing structured risk signals and relationship data.</p>
         </div>
-        
-        <button 
+
+        <button
           onClick={runInvestigation}
           disabled={loadingAI}
           className="relative group flex items-center space-x-2 px-6 py-3 rounded-lg font-bold text-white transition-all overflow-hidden shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] disabled:opacity-50 disabled:cursor-not-allowed"
@@ -74,10 +83,10 @@ export default function Investigation() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
+
         {/* Left Column: Data & Graph */}
         <div className="lg:col-span-2 space-y-6">
-          
+
           <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6 flex space-x-12">
             <div>
               <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Accounts</p>
@@ -123,7 +132,7 @@ export default function Investigation() {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
             <h3 className="text-lg font-bold mb-4 dark:text-white flex items-center space-x-2">
               <span className="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
@@ -159,46 +168,97 @@ export default function Investigation() {
 
         {/* Right Column: AI Report */}
         <div className="lg:col-span-1">
-          <div className={`rounded-xl shadow-lg border p-6 min-h-full transition-all duration-500 backdrop-blur-xl relative overflow-hidden
-            ${report ? 'bg-white/90 dark:bg-slate-800/80 border-blue-200 dark:border-blue-700/50 ring-4 ring-blue-50 dark:ring-blue-900/20' : 'bg-gray-50/80 dark:bg-slate-800/40 border-gray-200 dark:border-slate-700 border-dashed'}`}>
-            
+          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6 min-h-full transition-all duration-300 relative overflow-hidden">
+
             {report && (
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600"></div>
             )}
 
-            <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-gray-100 dark:border-slate-700/50">
-              <div className={`p-2 rounded-lg relative ${report ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.3)]' : 'bg-gray-200 dark:bg-slate-700 text-gray-400 dark:text-slate-500'}`}>
-                {report && <div className="absolute inset-0 bg-blue-500/20 blur-md rounded-lg"></div>}
-                <Bot className="w-6 h-6 relative z-10" />
+            <div className="flex items-center justify-between mb-5 pb-4 border-b border-gray-100 dark:border-slate-700/50">
+              <div className="flex items-center space-x-3">
+                <div className={`p-2 rounded-lg ${report ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'bg-gray-100 dark:bg-slate-700 text-gray-400 dark:text-slate-500'}`}>
+                  <Bot className="w-5 h-5" />
+                </div>
+                <div>
+                  <h2 className="font-bold text-base text-gray-900 dark:text-white">
+                    AI Investigator Report
+                  </h2>
+                  <p className="text-xs text-gray-500 dark:text-slate-400">Autonomous analysis</p>
+                </div>
               </div>
-              <h2 className={`font-bold text-lg ${report ? 'text-gray-900 dark:text-white' : 'text-gray-400 dark:text-slate-500'}`}>
-                AI Investigator Report
-              </h2>
+
+              {report && (
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold border ${report.risk_level === 'HIGH' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/50' :
+                  report.risk_level === 'MEDIUM' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800/50' : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/50'
+                  }`}>
+                  {report.risk_level} RISK
+                </span>
+              )}
             </div>
 
             {loadingAI ? (
-              <div className="space-y-4 animate-pulse">
-                <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-3/4"></div>
-                <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-full"></div>
-                <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-5/6"></div>
-                <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded w-full"></div>
-                <div className="h-20 bg-gray-200 dark:bg-slate-700 rounded w-full mt-6"></div>
+              <div className="space-y-4 py-4 animate-pulse">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2.5 h-2.5 bg-blue-500 rounded-full animate-ping"></div>
+                  <div className="h-3 bg-gray-200 dark:bg-slate-700 rounded w-1/2"></div>
+                </div>
+                <div className="h-16 bg-gray-50 dark:bg-slate-700/50 rounded-lg w-full"></div>
+                <div className="h-3 bg-gray-200 dark:bg-slate-700 rounded w-3/4"></div>
+                <div className="space-y-2">
+                  <div className="h-10 bg-gray-50 dark:bg-slate-700/50 rounded-lg w-full"></div>
+                  <div className="h-10 bg-gray-50 dark:bg-slate-700/50 rounded-lg w-full"></div>
+                </div>
+                <div className="h-12 bg-blue-50/50 dark:bg-slate-700/50 rounded-lg w-full mt-4"></div>
               </div>
             ) : report ? (
-              <div className="prose prose-sm max-w-none text-gray-700 dark:text-slate-300 
-                prose-headings:text-gray-900 dark:prose-headings:text-white prose-headings:font-bold prose-headings:mb-2 prose-headings:mt-4
-                prose-p:mb-3 prose-li:mb-1">
-                <ReactMarkdown>{report.report}</ReactMarkdown>
-                
-                <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-lg">
-                  <p className="text-xs text-blue-800 dark:text-blue-300 font-semibold uppercase tracking-wider mb-1">Recommended Action</p>
-                  <p className="text-sm font-bold text-blue-900 dark:text-blue-100">{report.recommended_action}</p>
-                </div>
+              <div className="space-y-4 text-xs">
+                <ReactMarkdown
+                  components={{
+                    h1: ({ children }) => (
+                      <div className="pb-2 mb-3 border-b border-gray-100 dark:border-slate-700/50">
+                        <span className="text-xs font-mono font-semibold text-gray-500 dark:text-slate-400">
+                          {children}
+                        </span>
+                      </div>
+                    ),
+                    h2: ({ children }) => (
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white flex items-center space-x-2 mt-4 mb-2">
+                        <span className="w-1.5 h-3.5 bg-blue-500 rounded-full"></span>
+                        <span>{children}</span>
+                      </h3>
+                    ),
+                    ul: ({ children }) => (
+                      <ul className="space-y-2 my-2">{children}</ul>
+                    ),
+                    ol: ({ children }) => (
+                      <ol className="space-y-2 my-2">{children}</ol>
+                    ),
+                    li: ({ children }) => (
+                      <li className="flex items-start space-x-2 text-xs text-gray-700 dark:text-slate-200 bg-gray-50 dark:bg-slate-700/50 p-2.5 rounded-lg border border-gray-100 dark:border-slate-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                        <span className="leading-relaxed flex-1">{children}</span>
+                      </li>
+                    ),
+                    p: ({ children }) => (
+                      <p className="text-xs leading-relaxed text-gray-600 dark:text-slate-300 mb-2">{children}</p>
+                    ),
+                    strong: ({ children }) => (
+                      <strong className="font-semibold text-gray-900 dark:text-white">{children}</strong>
+                    ),
+                    blockquote: ({ children }) => (
+                      <div className="p-3 my-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/50 text-xs text-blue-900 dark:text-blue-200">
+                        {children}
+                      </div>
+                    )
+                  }}
+                >
+                  {report.report}
+                </ReactMarkdown>
               </div>
             ) : (
               <div className="text-center py-12 text-gray-400 dark:text-slate-500">
                 <Bot className="w-12 h-12 mx-auto mb-4 opacity-20" />
-                <p>Click "Run AI Investigation" to task the agent to review this cluster.</p>
+                <p className="text-xs">Click "Run AI Investigation" to task the agent to review this cluster.</p>
               </div>
             )}
           </div>
