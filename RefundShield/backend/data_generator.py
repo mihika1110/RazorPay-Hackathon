@@ -17,9 +17,9 @@ def generate_synthetic_data(num_normal=800, num_abusive_clusters=20, num_dense_l
     current_date = datetime(2026, 9, 1)
 
     def create_account(account_id, is_abusive, device_id, address_id):
-        creation_days_ago = random.randint(10, 365)
-        if is_abusive:
-            creation_days_ago = random.randint(1, 30) # Abuse accounts often newer
+        creation_days_ago = random.randint(1, 365)
+        if is_abusive and random.random() < 0.8:
+            creation_days_ago = random.randint(1, 40) # 80% of abuse accounts are new
         
         creation_date = current_date - timedelta(days=creation_days_ago)
         return {
@@ -45,8 +45,8 @@ def generate_synthetic_data(num_normal=800, num_abusive_clusters=20, num_dense_l
         acc = create_account(acc_id, False, dev_id, addr_id)
         accounts.append(acc)
         
-        # Varying refund rate per normal user (0-20% usually, sometimes up to 60% for 'wardrobing')
-        base_refund_rate = random.uniform(0, 0.2) if random.random() > 0.15 else random.uniform(0.2, 0.6)
+        # Varying refund rate per normal user (0-20% usually, sometimes up to 80% for 'wardrobing')
+        base_refund_rate = random.uniform(0, 0.2) if random.random() > 0.2 else random.uniform(0.2, 0.8)
         
         # Generate Normal Orders
         num_orders = random.randint(1, 15)
