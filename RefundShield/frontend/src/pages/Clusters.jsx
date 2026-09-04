@@ -20,20 +20,20 @@ export default function Clusters() {
           <p className="text-gray-500 dark:text-slate-400 mt-1">Groups of accounts sharing devices, addresses, and suspicious behavior.</p>
         </div>
         <div className="flex space-x-3">
-          <div className="relative">
-            <Search className="w-5 h-5 absolute left-3 top-2.5 text-gray-400 dark:text-slate-500" />
-            <input type="text" placeholder="Search clusters..." className="pl-10 pr-4 py-2 border border-gray-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-slate-800 dark:text-white" />
+          <div className="relative group">
+            <Search className="w-5 h-5 absolute left-3 top-2.5 text-gray-400 dark:text-slate-500 group-hover:text-blue-500 transition-colors" />
+            <input type="text" placeholder="Search clusters..." className="pl-10 pr-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm dark:text-white transition-all shadow-sm" />
           </div>
-          <button className="flex items-center space-x-2 px-4 py-2 border border-gray-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700">
+          <button className="flex items-center space-x-2 px-4 py-2 border border-gray-200 dark:border-slate-700/50 rounded-lg bg-white/80 dark:bg-slate-800/50 hover:bg-gray-50 dark:hover:bg-slate-700 backdrop-blur-sm transition-all shadow-sm hover:shadow-md">
             <Filter className="w-4 h-4" />
             <span>Filter</span>
           </button>
         </div>
       </div>
 
-      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 overflow-hidden">
+      <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 overflow-hidden">
         <table className="w-full text-left">
-          <thead className="bg-gray-50 dark:bg-slate-800/50 text-gray-600 dark:text-slate-400 text-sm border-b dark:border-slate-700">
+          <thead className="bg-gray-50/50 dark:bg-slate-800/30 text-gray-600 dark:text-slate-400 text-sm border-b dark:border-slate-700/50 backdrop-blur-md">
             <tr>
               <th className="px-6 py-4 font-semibold">Cluster ID</th>
               <th className="px-6 py-4 font-semibold text-center">Accounts</th>
@@ -45,12 +45,12 @@ export default function Clusters() {
               <th className="px-6 py-4 font-semibold"></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100 dark:divide-slate-700">
+          <tbody className="divide-y divide-gray-100 dark:divide-slate-700/50">
             {clusters.map((cluster) => (
-              <tr key={cluster.cluster_id} className="hover:bg-blue-50/50 dark:hover:bg-slate-700/50 transition-colors">
-                <td className="px-6 py-4 text-sm font-bold text-gray-900 dark:text-slate-100">
+              <tr key={cluster.cluster_id} className="group hover:bg-blue-50/50 dark:hover:bg-slate-700/30 transition-all duration-300">
+                <td className="px-6 py-4 text-sm font-bold text-gray-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   <div className="flex items-center space-x-2">
-                    {cluster.risk_level === 'HIGH' && <AlertTriangle className="w-4 h-4 text-red-500" />}
+                    {cluster.risk_level === 'HIGH' && <AlertTriangle className="w-4 h-4 text-red-500 animate-pulse" />}
                     <span>{cluster.cluster_id}</span>
                     {cluster.is_dense_living && (
                       <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400" title={`Verified: ${cluster.location_type}`}>
@@ -61,7 +61,7 @@ export default function Clusters() {
                   </div>
                 </td>
                 <td className="px-6 py-4 text-sm text-center">
-                  <span className="bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full font-medium text-gray-700 dark:text-slate-300">{cluster.num_accounts}</span>
+                  <span className="bg-gray-100 dark:bg-slate-700/50 border border-transparent dark:border-slate-600 px-3 py-1 rounded-full font-medium text-gray-700 dark:text-slate-300">{cluster.num_accounts}</span>
                 </td>
                 <td className="px-6 py-4 text-sm text-center text-gray-600 dark:text-slate-400">{cluster.devices.length}</td>
                 <td className="px-6 py-4 text-sm text-center text-gray-600 dark:text-slate-400">{cluster.addresses.length}</td>
@@ -74,15 +74,16 @@ export default function Clusters() {
                 </td>
                 <td className="px-6 py-4 text-sm font-medium">₹{cluster.refund_value.toFixed(2)}</td>
                 <td className="px-6 py-4">
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold border ${cluster.risk_level === 'HIGH' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/50' :
-                      cluster.risk_level === 'MEDIUM' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800/50' : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/50'
+                  <span className={`px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-sm ${cluster.risk_level === 'HIGH' ? 'bg-red-100/80 dark:bg-red-900/20 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/50 shadow-[0_0_10px_rgba(239,68,68,0.2)]' :
+                      cluster.risk_level === 'MEDIUM' ? 'bg-yellow-100/80 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800/50' : 'bg-green-100/80 dark:bg-green-900/20 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/50'
                     }`}>
                     {cluster.risk_level}
                   </span>
                 </td>
                 <td className="px-6 py-4 text-right">
-                  <Link to={`/clusters/${cluster.cluster_id}`} className="inline-flex items-center justify-center px-4 py-2 bg-razorpay-blue text-white rounded-lg text-sm font-medium hover:bg-blue-900 transition-colors">
-                    Investigate
+                  <Link to={`/clusters/${cluster.cluster_id}`} className="inline-flex items-center space-x-1 text-sm font-semibold text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>Investigate</span>
+                    <span className="text-lg leading-none">&rarr;</span>
                   </Link>
                 </td>
               </tr>

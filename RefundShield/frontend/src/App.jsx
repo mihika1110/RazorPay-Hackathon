@@ -16,9 +16,9 @@ function Sidebar({ darkMode, toggleDarkMode }) {
   ];
 
   return (
-    <div className="w-64 bg-razorpay-blue text-white h-screen flex flex-col fixed">
-      <div className="p-6 flex items-center space-x-3 border-b border-gray-700">
-        <Shield className="w-8 h-8 text-blue-400" />
+    <div className="w-64 bg-gradient-to-b from-[#02042b] to-[#0a1128] text-white h-screen flex flex-col fixed border-r border-gray-800/50 shadow-2xl z-50">
+      <div className="p-6 flex items-center space-x-3 border-b border-white/5">
+        <Shield className="w-8 h-8 text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
         <span className="text-xl font-bold tracking-wide">RefundShield</span>
       </div>
       <nav className="flex-1 p-4 space-y-2">
@@ -26,23 +26,23 @@ function Sidebar({ darkMode, toggleDarkMode }) {
           const Icon = link.icon;
           const isActive = location.pathname === link.path || (location.pathname.startsWith('/clusters') && link.path === '/clusters');
           return (
-            <Link key={link.path} to={link.path} className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${isActive ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-800'}`}>
-              <Icon className="w-5 h-5" />
-              <span>{link.name}</span>
+            <Link key={link.path} to={link.path} className={`group flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 ${isActive ? 'bg-blue-600/90 text-white shadow-[0_0_15px_rgba(37,99,235,0.4)]' : 'text-gray-400 hover:bg-white/5 hover:text-gray-100'}`}>
+              <Icon className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`} />
+              <span className="font-medium">{link.name}</span>
             </Link>
           )
         })}
       </nav>
-      <div className="p-4 border-t border-gray-700">
+      <div className="p-4 border-t border-white/5">
         <button 
           onClick={toggleDarkMode}
-          className="flex items-center space-x-3 w-full p-3 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors"
+          className="flex items-center space-x-3 w-full p-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all duration-300"
         >
           {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+          <span className="font-medium">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
         </button>
       </div>
-      <div className="p-4 text-xs text-gray-400">
+      <div className="p-4 text-xs text-gray-500 font-medium">
         Razorpay AI Buildathon 2026
       </div>
     </div>
@@ -63,9 +63,14 @@ function App() {
   return (
     <Router>
       <div className={`${darkMode ? 'dark' : ''}`}>
-        <div className="flex bg-razorpay-light dark:bg-gray-900 min-h-screen text-gray-900 dark:text-gray-100 transition-colors duration-200">
+        <div className="flex bg-[#F8FAFC] dark:bg-[#0B0F19] min-h-screen text-gray-900 dark:text-gray-100 transition-colors duration-500 relative overflow-hidden">
+          {/* Ambient Glows */}
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 dark:bg-blue-600/5 blur-[100px] pointer-events-none mix-blend-screen"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 dark:bg-indigo-600/5 blur-[100px] pointer-events-none mix-blend-screen"></div>
+
           <Sidebar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-          <div className="flex-1 ml-64 p-8 overflow-y-auto h-screen">
+          
+          <div className="flex-1 ml-64 p-8 overflow-y-auto h-screen relative z-10">
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/clusters" element={<Clusters />} />

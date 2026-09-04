@@ -31,8 +31,11 @@ export default function Metrics() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         
         {/* Confusion Matrix */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6">
-          <h3 className="text-lg font-bold mb-6 dark:text-white">Confusion Matrix</h3>
+        <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
+          <h3 className="text-lg font-bold mb-6 dark:text-white flex items-center space-x-2">
+            <span className="w-1.5 h-6 bg-blue-500 rounded-full"></span>
+            <span>Confusion Matrix</span>
+          </h3>
           
           <div className="grid grid-cols-3 gap-2 text-sm text-center">
             <div className="p-4"></div>
@@ -63,8 +66,11 @@ export default function Metrics() {
 
         {/* Dataset Info */}
         <div className="space-y-6">
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6">
-            <h3 className="text-lg font-bold mb-4 dark:text-white">Dataset Details</h3>
+          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
+            <h3 className="text-lg font-bold mb-4 dark:text-white flex items-center space-x-2">
+              <span className="w-1.5 h-6 bg-purple-500 rounded-full"></span>
+              <span>Dataset Details</span>
+            </h3>
             <div className="space-y-4">
               <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-slate-700/50 rounded-lg">
                 <div className="flex items-center space-x-3 text-gray-700 dark:text-slate-300">
@@ -83,8 +89,11 @@ export default function Metrics() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6">
-            <h3 className="text-lg font-bold mb-4 dark:text-white">Business Impact</h3>
+          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
+            <h3 className="text-lg font-bold mb-4 dark:text-white flex items-center space-x-2">
+              <span className="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
+              <span>Business Impact</span>
+            </h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3 text-sm">
                 <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
@@ -111,13 +120,13 @@ export default function Metrics() {
 
 function MetricCard({ title, value, icon, desc }) {
   return (
-    <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 flex flex-col justify-between">
+    <div className="group bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl p-6 rounded-xl shadow-sm border border-gray-100/50 dark:border-slate-700/50 flex flex-col justify-between hover:shadow-lg dark:hover:shadow-blue-900/20 hover:-translate-y-1 transition-all duration-300">
       <div className="flex justify-between items-start mb-4">
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white">{title}</h3>
-        <div className="p-2 bg-gray-50 dark:bg-slate-700/50 rounded-lg">{icon}</div>
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{title}</h3>
+        <div className="p-2 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700/50 dark:to-slate-800/50 rounded-lg border border-white/50 dark:border-white/5 shadow-inner group-hover:scale-110 transition-transform">{icon}</div>
       </div>
       <div>
-        <p className="text-4xl font-black text-gray-900 dark:text-white">{value}</p>
+        <p className="text-4xl font-black text-gray-900 dark:text-white tracking-tight">{value}</p>
         <p className="text-sm text-gray-500 dark:text-slate-400 mt-2">{desc}</p>
       </div>
     </div>

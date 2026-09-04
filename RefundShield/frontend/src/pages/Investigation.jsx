@@ -59,19 +59,18 @@ export default function Investigation() {
         
         <button 
           onClick={runInvestigation}
-          disabled={loadingAI || report}
-          className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-bold transition-all shadow-sm
-            ${report ? 'bg-green-100 text-green-700 cursor-not-allowed border border-green-200' : 
-              loadingAI ? 'bg-blue-100 text-blue-700 cursor-wait' : 'bg-razorpay-blue text-white hover:bg-blue-900 hover:shadow-md'}`}
+          disabled={loadingAI}
+          className="relative group flex items-center space-x-2 px-6 py-3 rounded-lg font-bold text-white transition-all overflow-hidden shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {loadingAI ? (
-            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-700 mr-2"></div>
-          ) : report ? (
-            <Bot className="w-5 h-5" />
-          ) : (
-            <Play className="w-5 h-5 fill-current" />
-          )}
-          <span>{loadingAI ? 'Agent Investigating...' : report ? 'Investigation Complete' : 'Run AI Investigation'}</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-[length:200%_auto] animate-[gradient_2s_linear_infinite] opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div className="relative flex items-center space-x-2">
+            {loadingAI ? (
+              <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+            ) : (
+              <Play className="w-5 h-5 fill-current" />
+            )}
+            <span>{loadingAI ? 'Analyzing...' : 'Run AI Investigation'}</span>
+          </div>
         </button>
       </div>
 
@@ -80,27 +79,30 @@ export default function Investigation() {
         {/* Left Column: Data & Graph */}
         <div className="lg:col-span-2 space-y-6">
           
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6 flex space-x-12">
+          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6 flex space-x-12">
             <div>
               <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Accounts</p>
-              <p className="text-2xl font-bold dark:text-white">{cluster.num_accounts}</p>
+              <p className="text-3xl font-bold dark:text-white tracking-tight">{cluster.num_accounts}</p>
             </div>
             <div>
               <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Orders</p>
-              <p className="text-2xl font-bold dark:text-white">{cluster.num_orders}</p>
+              <p className="text-3xl font-bold dark:text-white tracking-tight">{cluster.num_orders}</p>
             </div>
             <div>
               <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Refund Rate</p>
-              <p className={`text-2xl font-bold ${cluster.refund_rate > 0.5 ? 'text-red-600 dark:text-red-400' : 'dark:text-white'}`}>{(cluster.refund_rate * 100).toFixed(1)}%</p>
+              <p className={`text-3xl font-bold tracking-tight ${cluster.refund_rate > 0.5 ? 'text-red-600 dark:text-red-400 drop-shadow-[0_0_5px_rgba(239,68,68,0.5)]' : 'dark:text-white'}`}>{(cluster.refund_rate * 100).toFixed(1)}%</p>
             </div>
             <div>
               <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">Total Refund Value</p>
-              <p className="text-2xl font-bold dark:text-white">₹{cluster.refund_value.toFixed(2)}</p>
+              <p className="text-3xl font-bold dark:text-white tracking-tight">₹{cluster.refund_value.toFixed(2)}</p>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6">
-            <h3 className="text-lg font-bold mb-4 dark:text-white">Entity Relationships</h3>
+          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
+            <h3 className="text-lg font-bold mb-4 dark:text-white flex items-center space-x-2">
+              <span className="w-1.5 h-6 bg-blue-500 rounded-full"></span>
+              <span>Entity Relationships</span>
+            </h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="border border-gray-100 dark:border-slate-700 rounded-lg p-4 bg-gray-50 dark:bg-slate-700/50">
                 <div className="flex items-center space-x-2 text-gray-700 dark:text-slate-200 font-semibold mb-3">
@@ -123,8 +125,11 @@ export default function Investigation() {
             </div>
           </div>
           
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 p-6">
-            <h3 className="text-lg font-bold mb-4 dark:text-white">Order History</h3>
+          <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-lg border border-gray-100/50 dark:border-slate-700/50 p-6">
+            <h3 className="text-lg font-bold mb-4 dark:text-white flex items-center space-x-2">
+              <span className="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
+              <span>Order History</span>
+            </h3>
             <div className="max-h-64 overflow-y-auto">
               <table className="w-full text-left text-sm">
                 <thead>
@@ -135,14 +140,14 @@ export default function Investigation() {
                     <th className="pb-2">Status</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-50 dark:divide-slate-700">
+                <tbody className="divide-y divide-gray-50 dark:divide-slate-700/50">
                   {cluster.order_details.slice(0, 15).map(o => (
-                    <tr key={o.order_id}>
-                      <td className="py-2 text-gray-600 dark:text-slate-300">{o.account_id}</td>
-                      <td className="py-2 font-mono text-gray-900 dark:text-slate-100">{o.order_id}</td>
-                      <td className="py-2 font-medium dark:text-slate-200">₹{o.amount.toFixed(2)}</td>
-                      <td className="py-2">
-                        {o.refund_requested ? <span className="text-red-600 dark:text-red-400 font-semibold text-xs">REFUNDED</span> : <span className="text-green-600 dark:text-green-400 font-semibold text-xs">COMPLETED</span>}
+                    <tr key={o.order_id} className="group hover:bg-gray-50/50 dark:hover:bg-slate-700/30 transition-all duration-300">
+                      <td className="py-3 text-gray-600 dark:text-slate-300 group-hover:text-blue-500 transition-colors">{o.account_id}</td>
+                      <td className="py-3 font-mono text-gray-900 dark:text-slate-100">{o.order_id}</td>
+                      <td className="py-3 font-medium dark:text-slate-200">₹{o.amount.toFixed(2)}</td>
+                      <td className="py-3">
+                        {o.refund_requested ? <span className="text-red-600 dark:text-red-400 font-semibold text-xs border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20 px-2 py-0.5 rounded">REFUNDED</span> : <span className="text-green-600 dark:text-green-400 font-semibold text-xs border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded">COMPLETED</span>}
                       </td>
                     </tr>
                   ))}
@@ -155,12 +160,17 @@ export default function Investigation() {
 
         {/* Right Column: AI Report */}
         <div className="lg:col-span-1">
-          <div className={`rounded-xl shadow-sm border p-6 min-h-full transition-all duration-500
-            ${report ? 'bg-white dark:bg-slate-800 border-blue-100 dark:border-blue-900/50 ring-4 ring-blue-50 dark:ring-blue-900/20' : 'bg-gray-50 dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 border-dashed'}`}>
+          <div className={`rounded-xl shadow-lg border p-6 min-h-full transition-all duration-500 backdrop-blur-xl relative overflow-hidden
+            ${report ? 'bg-white/90 dark:bg-slate-800/80 border-blue-200 dark:border-blue-700/50 ring-4 ring-blue-50 dark:ring-blue-900/20' : 'bg-gray-50/80 dark:bg-slate-800/40 border-gray-200 dark:border-slate-700 border-dashed'}`}>
             
-            <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-gray-100 dark:border-slate-700">
-              <div className={`p-2 rounded-lg ${report ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400' : 'bg-gray-200 dark:bg-slate-700 text-gray-400 dark:text-slate-500'}`}>
-                <Bot className="w-6 h-6" />
+            {report && (
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
+            )}
+
+            <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-gray-100 dark:border-slate-700/50">
+              <div className={`p-2 rounded-lg relative ${report ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.3)]' : 'bg-gray-200 dark:bg-slate-700 text-gray-400 dark:text-slate-500'}`}>
+                {report && <div className="absolute inset-0 bg-blue-500/20 blur-md rounded-lg"></div>}
+                <Bot className="w-6 h-6 relative z-10" />
               </div>
               <h2 className={`font-bold text-lg ${report ? 'text-gray-900 dark:text-white' : 'text-gray-400 dark:text-slate-500'}`}>
                 AI Investigator Report
