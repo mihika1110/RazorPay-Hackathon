@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+*.pkl
+*.csv
+model.pkl
+node_modules/
+dist/

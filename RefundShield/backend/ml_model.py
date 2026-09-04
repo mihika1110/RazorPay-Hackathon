@@ -54,46 +54,54 @@ def train_and_evaluate():
     
     df, X, y = prepare_features(accounts_df, orders_df)
     
-    # Train/Val/Test Split (60/20/20)
-    X_train_val, X_test, y_train_val, y_test = train_test_split(
+    # Train / Validation Split (80 / 20)
+    # NOTE: There is NO test split here.
+    # The live streaming data acts as the real-world test set,
+    # and live test metrics are computed in live_streamer.py as new orders arrive.
+    X_train, X_val, y_train, y_val = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y
     )
-    X_train, X_val, y_train, y_val = train_test_split(
-        X_train_val, y_train_val, test_size=0.25, random_state=42, stratify=y_train_val
-    ) # 0.25 * 0.8 = 0.2
     
+    print(f"Train: {len(X_train)} | Val: {len(X_val)} | Live Test: streamed in real-time")
     print("Training Random Forest...")
     clf = RandomForestClassifier(n_estimators=50, random_state=42, max_depth=5)
     clf.fit(X_train, y_train)
     
-    # Predictions
-    y_pred = clf.predict(X_test)
-    y_prob = clf.predict_proba(X_test)[:, 1]
+    # Evaluate on Validation Set (proxy for model quality during development)
+    y_val_pred = clf.predict(X_val)
+    val_precision = precision_score(y_val, y_val_pred)
+    val_recall    = recall_score(y_val, y_val_pred)
+    val_f1        = f1_score(y_val, y_val_pred)
+    val_cm        = confusion_matrix(y_val, y_val_pred).tolist()
+    val_fpr = val_cm[0][1] / (val_cm[0][0] + val_cm[0][1]) if (val_cm[0][0] + val_cm[0][1]) > 0 else 0.0
+    val_fnr = val_cm[1][0] / (val_cm[1][0] + val_cm[1][1]) if (val_cm[1][0] + val_cm[1][1]) > 0 else 0.0
+
+    print(f"Validation Metrics -> Precision: {val_precision:.3f} | Recall: {val_recall:.3f} | F1: {val_f1:.3f}")
     
-    # Evaluation
-    precision = precision_score(y_test, y_pred)
-    recall = recall_score(y_test, y_pred)
-    f1 = f1_score(y_test, y_pred)
-    cm = confusion_matrix(y_test, y_pred).tolist()
-    
-    fpr = cm[0][1] / (cm[0][0] + cm[0][1]) if (cm[0][0] + cm[0][1]) > 0 else 0.0
-    fnr = cm[1][0] / (cm[1][0] + cm[1][1]) if (cm[1][0] + cm[1][1]) > 0 else 0.0
-    
+    # Write initial metrics.json:
+    # - Validation metrics shown as reference until live test data accumulates
+    # - Live test fields start at 0 (will be updated by live_streamer.py)
     metrics = {
-        "precision": round(precision * 100, 2),
-        "recall": round(recall * 100, 2),
-        "f1": round(f1 * 100, 2),
-        "false_positive_rate": round(fpr * 100, 2),
-        "false_negative_rate": round(fnr * 100, 2),
-        "confusion_matrix": cm,
-        "test_records": len(y_test),
-        "val_records": len(y_val),
-        "train_records": len(y_train)
+        # Shown on Metrics page (starts as val metrics, replaced by live test metrics once streaming begins)
+        "precision": round(val_precision * 100, 2),
+        "recall": round(val_recall * 100, 2),
+        "f1": round(val_f1 * 100, 2),
+        "false_positive_rate": round(val_fpr * 100, 2),
+        "false_negative_rate": round(val_fnr * 100, 2),
+        "confusion_matrix": val_cm,
+        # Dataset split sizes
+        "train_records": len(X_train),
+        "val_records": len(X_val),
+        "test_records": 0,          # starts at 0 — grows as live orders stream in
+        # Flags
+        "live_mode": False,         # becomes True once live test data starts arriving
+        # Keep raw val metrics for reference display
+        "val_precision": round(val_precision * 100, 2),
+        "val_recall": round(val_recall * 100, 2),
+        "val_f1": round(val_f1 * 100, 2),
     }
     
-    print("Metrics on Held-Out Test Set:")
-    print(metrics)
-    
+    print("Initial metrics.json written (validation set metrics as baseline).")
     with open('metrics.json', 'w') as f:
         json.dump(metrics, f, indent=4)
         
@@ -101,12 +109,11 @@ def train_and_evaluate():
     with open('model.pkl', 'wb') as f:
         pickle.dump(clf, f)
         
-    # Generate Risk Scores for all orders (to serve in the dashboard)
+    # Score ALL initial data and save
     all_prob = clf.predict_proba(X)[:, 1]
     df['risk_score'] = all_prob
     df['risk_level'] = df['risk_score'].apply(lambda x: 'HIGH' if x > 0.8 else ('MEDIUM' if x > 0.4 else 'LOW'))
     
-    # Save processed orders with risk scores
     output_cols = ['order_id', 'account_id', 'timestamp', 'product_id', 'amount', 'device_id', 'address_id', 'order_status', 'refund_requested', 'risk_score', 'risk_level']
     df[output_cols].to_csv('orders_scored.csv', index=False)
     print("Saved orders_scored.csv and model.pkl")

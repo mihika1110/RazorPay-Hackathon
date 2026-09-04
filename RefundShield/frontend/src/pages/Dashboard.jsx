@@ -95,16 +95,17 @@ export default function Dashboard() {
 
 function StatCard({ title, value, icon }) {
   return (
-    <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl p-6 rounded-xl shadow-sm border border-gray-100/50 dark:border-slate-700/50 hover:shadow-lg dark:hover:shadow-blue-900/20 hover:-translate-y-1 transition-all duration-300">
-      <div className="flex justify-between items-start">
-        <div>
-          <p className="text-sm font-medium text-gray-500 dark:text-slate-400 mb-1">{title}</p>
-          <h3 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">{value}</h3>
-        </div>
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700/50 dark:to-slate-800/50 p-3 rounded-lg border border-white/50 dark:border-white/5 shadow-inner">
+    <div className="group relative bg-white/80 dark:bg-slate-800/50 backdrop-blur-xl p-5 rounded-xl shadow-sm border border-gray-100/50 dark:border-slate-700/50 hover:shadow-lg hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 hover:border-blue-400/50 dark:hover:border-blue-500/50 hover:-translate-y-1 transition-all duration-500 h-36 flex flex-col justify-between overflow-hidden">
+      {/* Shine sweep on hover */}
+      <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/60 dark:via-white/10 to-transparent skew-x-[-25deg] group-hover:animate-[shine_0.8s_ease-in-out_forwards] pointer-events-none z-10"></div>
+
+      <div className="flex justify-between items-start gap-2 relative z-20">
+        <p className="text-sm font-medium text-gray-500 dark:text-slate-400 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{title}</p>
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700/50 dark:to-slate-800/50 p-2.5 rounded-lg border border-white/50 dark:border-white/5 shadow-inner shrink-0 group-hover:scale-110 transition-transform duration-300">
           {icon}
         </div>
       </div>
+      <h3 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight truncate relative z-20">{value}</h3>
     </div>
   );
 }

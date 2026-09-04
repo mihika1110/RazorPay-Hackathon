@@ -23,8 +23,25 @@ export default function Metrics() {
 
   return (
     <div className="space-y-6 max-w-5xl">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white animate-fade-up">Model Performance Metrics</h1>
-      <p className="text-gray-500 dark:text-slate-400 animate-fade-up [animation-delay:100ms] opacity-0 fill-mode-forwards">Evaluated on a held-out synthetic test set.</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white animate-fade-up">Model Performance Metrics</h1>
+          <p className="text-gray-500 dark:text-slate-400 animate-fade-up [animation-delay:100ms] opacity-0 fill-mode-forwards">
+            {metrics.live_mode
+              ? 'Live test metrics — computed on real-time streaming orders (unseen during training).'
+              : 'Validation set metrics — live test metrics will appear once data starts streaming.'}
+          </p>
+        </div>
+        {metrics.live_mode && (
+          <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 rounded-full animate-fade-up">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-xs font-semibold text-green-700 dark:text-green-400">LIVE</span>
+          </div>
+        )}
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 h-48">
         <div className="animate-fade-up [animation-delay:200ms] opacity-0 fill-mode-forwards"><MetricCard title="Precision" value={`${metrics.precision}%`} icon={<Target className="text-blue-500" />} desc="Accuracy of flagged orders" formula="TP / (TP + FP)" formulaDesc="Out of all orders we flagged as abuse, what percentage were actually abuse?" legend="TP = True Positives, FP = False Positives" /></div>
@@ -90,12 +107,18 @@ export default function Metrics() {
                 </div>
                 <span className="font-bold dark:text-white">{metrics.val_records?.toLocaleString() || 0} records</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-slate-700/50 rounded-lg">
+              <div className="flex justify-between items-center p-3 rounded-lg border-2 border-dashed border-green-300 dark:border-green-700/50 bg-green-50/50 dark:bg-green-900/10">
                 <div className="flex items-center space-x-3 text-gray-700 dark:text-slate-300">
-                  <PieChart className="w-5 h-5 text-gray-400 dark:text-slate-500" />
-                  <span className="font-medium">Held-Out Test Set (Final Metrics)</span>
+                  <PieChart className="w-5 h-5 text-green-500" />
+                  <div>
+                    <span className="font-medium block">Live Test Set (Real-World Evaluation)</span>
+                    <span className="text-xs text-gray-400 dark:text-slate-500">New streaming orders — never seen during training</span>
+                  </div>
                 </div>
-                <span className="font-bold dark:text-white">{metrics.test_records.toLocaleString()} records</span>
+                <div className="text-right">
+                  <span className="font-bold dark:text-white block">{metrics.test_records.toLocaleString()} records</span>
+                  {!metrics.live_mode && <span className="text-xs text-gray-400 dark:text-slate-500">Waiting for stream...</span>}
+                </div>
               </div>
             </div>
           </div>
