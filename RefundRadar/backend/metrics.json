@@ -6,7 +6,7 @@
     "false_negative_rate": 7.53,
     "confusion_matrix": [
         [
-            2785,
+            2791,
             7
         ],
         [
@@ -14,7 +14,7 @@
             172
         ]
     ],
-    "test_records": 2978,
+    "test_records": 2984,
     "val_records": 4313,
     "train_records": 17252,
     "live_mode": true
