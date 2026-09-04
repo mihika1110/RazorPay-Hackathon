@@ -1,8 +1,8 @@
-# 📡 RefundRadar — Intelligent Refund Abuse & Fraud Ring Detection
+# 📡 RefundRadar - Intelligent Refund Abuse & Fraud Ring Detection
 
 > Built for the **Razorpay AI Buildathon 2026**
 
-RefundRadar is a real-time fraud intelligence platform that detects coordinated refund abuse syndicates, wardrobing, and serial return fraud. By combining **entity relationship graph clustering**, **machine learning risk scoring**, and an **autonomous AI investigation agent**, RefundRadar uncovers organized fraud rings while ensuring legitimate customers—like students in dorms or families sharing devices—are protected from false positive blocks.
+RefundRadar is a real-time fraud intelligence platform that detects coordinated refund abuse syndicates, wardrobing, and serial return fraud. By combining **entity relationship graph clustering**, **machine learning risk scoring**, and an **autonomous AI investigation agent**, RefundRadar uncovers organized fraud rings while ensuring legitimate customers-like students in dorms or families sharing devices-are protected from false positive blocks.
 
 ---
 
@@ -84,7 +84,7 @@ RefundRadar solves this by analyzing the entire **relationship graph** and evalu
 ### 📡 5. Continuous Live Data Streamer & Production Persistence
 * Runs an asynchronous background generator (`live_streamer.py`) that simulates live incoming production orders every few seconds.
 * Automatically scores incoming orders, updates live metrics, and dynamically recalibrates cluster graphs in real time.
-* **Production-Grade Persistence:** Historical memory is never wiped on server restart—new transactions seamlessly append to `orders_scored.csv` and `clusters.json`.
+* **Production-Grade Persistence:** Historical memory is never wiped on server restart-new transactions seamlessly append to `orders_scored.csv` and `clusters.json`.
 
 ---
 
