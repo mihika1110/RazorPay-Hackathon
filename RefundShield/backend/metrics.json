@@ -1,0 +1,19 @@
+{
+    "precision": 100.0,
+    "recall": 100.0,
+    "f1": 100.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "confusion_matrix": [
+        [
+            1271,
+            0
+        ],
+        [
+            0,
+            488
+        ]
+    ],
+    "test_records": 1759,
+    "train_records": 7033
+}

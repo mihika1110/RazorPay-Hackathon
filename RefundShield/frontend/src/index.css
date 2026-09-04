@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-razorpay-blue: #02042b;
+  --color-razorpay-light: #f7f8f9;
+  --color-razorpay-primary: #3385ff;
+}
+
+body {
+  background-color: var(--color-razorpay-light);
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+}
