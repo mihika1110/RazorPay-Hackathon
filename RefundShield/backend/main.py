@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 import pandas as pd
 import json
 import os
+import math
 
 from agent import generate_investigation_report
 from live_streamer import start_stream, stop_stream, is_stream_running
@@ -32,13 +33,22 @@ app.add_middleware(
 
 def load_orders():
     if os.path.exists('orders_scored.csv'):
-        return pd.read_csv('orders_scored.csv')
-    return pd.read_csv('orders.csv')
+        df = pd.read_csv('orders_scored.csv')
+    else:
+        df = pd.read_csv('orders.csv')
+    return df.where(pd.notnull(df), None)
+
 
 def load_clusters():
     if os.path.exists('clusters.json'):
         with open('clusters.json', 'r') as f:
-            return json.load(f)
+            data = json.load(f)
+            # Ensure no NaN floats exist which violate RFC-8259 JSON and crash FastAPI
+            for c in data:
+                for k, v in c.items():
+                    if isinstance(v, float) and math.isnan(v):
+                        c[k] = 0.0
+            return data
     return []
 
 @app.get("/api/stats")
@@ -143,4 +153,3 @@ def start_stream_endpoint():
 def stop_stream_endpoint():
     stop_stream()
     return {"is_streaming": False, "message": "Live stream paused"}
-

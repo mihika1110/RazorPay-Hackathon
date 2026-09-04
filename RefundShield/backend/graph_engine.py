@@ -70,8 +70,9 @@ def build_and_analyze_graph():
             refund_rate = (total_refunds / total_orders) if total_orders > 0 else 0
             
             # Calculate avg risk score
-            if 'risk_score' in cluster_orders.columns:
-                avg_risk = float(cluster_orders['risk_score'].mean())
+            if 'risk_score' in cluster_orders.columns and total_orders > 0:
+                mean_val = cluster_orders['risk_score'].mean()
+                avg_risk = float(mean_val) if pd.notna(mean_val) else 0.0
             else:
                 avg_risk = 0.0
                 
