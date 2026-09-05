@@ -5,8 +5,12 @@ and prints a beautifully formatted breakdown of predictions, scores, and explana
 """
 
 import os
+import sys
 import pickle
 import pandas as pd
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 # Load model
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pkl")

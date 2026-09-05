@@ -18,6 +18,9 @@ import argparse
 import pickle
 import pandas as pd
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pkl")
 
 def load_model():
