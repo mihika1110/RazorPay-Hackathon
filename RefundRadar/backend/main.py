@@ -1,12 +1,14 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
+from pydantic import BaseModel
+from typing import List, Dict, Any, Optional
 import pandas as pd
 import json
 import os
 import math
 
-from agent import generate_investigation_report
+from agent import generate_investigation_report, handle_copilot_chat, get_copilot_suggestions
 from live_streamer import start_stream, stop_stream, is_stream_running
 
 @asynccontextmanager
@@ -153,3 +155,22 @@ def start_stream_endpoint():
 def stop_stream_endpoint():
     stop_stream()
     return {"is_streaming": False, "message": "Live stream paused"}
+
+
+class CopilotChatRequest(BaseModel):
+    message: str
+    history: Optional[List[Dict[str, Any]]] = []
+    context: Optional[Dict[str, Any]] = {}
+
+
+@app.post("/api/copilot/chat")
+def copilot_chat_endpoint(req: CopilotChatRequest):
+    try:
+        return handle_copilot_chat(req.message, req.history, req.context)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/copilot/suggestions")
+def copilot_suggestions_endpoint(active_cluster_id: Optional[str] = None):
+    return {"suggestions": get_copilot_suggestions(active_cluster_id)}

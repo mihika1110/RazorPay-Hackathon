@@ -1,0 +1,34 @@
+# 1. Environment & Secret Keys
+.env
+*.env
+.env.*
+!.env.example
+
+# 2. Python & Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.pkl
+model.pkl
+*.csv
+.Python
+env/
+venv/
+.venv/
+
+# 3. Frontend (React + Vite)
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 4. OS & IDE Junk
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+*.swp
+*.swo

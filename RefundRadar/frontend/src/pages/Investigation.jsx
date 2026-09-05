@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeft, Bot, ShieldAlert, Cpu, MapPin, CreditCard, Play, Building2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { API_BASE } from '../config';
 
 export default function Investigation() {
@@ -213,7 +214,25 @@ export default function Investigation() {
             ) : report ? (
               <div className="space-y-4 text-xs">
                 <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
                   components={{
+                    table: ({ node, ...props }) => (
+                      <div className="overflow-x-auto my-3 rounded-xl border border-gray-200 dark:border-slate-700/80 shadow-sm bg-white/70 dark:bg-slate-900/60">
+                        <table className="w-full text-left border-collapse text-[11px] sm:text-xs" {...props} />
+                      </div>
+                    ),
+                    thead: ({ node, ...props }) => (
+                      <thead className="bg-gray-100/90 dark:bg-slate-800/90 border-b border-gray-200 dark:border-slate-700" {...props} />
+                    ),
+                    th: ({ node, ...props }) => (
+                      <th className="px-3 py-2 font-bold text-gray-800 dark:text-gray-200 tracking-wide" {...props} />
+                    ),
+                    tbody: ({ node, ...props }) => (
+                      <tbody className="divide-y divide-gray-100 dark:divide-slate-800/60" {...props} />
+                    ),
+                    td: ({ node, ...props }) => (
+                      <td className="px-3 py-2 text-gray-700 dark:text-slate-300 whitespace-normal leading-relaxed align-top" {...props} />
+                    ),
                     h1: ({ children }) => (
                       <div className="pb-2 mb-3 border-b border-gray-100 dark:border-slate-700/50">
                         <span className="text-xs font-mono font-semibold text-gray-500 dark:text-slate-400">

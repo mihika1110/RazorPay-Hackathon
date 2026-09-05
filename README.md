@@ -73,13 +73,15 @@ RefundRadar solves this by analyzing the entire **relationship graph** and evalu
   * Proportional refund rate
 * Delivers **97%+ Precision** and **96%+ Recall** with live confusion matrix tracking.
 
-### 🧠 4. Autonomous AI Investigator Agent
+### 🧠 4. Autonomous AI Investigator Agent & Interactive Co-Pilot
 * Powered by Google's **Gemini 2.0 Flash** (with a built-in deterministic fallback engine).
-* Generates structured investigation dossiers with:
-  * **Executive Summary:** High-level metrics and impact.
-  * **Key Risk Signals:** Concrete evidence of shared hardware, address collusions, and return velocities.
-  * **Assessment & Confidence Score:** Probabilistic verdict on coordinated ring activity vs. normal behavior.
-  * **Actionable Next Steps:** Clear instructions for fraud operations teams (e.g., *Monitor*, *Manual Review*, *Do Not Block*).
+* **Investigation Dossiers:** Generates structured reports with Executive Summaries, Key Risk Signals, Confidence Scores, and Actionable Next Steps.
+* **Interactive AI Risk Co-Pilot (Chat Assistant):** Real-time natural language side-drawer for fraud analysts:
+  * 🚨 *Cluster Diagnostics:* "Why was Cluster C180 flagged as HIGH risk?"
+  * 🔗 *Entity Link Analysis:* "Show common links between Account ACC_A_1 and ACC_A_5"
+  * ⚖️ *Chargeback Defense Packages:* "Draft an official chargeback dispute letter with evidence logs for Order ORD_ACC_N_0_0"
+  * 🛡️ *Countermeasure Simulation:* "Simulate what happens if we block device DEV_A_0"
+  * 📋 *One-Click Export:* Direct copy-to-clipboard for dispute representations and investigation notes.
 
 ### 📡 5. Continuous Live Data Streamer & Production Persistence
 * Runs an asynchronous background generator (`live_streamer.py`) that simulates live incoming production orders every few seconds.

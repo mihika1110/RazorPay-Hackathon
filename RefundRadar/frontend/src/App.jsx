@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard';
 import Clusters from './pages/Clusters';
 import Investigation from './pages/Investigation';
 import Metrics from './pages/Metrics';
+import AiCopilot from './components/AiCopilot';
 import { Shield, LayoutDashboard, Users, Activity, BarChart3, Sun, Moon, Radio, Pause, Play, Loader2 } from 'lucide-react';
 import { StreamProvider, useStream } from './context/StreamContext';
 
@@ -123,6 +124,9 @@ function App() {
                 <Route path="/metrics" element={<Metrics />} />
               </Routes>
             </div>
+
+            {/* Global AI Fraud Investigator Co-Pilot */}
+            <AiCopilot />
           </div>
         </div>
       </Router>
